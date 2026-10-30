@@ -577,7 +577,7 @@ export default function VenueBooking() {
                                                 {cateringPackages.map(pkg => (
                                                     <div key={pkg._id} onClick={() => handleSelectPackage(pkg)} className={`relative rounded-2xl border-2 transition-all duration-300 cursor-pointer overflow-hidden ${selectedPackage?._id === pkg._id ? 'border-primary bg-primary/5 shadow-lg scale-[1.02]' : 'border-border bg-white hover:border-primary/20'}`}>
                                                         <div className="h-32 relative overflow-hidden">
-                                                            <img src={pkg.thumbnail ? getImageUrl(pkg.thumbnail) : `https://source.unsplash.com/400x300/?food`} alt={pkg.name} className="w-full h-full object-cover" />
+                                                            <img src={pkg.thumbnail ? getImageUrl(pkg.thumbnail) : `https://picsum.photos/seed/${encodeURIComponent(pkg.name)}/400/300`} alt={pkg.name} className="w-full h-full object-cover" />
                                                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                                                         </div>
                                                         <div className="p-6 pt-4">

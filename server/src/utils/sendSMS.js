@@ -1,133 +1,140 @@
 import https from 'https';
 
-/**
- * Sends an SMS using Twilio or Fast2SMS based on configuration
- * @param {string} phone - Target phone number
- * @param {string} message - Content of the SMS
+/*
+ * Sends an SMS via Fast2SMS, then Twilio, then the console.
+ *
+ * Two things were wrong with the previous version, and together they made
+ * registration impossible on a fresh checkout.
+ *
+ * First, a placeholder counted as configured. .env.example ships
+ * FAST2SMS_API_KEY=your_fast2sms_key, which is a non-empty string, so
+ * `if (FAST2SMS_API_KEY)` was true and the real provider was called with a
+ * key that cannot work.
+ *
+ * Second, each provider block returned early, so when Fast2SMS answered 412
+ * Invalid Authentication the promise resolved false and the console fallback
+ * below was never reached. The OTP went nowhere: not to a phone, not to the
+ * terminal. You could register and then never get past the verify screen.
+ *
+ * Now a placeholder is treated as absent, and a provider that fails falls
+ * through to the next one, ending at the console. The OTP always surfaces
+ * somewhere.
  */
+
+const PLACEHOLDER = /^(your[_-]|<|xxx|placeholder|changeme|todo)/i;
+
+const configured = (value) =>
+    typeof value === 'string' && value.trim() !== '' && !PLACEHOLDER.test(value.trim());
+
+const trySendFast2SMS = (apiKey, phone, message) =>
+    new Promise((resolve) => {
+        let number = phone.replace(/\D/g, '');
+        if (number.startsWith('91') && number.length === 12) number = number.slice(2);
+
+        console.log(`Sending SMS to ${number} via Fast2SMS...`);
+
+        const req = https.request({
+            hostname: 'www.fast2sms.com',
+            path: `/dev/bulkV2?authorization=${apiKey}&route=q`
+                + `&message=${encodeURIComponent(message)}&numbers=${number}`,
+            method: 'GET',
+        }, (res) => {
+            let body = '';
+            res.on('data', (chunk) => { body += chunk; });
+            res.on('end', () => {
+                try {
+                    const parsed = JSON.parse(body);
+                    if (res.statusCode === 200 && parsed.return === true) {
+                        console.log(`SMS sent via Fast2SMS to ${number}`);
+                        return resolve(true);
+                    }
+                    console.error(`Fast2SMS declined (${res.statusCode}): ${parsed.message}`);
+                } catch {
+                    console.error(`Fast2SMS returned something that is not JSON: ${body.slice(0, 120)}`);
+                }
+                resolve(false);
+            });
+        });
+
+        req.on('error', (err) => {
+            console.error(`Fast2SMS request failed: ${err.message}`);
+            resolve(false);
+        });
+        req.end();
+    });
+
+const trySendTwilio = (sid, token, from, phone, message) =>
+    new Promise((resolve) => {
+        const auth = Buffer.from(`${sid}:${token}`).toString('base64');
+        const body = new URLSearchParams({
+            To: phone.startsWith('+') ? phone : `+91${phone}`,
+            From: from,
+            Body: message,
+        }).toString();
+
+        const req = https.request({
+            hostname: 'api.twilio.com',
+            port: 443,
+            path: `/2010-04-01/Accounts/${sid}/Messages.json`,
+            method: 'POST',
+            headers: {
+                Authorization: `Basic ${auth}`,
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': Buffer.byteLength(body),
+            },
+        }, (res) => {
+            res.resume();
+            if (res.statusCode === 201) {
+                console.log(`SMS sent via Twilio to ${phone}`);
+                return resolve(true);
+            }
+            console.error(`Twilio declined with status ${res.statusCode}`);
+            resolve(false);
+        });
+
+        req.on('error', (err) => {
+            console.error(`Twilio request failed: ${err.message}`);
+            resolve(false);
+        });
+        req.write(body);
+        req.end();
+    });
+
+const logToConsole = (phone, message) => {
+    const otp = (message.match(/\b\d{6}\b/) || [])[0];
+    console.log('\n+----------------------------------------------------------+');
+    console.log('|            SMS NOT SENT - CONSOLE FALLBACK               |');
+    console.log('+----------------------------------------------------------+');
+    console.log(`|  TO      : ${phone.padEnd(44)}|`);
+    console.log(`|  MESSAGE : ${message.slice(0, 44).padEnd(44)}|`);
+    if (otp) {
+        console.log('+----------------------------------------------------------+');
+        console.log(`|  OTP CODE: ${otp.padEnd(44)}|`);
+        console.log('|  Copy the code above into the verify screen.             |');
+    }
+    console.log('+----------------------------------------------------------+\n');
+    return true;
+};
+
 const sendSMS = async (phone, message) => {
     const {
         TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER,
-        FAST2SMS_API_KEY
+        FAST2SMS_API_KEY,
     } = process.env;
 
-    // 1. TRY FAST2SMS (Simple URL Call)
-    if (FAST2SMS_API_KEY) {
-        return new Promise((resolve, reject) => {
-            // Format phone number - Fast2SMS needs 10 digits without country code
-            let formattedPhone = phone.replace(/\D/g, ''); // Remove non-digits
-            if (formattedPhone.startsWith('91') && formattedPhone.length === 12) {
-                formattedPhone = formattedPhone.substring(2); // Remove country code
-            }
-
-            console.log(`📤 Sending SMS to ${formattedPhone} via Fast2SMS...`);
-
-            const options = {
-                hostname: 'www.fast2sms.com',
-                path: `/dev/bulkV2?authorization=${FAST2SMS_API_KEY}&route=q&message=${encodeURIComponent(message)}&numbers=${formattedPhone}`,
-                method: 'GET'
-            };
-
-            const req = https.request(options, (res) => {
-                let data = '';
-
-                res.on('data', (chunk) => {
-                    data += chunk;
-                });
-
-                res.on('end', () => {
-                    try {
-                        const response = JSON.parse(data);
-                        console.log('Fast2SMS Response:', response);
-
-                        if (res.statusCode === 200 && response.return === true) {
-                            console.log(`✅ SMS sent successfully via Fast2SMS to ${formattedPhone}`);
-                            console.log(`📱 Message ID: ${response.message[0]}`);
-                            resolve(true);
-                        } else {
-                            console.error(`❌ Fast2SMS failed:`, response);
-                            console.error(`Status: ${res.statusCode}, Message: ${response.message}`);
-                            resolve(false);
-                        }
-                    } catch (e) {
-                        console.error(`❌ Fast2SMS response parse error:`, e.message);
-                        console.error(`Raw response:`, data);
-                        resolve(false);
-                    }
-                });
-            });
-
-            req.on('error', (e) => {
-                console.error(`❌ Fast2SMS Request Error: ${e.message}`);
-                resolve(false);
-            });
-
-            req.end();
-        });
+    if (configured(FAST2SMS_API_KEY)) {
+        if (await trySendFast2SMS(FAST2SMS_API_KEY, phone, message)) return true;
+        console.warn('Fast2SMS did not deliver, trying the next option.');
     }
 
-    // 2. TRY TWILIO (Requires standard auth)
-    if (TWILIO_ACCOUNT_SID && TWILIO_AUTH_TOKEN) {
-        // Since we don't want to force install 'twilio' package immediately if not there,
-        // we can use a standard REST API call via https
-        return new Promise((resolve, reject) => {
-            const auth = Buffer.from(`${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}`).toString('base64');
-            const data = new URLSearchParams({
-                To: phone.startsWith('+') ? phone : `+91${phone}`, // Defaulting to IN if no +
-                From: TWILIO_PHONE_NUMBER,
-                Body: message
-            }).toString();
-
-            const options = {
-                hostname: 'api.twilio.com',
-                port: 443,
-                path: `/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`,
-                method: 'POST',
-                headers: {
-                    'Authorization': `Basic ${auth}`,
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Content-Length': data.length
-                }
-            };
-
-            const req = https.request(options, (res) => {
-                if (res.statusCode === 201) {
-                    console.log(`✅ SMS sent via Twilio to ${phone}`);
-                    resolve(true);
-                } else {
-                    console.error(`❌ Twilio failed with status: ${res.statusCode}`);
-                    resolve(false);
-                }
-            });
-
-            req.on('error', (e) => {
-                console.error(`❌ Twilio Error: ${e.message}`);
-                resolve(false);
-            });
-
-            req.write(data);
-            req.end();
-        });
+    if (configured(TWILIO_ACCOUNT_SID) && configured(TWILIO_AUTH_TOKEN)
+        && configured(TWILIO_PHONE_NUMBER)) {
+        if (await trySendTwilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN,
+            TWILIO_PHONE_NUMBER, phone, message)) return true;
+        console.warn('Twilio did not deliver, falling back to the console.');
     }
 
-    // 3. FALLBACK: Log if nothing is configured
-    console.log('\n╔══════════════════════════════════════════════════════════╗');
-    console.log('║         📱 SMS NOT SENT - CONSOLE FALLBACK              ║');
-    console.log('╠══════════════════════════════════════════════════════════╣');
-    console.log(`║  RECIPIENT: ${phone.padEnd(42)} ║`);
-    console.log(`║  MESSAGE: ${message.substring(0, 44).padEnd(44)} ║`);
-
-    // Extract OTP if present
-    const otpMatch = message.match(/\b\d{6}\b/);
-    if (otpMatch) {
-        console.log('╠══════════════════════════════════════════════════════════╣');
-        console.log(`║  🔑 OTP CODE: ${otpMatch[0]}                                  ║`);
-        console.log('╠══════════════════════════════════════════════════════════╣');
-        console.log('║  ⚠️  COPY THE OTP ABOVE TO VERIFY                        ║');
-    }
-    console.log('╚══════════════════════════════════════════════════════════╝\n');
-
-    return true;
+    return logToConsole(phone, message);
 };
 
 export default sendSMS;

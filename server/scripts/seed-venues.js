@@ -342,6 +342,7 @@ const seed = async () => {
         const packages = await CateringPackage.insertMany([
             {
                 name: 'Basic Package',
+                thumbnail: 'https://www.themealdb.com/images/media/meals/o2cd4r1764113576.jpg',
                 tier: 'basic',
                 description: 'A simple yet satisfying menu perfect for budget-conscious events. Features essential dishes that please every palate.',
                 shortDescription: 'Essential menu for budget-friendly events',
@@ -371,6 +372,7 @@ const seed = async () => {
             },
             {
                 name: 'Standard Package',
+                thumbnail: 'https://www.themealdb.com/images/media/meals/02s6gc1763799560.jpg',
                 tier: 'standard',
                 description: 'Our most popular package with a perfect balance of variety and value. Features an extensive menu with live counter and multiple dessert options.',
                 shortDescription: 'Most popular balanced menu with live counters',
@@ -403,6 +405,7 @@ const seed = async () => {
             },
             {
                 name: 'Premium Package',
+                thumbnail: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
                 tier: 'premium',
                 description: 'An elevated dining experience with extensive menu, multiple live counters, mocktail stations, and premium desserts. Perfect for special celebrations.',
                 shortDescription: 'Premium dining with live counters and mocktails',
@@ -441,6 +444,7 @@ const seed = async () => {
             },
             {
                 name: 'Deluxe Package',
+                thumbnail: 'https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg',
                 tier: 'deluxe',
                 description: 'The ultimate luxury dining experience with our most comprehensive menu, premium ingredients, dedicated chef stations, and white-glove service. An unforgettable culinary journey.',
                 shortDescription: 'Ultimate luxury dining with dedicated chef stations',

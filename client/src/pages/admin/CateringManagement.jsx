@@ -405,7 +405,7 @@ export default function AdminCateringManagement() {
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-100 flex-shrink-0">
                                                 <img 
-                                                    src={i.image ? getImageUrl(i.image) : `https://source.unsplash.com/100x100/?${encodeURIComponent(i.name)},food`} 
+                                                    src={i.image ? getImageUrl(i.image) : `https://picsum.photos/seed/${encodeURIComponent(i.name)}/100/100`} 
                                                     alt={i.name} 
                                                     className="w-full h-full object-cover" 
                                                 />
