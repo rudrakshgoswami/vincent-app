@@ -1,41 +1,50 @@
 [
   {
-    "_id": "65f0e1a1b2c3d4e5f6000001",
-    "name": "Classic Package",
-    "description": "Elegant Indian buffet setup for budget-friendly premium events.",
-    "thumbnail": "/uploads/Catering/pkg_classic.jpg",
-    "pricePerPlate": 650,
-    "minGuests": 100,
-    "maxGuests": 500,
+    "_id": "6ae4461dff309592e9620516",
+    "name": "Basic Package",
+    "description": "A simple yet satisfying menu perfect for budget-conscious events. Features essential dishes that please every palate.",
+    "pricePerPlate": 350,
+    "minGuests": 50,
+    "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.346Z",
-    "updatedAt": "2026-03-20T15:54:58.346Z"
+    "createdAt": "2026-10-30T07:24:13.536Z",
+    "updatedAt": "2026-10-30T07:24:13.536Z"
   },
   {
-    "_id": "65f0e1a1b2c3d4e5f6000002",
+    "_id": "6ae4461dff309592e9620517",
+    "name": "Standard Package",
+    "description": "Our most popular package with a perfect balance of variety and value. Features an extensive menu with live counter and multiple dessert options.",
+    "pricePerPlate": 550,
+    "minGuests": 50,
+    "maxGuests": 1000,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-10-30T07:24:13.536Z",
+    "updatedAt": "2026-10-30T07:24:13.536Z"
+  },
+  {
+    "_id": "6ae4461dff309592e9620518",
     "name": "Premium Package",
-    "description": "Luxury wedding buffet with expanded variety and premium service.",
-    "thumbnail": "/uploads/Catering/pkg_premium.jpg",
-    "pricePerPlate": 950,
-    "minGuests": 150,
-    "maxGuests": 800,
+    "description": "An elevated dining experience with extensive menu, multiple live counters, mocktail stations, and premium desserts. Perfect for special celebrations.",
+    "pricePerPlate": 800,
+    "minGuests": 50,
+    "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.347Z",
-    "updatedAt": "2026-03-20T15:54:58.347Z"
+    "createdAt": "2026-10-30T07:24:13.536Z",
+    "updatedAt": "2026-10-30T07:24:13.536Z"
   },
   {
-    "_id": "65f0e1a1b2c3d4e5f6000003",
-    "name": "Royal Wedding Package",
-    "description": "Grand royal banquet food spread for the ultimate celebratory experience.",
-    "thumbnail": "/uploads/Catering/pkg_royal.jpg",
-    "pricePerPlate": 1350,
-    "minGuests": 200,
-    "maxGuests": 1500,
+    "_id": "6ae4461dff309592e9620519",
+    "name": "Deluxe Package",
+    "description": "The ultimate luxury dining experience with our most comprehensive menu, premium ingredients, dedicated chef stations, and white-glove service. An unforgettable culinary journey.",
+    "pricePerPlate": 1200,
+    "minGuests": 50,
+    "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.347Z",
-    "updatedAt": "2026-03-20T15:54:58.347Z"
+    "createdAt": "2026-10-30T07:24:13.536Z",
+    "updatedAt": "2026-10-30T07:24:13.536Z"
   }
 ]

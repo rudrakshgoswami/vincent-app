@@ -38,7 +38,7 @@ const seedData = async () => {
                 price: 249,
                 category: starters._id,
                 isVeg: true,
-                image: 'https://images.unsplash.com/photo-1567184109411-b28f3f6e8c8a?auto=format&fit=crop&q=80&w=800',
+                image: 'https://www.themealdb.com/images/media/meals/3m8yae1763257951.jpg?auto=format&fit=crop&q=80&w=800',
                 isAvailable: true
             },
             {
@@ -65,7 +65,7 @@ const seedData = async () => {
                 price: 149,
                 category: desserts._id,
                 isVeg: true,
-                image: 'https://images.unsplash.com/photo-1564758622714-3887469a48f4?auto=format&fit=crop&q=80&w=800',
+                image: 'https://www.themealdb.com/images/media/meals/wkhg581762773124.jpg?auto=format&fit=crop&q=80&w=800',
                 isAvailable: true
             },
             {

@@ -157,6 +157,17 @@ export default function Menu() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
                                     {items.map((item) => (
                                         <div key={item.id || item._id} className="group flex justify-between items-start p-6 bg-white/95 backdrop-blur-sm shadow-[0_4px_30px_-4px_rgba(0,0,0,0.3)] border border-white/10 hover:bg-white transition-all duration-300 rounded-3xl hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transform hover:-translate-y-1">
+                                            {item.image && (
+                                                <img
+                                                    src={getImageUrl(item.image)}
+                                                    alt={item.name}
+                                                    loading="lazy"
+                                                    width="72"
+                                                    height="72"
+                                                    className="flex-shrink-0 w-[72px] h-[72px] rounded-2xl object-cover mr-4 shadow-sm"
+                                                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                                />
+                                            )}
                                             <div className="flex-1 pr-4 relative">
                                                 <div className="flex items-center gap-3 mb-2 flex-wrap">
                                                     {item.isVeg ? (

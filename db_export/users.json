@@ -170,5 +170,28 @@
     "updatedAt": "2026-03-12T17:20:31.589Z",
     "__v": 0,
     "blockReason": null
+  },
+  {
+    "_id": "69e2320fdb075be49c079a39",
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@example.com",
+    "phone": "+919000000008",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "69e2320fdb075be49c079a3a"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-04-17T13:13:51.675Z",
+    "updatedAt": "2026-04-17T13:14:13.465Z",
+    "__v": 0
   }
 ]

@@ -24,7 +24,7 @@ const seedCatering = async () => {
         const packages = await CateringPackage.insertMany([
             { name: "Standard Veg Thali", description: "A simple and delicious veg spread.", pricePerPlate: 500, minGuests: 50, maxGuests: 500, isActive: true, thumbnail: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80" },
             { name: "Premium Veg Buffet", description: "An elaborate spread with more options and live counters.", pricePerPlate: 800, minGuests: 100, maxGuests: 1000, isActive: true, thumbnail: "https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?w=500&q=80" },
-            { name: "Royal Veg Feast", description: "The ultimate luxury dining experience with exotic dishes.", pricePerPlate: 1200, minGuests: 150, maxGuests: 2000, isActive: true, thumbnail: "https://images.unsplash.com/photo-1631452180519-c014fe946bc0?w=500&q=80" }
+            { name: "Royal Veg Feast", description: "The ultimate luxury dining experience with exotic dishes.", pricePerPlate: 1200, minGuests: 150, maxGuests: 2000, isActive: true, thumbnail: "https://www.themealdb.com/images/media/meals/zub3s91764110535.jpg?w=500&q=80" }
         ]);
 
         const [pStd, pPrem, pRoy] = packages;
@@ -47,8 +47,8 @@ const seedCatering = async () => {
         await FoodItem.insertMany([
             // Welcome Drinks
             { name: "Fresh Lime Soda", description: "Refreshing sweet & salt lime soda", image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80", categoryId: getCatId("Welcome Drinks"), packageIds: allPkgIds, foodType: "Vegan", isAvailable: true },
-            { name: "Mango Lassi", description: "Thick, sweet yogurt drink flavored with mango", image: "https://images.unsplash.com/photo-1577742137542-a630fe86a683?w=500&q=80", categoryId: getCatId("Welcome Drinks"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
-            { name: "Blue Lagoon Mocktail", description: "Blue curacao and lemonade", image: "https://images.unsplash.com/photo-1549416550-9fbbddac4da6?w=500&q=80", categoryId: getCatId("Welcome Drinks"), packageIds: premRoyIds, foodType: "Vegan", isAvailable: true },
+            { name: "Mango Lassi", description: "Thick, sweet yogurt drink flavored with mango", image: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg?w=500&q=80", categoryId: getCatId("Welcome Drinks"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
+            { name: "Blue Lagoon Mocktail", description: "Blue curacao and lemonade", image: "https://www.themealdb.com/images/media/meals/a4kgf21763075288.jpg?w=500&q=80", categoryId: getCatId("Welcome Drinks"), packageIds: premRoyIds, foodType: "Vegan", isAvailable: true },
             { name: "Watermelon Mojito", description: "Fresh watermelon with mint", image: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500&q=80", categoryId: getCatId("Welcome Drinks"), packageIds: premRoyIds, foodType: "Vegan", isAvailable: true },
 
             // Starters
@@ -56,18 +56,18 @@ const seedCatering = async () => {
             { name: "Hara Bhara Kabab", description: "Healthy kababs made from spinach, peas, and potatoes", image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80", categoryId: getCatId("Starters (Veg)"), packageIds: allPkgIds, foodType: "Vegan", isAvailable: true },
             { name: "Chilli Gobi", description: "Cauliflower florets tossed in spicy soy sauce", image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80", categoryId: getCatId("Starters (Veg)"), packageIds: allPkgIds, foodType: "Vegan", isAvailable: true },
             { name: "Mushroom Tikka", description: "Marinated mushrooms grilled to perfection", image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500&q=80", categoryId: getCatId("Starters (Veg)"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
-            { name: "Cheese Corn Balls", description: "Crispy fried balls stuffed with cheese and sweet corn", image: "https://images.unsplash.com/photo-1589146187933-c24acb89ff4c?w=500&q=80", categoryId: getCatId("Starters (Veg)"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
+            { name: "Cheese Corn Balls", description: "Crispy fried balls stuffed with cheese and sweet corn", image: "https://www.themealdb.com/images/media/meals/5jdtie1763289302.jpg?w=500&q=80", categoryId: getCatId("Starters (Veg)"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
 
             // Main Course
-            { name: "Paneer Butter Masala", description: "Rich and creamy tomato-based paneer curry", image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc0?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
+            { name: "Paneer Butter Masala", description: "Rich and creamy tomato-based paneer curry", image: "https://www.themealdb.com/images/media/meals/zub3s91764110535.jpg?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
             { name: "Dal Makhani", description: "Slow-cooked black lentils with cream and butter", image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
             { name: "Mix Veg Curry", description: "Assorted vegetables cooked in a spicy gravy", image: "https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: allPkgIds, foodType: "Vegan", isAvailable: true },
             { name: "Malai Kofta", description: "Potato and paneer balls deep-fried and served in a creamy sauce", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
-            { name: "Kadhai Paneer", description: "Paneer cooked with bell peppers and whole spices", image: "https://images.unsplash.com/photo-1555126634-ae234bea3bda?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
+            { name: "Kadhai Paneer", description: "Paneer cooked with bell peppers and whole spices", image: "https://www.themealdb.com/images/media/meals/tbj1bs1764118062.jpg?w=500&q=80", categoryId: getCatId("Main Course"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
 
             // Breads
             { name: "Butter Naan", description: "Soft Indian flatbread brushed with butter", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&q=80", categoryId: getCatId("Indian Breads"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
-            { name: "Tandoori Roti", description: "Whole wheat bread baked in a tandoor", image: "https://images.unsplash.com/photo-1604908176885-110cd9da66b7?w=500&q=80", categoryId: getCatId("Indian Breads"), packageIds: allPkgIds, foodType: "Vegan", isAvailable: true },
+            { name: "Tandoori Roti", description: "Whole wheat bread baked in a tandoor", image: "https://www.themealdb.com/images/media/meals/grhn401765687086.jpg?w=500&q=80", categoryId: getCatId("Indian Breads"), packageIds: allPkgIds, foodType: "Vegan", isAvailable: true },
             { name: "Garlic Naan", description: "Naan topped with minced garlic and cilantro", image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&q=80", categoryId: getCatId("Indian Breads"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
 
             // Rice
@@ -76,20 +76,20 @@ const seedCatering = async () => {
             { name: "Peas Pulao", description: "A simple and mildly spiced rice dish with green peas", image: "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?w=500&q=80", categoryId: getCatId("Rice & Biryani"), packageIds: premRoyIds, foodType: "Vegan", isAvailable: true },
 
             // Desserts
-            { name: "Gulab Jamun", description: "Deep-fried milk-solid balls soaked in sugar syrup", image: "https://images.unsplash.com/photo-1644919532835-2aa0f1ae12de?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
-            { name: "Rasgulla", description: "Spongy cottage cheese balls cooked in light sugar syrup", image: "https://images.unsplash.com/photo-1601050690117-94f5f64ee4b8?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
-            { name: "Gajar Ka Halwa", description: "Rich carrot pudding loaded with dry fruits", image: "https://images.unsplash.com/photo-1634560703816-0a2a46e1ab78?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
-            { name: "Vanilla Ice Cream", description: "Classic vanilla flavored ice cream", image: "https://images.unsplash.com/photo-1570197781417-0a52375c3f71?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true }
+            { name: "Gulab Jamun", description: "Deep-fried milk-solid balls soaked in sugar syrup", image: "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
+            { name: "Rasgulla", description: "Spongy cottage cheese balls cooked in light sugar syrup", image: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true },
+            { name: "Gajar Ka Halwa", description: "Rich carrot pudding loaded with dry fruits", image: "https://www.themealdb.com/images/media/meals/c0gmo31766594751.jpg?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: premRoyIds, foodType: "Veg", isAvailable: true },
+            { name: "Vanilla Ice Cream", description: "Classic vanilla flavored ice cream", image: "https://www.themealdb.com/images/media/meals/q47rkb1762324620.jpg?w=500&q=80", categoryId: getCatId("Desserts"), packageIds: allPkgIds, foodType: "Veg", isAvailable: true }
         ]);
 
         console.log('Categories & Items seeded');
 
         // Create Live Counters
         await LiveCounter.insertMany([
-            { name: "Pani Puri Station", description: "Unlimited fresh pani puri", image: "https://images.unsplash.com/photo-1601050690044-67dce8cc53ab?w=500&q=80", packageIds: allPkgIds, isAddOn: false, addOnPricePerPlate: 0 },
+            { name: "Pani Puri Station", description: "Unlimited fresh pani puri", image: "https://www.themealdb.com/images/media/meals/fg7d641784666908.jpg?w=500&q=80", packageIds: allPkgIds, isAddOn: false, addOnPricePerPlate: 0 },
             { name: "Pasta Counter", description: "Live pasta with choices of red, white, or mixed sauce", image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80", packageIds: [pRoy._id], isAddOn: false, addOnPricePerPlate: 0 },
             { name: "Pasta Counter (Add-on)", description: "Live pasta with choices of red, white, or mixed sauce", image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80", packageIds: [pStd._id, pPrem._id], isAddOn: true, addOnPricePerPlate: 80 },
-            { name: "Waffle Station", description: "Freshly baked waffles with assorted toppings", image: "https://images.unsplash.com/photo-1562376552-0d160a2f9fa6?w=500&q=80", packageIds: allPkgIds, isAddOn: true, addOnPricePerPlate: 60 },
+            { name: "Waffle Station", description: "Freshly baked waffles with assorted toppings", image: "https://www.themealdb.com/images/media/meals/jvjnoh1780086318.jpg?w=500&q=80", packageIds: allPkgIds, isAddOn: true, addOnPricePerPlate: 60 },
             { name: "Live Chaat Counter", description: "Samosa chaat, Aloo tikki chaat and more", image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80", packageIds: premRoyIds, isAddOn: false, addOnPricePerPlate: 0 }
         ]);
 

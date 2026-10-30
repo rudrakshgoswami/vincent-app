@@ -1,1104 +1,497 @@
 [
   {
-    "_id": "69bd6dd27c5490a1252fbf9c",
-    "name": "Jaljeera",
-    "image": "/uploads/Catering/jaljeera.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
+    "_id": "6ae4438fee248ec931edd7e1",
+    "name": "Fresh Lime Soda",
+    "description": "Refreshing sweet & salt lime soda",
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7da",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.730Z",
+    "updatedAt": "2026-10-30T07:13:19.730Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbf9d",
-    "name": "Masala Buttermilk",
-    "image": "/uploads/Catering/masala_buttermilk.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
+    "_id": "6ae4438fee248ec931edd7e2",
+    "name": "Mango Lassi",
+    "description": "Thick, sweet yogurt drink flavored with mango",
+    "image": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7da",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.730Z",
+    "updatedAt": "2026-10-30T07:13:19.730Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbf9e",
-    "name": "Lemon Mint Cooler",
-    "image": "/uploads/Catering/lemon_mint_cooler.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
+    "_id": "6ae4438fee248ec931edd7e3",
+    "name": "Blue Lagoon Mocktail",
+    "description": "Blue curacao and lemonade",
+    "image": "https://www.themealdb.com/images/media/meals/a4kgf21763075288.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7da",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.730Z",
+    "updatedAt": "2026-10-30T07:13:19.730Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbf9f",
-    "name": "Mango Shake",
-    "image": "/uploads/Catering/mango_shake.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
+    "_id": "6ae4438fee248ec931edd7e4",
+    "name": "Watermelon Mojito",
+    "description": "Fresh watermelon with mint",
+    "image": "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7da",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.730Z",
+    "updatedAt": "2026-10-30T07:13:19.730Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfa0",
-    "name": "Fruit Punch",
-    "image": "/uploads/Catering/fruit_punch.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa1",
-    "name": "Dry Fruit Thandai",
-    "image": "/uploads/Catering/thandai.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa2",
-    "name": "Signature Mocktail",
-    "image": "/uploads/Catering/mocktail.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000011",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa3",
-    "name": "Tomato Soup",
-    "image": "/uploads/Catering/tomato_soup.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000012",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa4",
-    "name": "Sweet Corn Soup",
-    "image": "/uploads/Catering/sweet_corn_soup.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000012",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa5",
-    "name": "Manchow Soup",
-    "image": "/uploads/Catering/manchow_soup.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000012",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa6",
-    "name": "Cream of Mushroom",
-    "image": "/uploads/Catering/mushroom_soup.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000012",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa7",
+    "_id": "6ae4438fee248ec931edd7e5",
     "name": "Paneer Tikka",
-    "image": "/uploads/Catering/paneer_tikka.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
+    "description": "Cubes of paneer marinated in spices and grilled in a tandoor",
+    "image": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7db",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.730Z",
+    "updatedAt": "2026-10-30T07:13:19.730Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfa8",
-    "name": "Paneer Malai Tikka",
-    "image": "/uploads/Catering/malai_tikka.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfa9",
-    "name": "Paneer Angara",
-    "image": "/uploads/Catering/paneer_angara.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfaa",
-    "name": "Veg Spring Roll",
-    "image": "/uploads/Catering/spring_roll.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfab",
+    "_id": "6ae4438fee248ec931edd7e6",
     "name": "Hara Bhara Kabab",
-    "image": "/uploads/Catering/hara_bhara_kabab.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
+    "description": "Healthy kababs made from spinach, peas, and potatoes",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7db",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfac",
-    "name": "Dahi Kebab",
-    "image": "/uploads/Catering/dahi_kebab.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
+    "_id": "6ae4438fee248ec931edd7e7",
+    "name": "Chilli Gobi",
+    "description": "Cauliflower florets tossed in spicy soy sauce",
+    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7db",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfad",
-    "name": "Crispy Corn",
-    "image": "/uploads/Catering/crispy_corn.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
+    "_id": "6ae4438fee248ec931edd7e8",
+    "name": "Mushroom Tikka",
+    "description": "Marinated mushrooms grilled to perfection",
+    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7db",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfae",
-    "name": "Baby Corn Chilli",
-    "image": "/uploads/Catering/baby_corn.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.380Z",
-    "updatedAt": "2026-03-20T15:54:58.380Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfaf",
-    "name": "Stuffed Mushroom",
-    "image": "/uploads/Catering/stuffed_mushroom.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb0",
+    "_id": "6ae4438fee248ec931edd7e9",
     "name": "Cheese Corn Balls",
-    "image": "/uploads/Catering/cheese_balls.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
+    "description": "Crispy fried balls stuffed with cheese and sweet corn",
+    "image": "https://www.themealdb.com/images/media/meals/5jdtie1763289302.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7db",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfb1",
-    "name": "Veg Seekh Kabab",
-    "image": "/uploads/Catering/seekh_kabab_veg.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb2",
-    "name": "Corn Tikki",
-    "image": "/uploads/Catering/corn_tikki.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000013",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb3",
+    "_id": "6ae4438fee248ec931edd7ea",
     "name": "Paneer Butter Masala",
-    "image": "/uploads/Catering/paneer_butter_masala.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
+    "description": "Rich and creamy tomato-based paneer curry",
+    "image": "https://www.themealdb.com/images/media/meals/zub3s91764110535.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dc",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfb4",
-    "name": "Shahi Paneer",
-    "image": "/uploads/Catering/shahi_paneer.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb5",
-    "name": "Paneer Lababdar",
-    "image": "/uploads/Catering/paneer_lababdar.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb6",
-    "name": "Paneer Pasanda",
-    "image": "/uploads/Catering/paneer_pasanda.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb7",
-    "name": "Malai Kofta",
-    "image": "/uploads/Catering/malai_kofta.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb8",
-    "name": "Veg Handi",
-    "image": "/uploads/Catering/veg_handi.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfb9",
-    "name": "Navratan Korma",
-    "image": "/uploads/Catering/navratan_korma.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfba",
-    "name": "Veg Jaipuri",
-    "image": "/uploads/Catering/veg_jaipuri.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfbb",
-    "name": "Undhiyu",
-    "image": "/uploads/Catering/undhiyu.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfbc",
-    "name": "Dum Aloo Kashmiri",
-    "image": "/uploads/Catering/dum_aloo.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfbd",
-    "name": "Sev Tamatar",
-    "image": "/uploads/Catering/sev_tamatar.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfbe",
-    "name": "Bhindi Masala",
-    "image": "/uploads/Catering/bhindi_masala.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000014",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfbf",
-    "name": "Dal Fry",
-    "image": "/uploads/Catering/dal_fry.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000015",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfc0",
-    "name": "Dal Tadka",
-    "image": "/uploads/Catering/dal_tadka.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000015",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfc1",
+    "_id": "6ae4438fee248ec931edd7eb",
     "name": "Dal Makhani",
-    "image": "/uploads/Catering/dal_makhani.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000015",
+    "description": "Slow-cooked black lentils with cream and butter",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dc",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfc2",
-    "name": "Dal Bukhara",
-    "image": "/uploads/Catering/dal_bukhara.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000015",
+    "_id": "6ae4438fee248ec931edd7ec",
+    "name": "Mix Veg Curry",
+    "description": "Assorted vegetables cooked in a spicy gravy",
+    "image": "https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dc",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfc3",
-    "name": "Gujarati Dal",
-    "image": "/uploads/Catering/gujarati_dal.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000015",
+    "_id": "6ae4438fee248ec931edd7ed",
+    "name": "Malai Kofta",
+    "description": "Potato and paneer balls deep-fried and served in a creamy sauce",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dc",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfc4",
-    "name": "Gujarati Kadhi",
-    "image": "/uploads/Catering/gujarati_kadhi.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000015",
+    "_id": "6ae4438fee248ec931edd7ee",
+    "name": "Kadhai Paneer",
+    "description": "Paneer cooked with bell peppers and whole spices",
+    "image": "https://www.themealdb.com/images/media/meals/tbj1bs1764118062.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dc",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfc5",
-    "name": "Tandoori Roti",
-    "image": "/uploads/Catering/tandoori_roti.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfc6",
+    "_id": "6ae4438fee248ec931edd7ef",
     "name": "Butter Naan",
-    "image": "/uploads/Catering/naan.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
+    "description": "Soft Indian flatbread brushed with butter",
+    "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dd",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfc7",
+    "_id": "6ae4438fee248ec931edd7f0",
+    "name": "Tandoori Roti",
+    "description": "Whole wheat bread baked in a tandoor",
+    "image": "https://www.themealdb.com/images/media/meals/grhn401765687086.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dd",
+    "packageIds": [
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
+    ],
+    "foodType": "Vegan",
+    "isAvailable": true,
+    "isJain": false,
+    "hasVariants": false,
+    "variants": [],
+    "variantPackageLimits": [],
+    "__v": 0,
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
+  },
+  {
+    "_id": "6ae4438fee248ec931edd7f1",
     "name": "Garlic Naan",
-    "image": "/uploads/Catering/garlic_naan.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
+    "description": "Naan topped with minced garlic and cilantro",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7dd",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.381Z",
-    "updatedAt": "2026-03-20T15:54:58.381Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfc8",
-    "name": "Lachha Paratha",
-    "image": "/uploads/Catering/paratha.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfc9",
-    "name": "Butter Kulcha",
-    "image": "/uploads/Catering/kulcha.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfca",
-    "name": "Missi Roti",
-    "image": "/uploads/Catering/missi_roti.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfcb",
-    "name": "Roomali Roti",
-    "image": "/uploads/Catering/roomali_roti.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000016",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfcc",
-    "name": "Steam Rice",
-    "image": "/uploads/Catering/steam_rice.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000017",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfcd",
+    "_id": "6ae4438fee248ec931edd7f2",
     "name": "Jeera Rice",
-    "image": "/uploads/Catering/jeera_rice.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000017",
+    "description": "Basmati rice cooked with cumin seeds",
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7de",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfce",
-    "name": "Veg Pulao",
-    "image": "/uploads/Catering/veg_pulao.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000017",
+    "_id": "6ae4438fee248ec931edd7f3",
+    "name": "Veg Dum Biryani",
+    "description": "Aromatic layered rice cooked with vegetables and spices",
+    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7de",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfcf",
-    "name": "Kashmiri Pulao",
-    "image": "/uploads/Catering/kashmiri_pulao.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000017",
+    "_id": "6ae4438fee248ec931edd7f4",
+    "name": "Peas Pulao",
+    "description": "A simple and mildly spiced rice dish with green peas",
+    "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7de",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "foodType": "Veg",
+    "foodType": "Vegan",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfd0",
-    "name": "Hyderabadi Veg Biryani",
-    "image": "/uploads/Catering/biryani_veg.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000017",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfd1",
+    "_id": "6ae4438fee248ec931edd7f5",
     "name": "Gulab Jamun",
-    "image": "/uploads/Catering/gulab_jamun.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
+    "description": "Deep-fried milk-solid balls soaked in sugar syrup",
+    "image": "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7df",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfd2",
-    "name": "Rasmalai",
-    "image": "/uploads/Catering/rasmalai.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfd3",
-    "name": "Jalebi",
-    "image": "/uploads/Catering/jalebi.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfd4",
-    "name": "Jalebi Rabdi",
-    "image": "/uploads/Catering/jalebi_rabdi.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfd5",
-    "name": "Moong Dal Halwa",
-    "image": "/uploads/Catering/moong_dal_halwa.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfd6",
-    "name": "Gajar Halwa",
-    "image": "/uploads/Catering/gajar_halwa.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "foodType": "Veg",
-    "isAvailable": true,
-    "hasVariants": false,
-    "variants": [],
-    "variantPackageLimits": [],
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
-  },
-  {
-    "_id": "69bd6dd27c5490a1252fbfd7",
+    "_id": "6ae4438fee248ec931edd7f6",
     "name": "Rasgulla",
-    "image": "/uploads/Catering/rasgulla.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
+    "description": "Spongy cottage cheese balls cooked in light sugar syrup",
+    "image": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7df",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfd8",
-    "name": "Ice Cream",
-    "image": "/uploads/Catering/ice_cream.jpg",
-    "categoryId": "65f0e2a1b2c3d4e5f6000018",
+    "_id": "6ae4438fee248ec931edd7f7",
+    "name": "Gajar Ka Halwa",
+    "description": "Rich carrot pudding loaded with dry fruits",
+    "image": "https://www.themealdb.com/images/media/meals/c0gmo31766594751.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7df",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "foodType": "Veg",
     "isAvailable": true,
+    "isJain": false,
     "hasVariants": false,
     "variants": [],
     "variantPackageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.382Z",
-    "updatedAt": "2026-03-20T15:54:58.382Z"
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
+  },
+  {
+    "_id": "6ae4438fee248ec931edd7f8",
+    "name": "Vanilla Ice Cream",
+    "description": "Classic vanilla flavored ice cream",
+    "image": "https://www.themealdb.com/images/media/meals/q47rkb1762324620.jpg?w=500&q=80",
+    "categoryId": "6ae4438fee248ec931edd7df",
+    "packageIds": [
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
+    ],
+    "foodType": "Veg",
+    "isAvailable": true,
+    "isJain": false,
+    "hasVariants": false,
+    "variants": [],
+    "variantPackageLimits": [],
+    "__v": 0,
+    "createdAt": "2026-10-30T07:13:19.731Z",
+    "updatedAt": "2026-10-30T07:13:19.731Z"
   }
 ]

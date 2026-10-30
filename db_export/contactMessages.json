@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "_id": "69e233c8db075be49c079d6d",
+    "userId": "69e2320fdb075be49c079a39",
+    "name": "rud",
+    "email": "user@example.com",
+    "phone": "+919000000000",
+    "subject": "Complaint",
+    "message": "not well",
+    "status": "new",
+    "adminNotes": "",
+    "replies": [],
+    "createdAt": "2026-04-17T13:21:12.047Z",
+    "updatedAt": "2026-04-17T13:21:12.047Z",
+    "__v": 0
+  }
+]

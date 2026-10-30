@@ -1,11 +1,74 @@
 [
   {
-    "_id": "69b6eed068666d216c859904",
-    "name": "Pizzas",
-    "description": "",
+    "_id": "6ae4438f0fa7f00a571a81ef",
+    "name": "Starters",
+    "description": "Starters at Vincent.",
     "isActive": true,
-    "createdAt": "2026-03-15T17:39:28.021Z",
-    "updatedAt": "2026-03-15T17:39:28.021Z",
+    "createdAt": "2026-10-30T07:13:19.022Z",
+    "updatedAt": "2026-10-30T07:13:19.022Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8200",
+    "name": "Sides & Small Plates",
+    "description": "Sides and small plates at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.040Z",
+    "updatedAt": "2026-10-30T07:13:19.040Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8211",
+    "name": "Main Course (Veg)",
+    "description": "Main Course (Veg) at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.046Z",
+    "updatedAt": "2026-10-30T07:13:19.046Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8222",
+    "name": "Main Course (Non-Veg)",
+    "description": "Main Course (Non-Veg) at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.052Z",
+    "updatedAt": "2026-10-30T07:13:19.052Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8233",
+    "name": "From the Sea",
+    "description": "From the Sea at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.058Z",
+    "updatedAt": "2026-10-30T07:13:19.058Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8244",
+    "name": "Pasta & Continental",
+    "description": "Pasta & Continental at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.063Z",
+    "updatedAt": "2026-10-30T07:13:19.063Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8253",
+    "name": "All Day Breakfast",
+    "description": "All Day Breakfast at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.069Z",
+    "updatedAt": "2026-10-30T07:13:19.069Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae4438f0fa7f00a571a8264",
+    "name": "Desserts",
+    "description": "Desserts at Vincent.",
+    "isActive": true,
+    "createdAt": "2026-10-30T07:13:19.073Z",
+    "updatedAt": "2026-10-30T07:13:19.073Z",
     "__v": 0
   }
 ]

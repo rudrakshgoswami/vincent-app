@@ -6,6 +6,21 @@ import CateringPackage from '../src/models/CateringPackage.js';
 import CateringExtra from '../src/models/CateringAddOn.js'; // Aliased, same as venueController.js
 import ServicePackage from '../src/models/ServicePackage.js';
 
+/*
+ * The rows below were written for a CateringExtra model that does not exist.
+ * CateringAddOn stands in for it, and wants a single `price` plus a
+ * pricingType of 'per_plate' or 'flat'. per_person folds into per_plate
+ * because the pricing code multiplies both by the guest count.
+ */
+const toAddOn = (row) => ({
+    name: row.name,
+    description: row.description || row.category || '',
+    icon: row.icon || '',
+    price: row.pricePerPlate ?? row.pricePerPerson ?? row.price ?? 0,
+    pricingType: row.priceType === 'fixed' ? 'flat' : 'per_plate',
+    isActive: row.status ? row.status === 'active' : true,
+});
+
 const seed = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
@@ -75,10 +90,10 @@ const seed = async () => {
                     { name: 'Wheelchair Accessible', category: 'other', icon: '♿', available: true }
                 ],
                 media: [
-                    { type: 'image', url: '/images/venues/royal-1.jpg', category: 'interior', caption: 'Grand Ballroom', isCover: true, order: 0 },
-                    { type: 'image', url: '/images/venues/royal-2.jpg', category: 'interior', caption: 'Crystal Chandeliers', order: 1 },
-                    { type: 'image', url: '/images/venues/royal-3.jpg', category: 'exterior', caption: 'Entrance', order: 2 },
-                    { type: 'image', url: '/images/venues/royal-4.jpg', category: 'events', caption: 'Wedding Setup', order: 3 }
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/%22Conference_Delegate_in_Session%2C_Continental_Hall%2C_Washington%2C_D.C.%22.jpg/1920px-%22Conference_Delegate_in_Session%2C_Continental_Hall%2C_Washington%2C_D.C.%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'interior', caption: 'Grand Ballroom', isCover: true, order: 0 },
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Easton_Lodge_Gardens_Tudor_Open_Day_Little_Easton_Essex_England.jpg/1920px-Easton_Lodge_Gardens_Tudor_Open_Day_Little_Easton_Essex_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'interior', caption: 'Crystal Chandeliers', order: 1 },
+                    { type: 'image', url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Brussels_Album_12_-_Banquet_in_the_Townhall_in_Brussels_%28Warsaw_University_Library%2C_inv._10258%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled', category: 'exterior', caption: 'Entrance', order: 2 },
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/20191205_Haveli_Khazanchi%2C_Gali_Khazanchi%2C_Old_Delhi_0635_6745.jpg/1920px-20191205_Haveli_Khazanchi%2C_Gali_Khazanchi%2C_Old_Delhi_0635_6745.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'events', caption: 'Wedding Setup', order: 3 }
                 ],
                 seatingCapacity: { theater: 500, banquet: 350, cocktail: 600, classroom: 250 },
                 rating: 4.8,
@@ -146,8 +161,8 @@ const seed = async () => {
                     { name: 'Fountain', category: 'outdoor', icon: '⛲', details: 'Decorative water fountain', available: true }
                 ],
                 media: [
-                    { type: 'image', url: '/images/venues/garden-1.jpg', category: 'exterior', caption: 'Lush Garden View', isCover: true, order: 0 },
-                    { type: 'image', url: '/images/venues/garden-2.jpg', category: 'events', caption: 'Evening Event', order: 1 }
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/BARONA_Casino%2CLakeside%2CCalifornia%2CUSA._-_panoramio.jpg/1920px-BARONA_Casino%2CLakeside%2CCalifornia%2CUSA._-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'exterior', caption: 'Lush Garden View', isCover: true, order: 0 },
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Banquet_Hall_-_Biltmore_Estate%2C_Asheville_2024.jpg/1280px-Banquet_Hall_-_Biltmore_Estate%2C_Asheville_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'events', caption: 'Evening Event', order: 1 }
                 ],
                 seatingCapacity: { theater: 800, banquet: 500, cocktail: 1000 },
                 rating: 4.9,
@@ -202,7 +217,7 @@ const seed = async () => {
                     { name: 'Poolside Area', category: 'outdoor', icon: '🏊', available: true }
                 ],
                 media: [
-                    { type: 'image', url: '/images/venues/skyline-1.jpg', category: 'exterior', caption: 'Rooftop View', isCover: true, order: 0 }
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Banquet_Hall_Nadiya_hotel.jpg/1920px-Banquet_Hall_Nadiya_hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'exterior', caption: 'Rooftop View', isCover: true, order: 0 }
                 ],
                 rating: 4.6, reviewCount: 67,
                 policies: {
@@ -243,7 +258,7 @@ const seed = async () => {
                     { name: 'Whiteboard Walls', category: 'other', icon: '📝', available: true }
                 ],
                 media: [
-                    { type: 'image', url: '/images/venues/elite-1.jpg', category: 'interior', caption: 'Main Hall', isCover: true, order: 0 }
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Banquet_Room_interior%2C_Brother_Hotel_20130212.jpg/1920px-Banquet_Room_interior%2C_Brother_Hotel_20130212.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'interior', caption: 'Main Hall', isCover: true, order: 0 }
                 ],
                 seatingCapacity: { theater: 300, banquet: 200, classroom: 150, ushape: 80 },
                 rating: 4.5, reviewCount: 45,
@@ -279,7 +294,7 @@ const seed = async () => {
                     { name: 'Photo Booth Area', category: 'other', icon: '📸', available: true }
                 ],
                 media: [
-                    { type: 'image', url: '/images/venues/heritage-1.jpg', category: 'exterior', caption: 'Haveli Entrance', isCover: true, order: 0 }
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Banquet_hall%2C_Royal_Castle%2C_Laeken%2C_2026.jpg/1920px-Banquet_hall%2C_Royal_Castle%2C_Laeken%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'exterior', caption: 'Haveli Entrance', isCover: true, order: 0 }
                 ],
                 rating: 4.7, reviewCount: 89,
                 status: 'active', featured: true, tags: ['heritage', 'wedding', 'traditional', 'premium', 'photography'], priorityScore: 8
@@ -315,7 +330,7 @@ const seed = async () => {
                     { name: 'Power Backup', category: 'connectivity', icon: '🔋', available: true }
                 ],
                 media: [
-                    { type: 'image', url: '/images/venues/lakeview-1.jpg', category: 'exterior', caption: 'Lake View', isCover: true, order: 0 }
+                    { type: 'image', url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/2021_Maastricht%2C_Eiffelgebouw%2C_Bold_%282%29.jpg/1920px-2021_Maastricht%2C_Eiffelgebouw%2C_Bold_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail', category: 'exterior', caption: 'Lake View', isCover: true, order: 0 }
                 ],
                 rating: 4.6, reviewCount: 56,
                 status: 'active', tags: ['farmhouse', 'lake', 'rustic', 'destination', 'nature'], priorityScore: 7
@@ -477,7 +492,7 @@ const seed = async () => {
         console.log(`✅ Created ${packages.length} catering packages`);
 
         // ===================== CATERING EXTRAS =====================
-        const extras = await CateringExtra.insertMany([
+        const EXTRA_ROWS = [
             // Extra menu items
             { name: 'Paneer Malai Tikka', category: 'extra_item', subcategory: 'starters', pricePerPlate: 80, priceType: 'per_plate', icon: '🧀', status: 'active', displayOrder: 1 },
             { name: 'Stuffed Mushrooms', category: 'extra_item', subcategory: 'starters', pricePerPlate: 90, priceType: 'per_plate', icon: '🍄', status: 'active', displayOrder: 2 },
@@ -524,7 +539,9 @@ const seed = async () => {
 
             // Kids menu
             { name: 'Kids Menu', category: 'kids_menu', pricePerPerson: 250, priceType: 'per_person', requiresQuantity: true, description: 'Pizzas, Pasta, Fries, Ice Cream', beverageItems: ['Juice', 'Soft Drinks'], status: 'active', displayOrder: 1 }
-        ]);
+        ];
+
+        const extras = await CateringExtra.insertMany(EXTRA_ROWS.map(toAddOn));
         console.log(`✅ Created ${extras.length} catering extras`);
 
         // ===================== SERVICE PACKAGES =====================

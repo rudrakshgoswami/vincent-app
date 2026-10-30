@@ -1,180 +1,83 @@
 [
   {
-    "_id": "69bd6dd27c5490a1252fbfda",
-    "name": "Pav Bhaji Counter",
-    "description": "Hot buttery pav served with spicy bhaji in authentic Mumbai style.",
-    "image": "/uploads/Catering/pav_bhaji.jpg",
+    "_id": "6ae4438fee248ec931edd7fa",
+    "name": "Pani Puri Station",
+    "description": "Unlimited fresh pani puri",
+    "image": "https://www.themealdb.com/images/media/meals/fg7d641784666908.jpg?w=500&q=80",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "isAddOn": true,
-    "addOnPricePerPlate": 120,
-    "varieties": [
-      {
-        "name": "Butter Pav Bhaji",
-        "description": "Classic mash with dollops of Amul butter.",
-        "image": "/uploads/Catering/pav_bhaji.jpg",
-        "_id": "69bd6dd27c5490a1252fbfdb"
-      },
-      {
-        "name": "Cheese Pav Bhaji",
-        "description": "Grated processed cheese over hot bhaji.",
-        "image": "/uploads/image-1774025196439.jpg",
-        "_id": "69bd6dd27c5490a1252fbfdc"
-      },
-      {
-        "name": "Paneer Pav Bhaji",
-        "description": "Bhaji enriched with soft paneer cubes.",
-        "image": "/uploads/image-1774025202406.jpg",
-        "_id": "69bd6dd27c5490a1252fbfdd"
-      }
-    ],
+    "isAddOn": false,
+    "addOnPricePerPlate": 0,
+    "varieties": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.393Z",
-    "updatedAt": "2026-03-20T16:46:45.529Z"
+    "createdAt": "2026-10-30T07:13:19.738Z",
+    "updatedAt": "2026-10-30T07:13:19.738Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfde",
-    "name": "Italian Pasta Counter",
-    "description": "Choice of Penne/Fusilli in Red, White, or Pink sauce.",
-    "image": "/uploads/Catering/pasta.jpg",
+    "_id": "6ae4438fee248ec931edd7fb",
+    "name": "Pasta Counter",
+    "description": "Live pasta with choices of red, white, or mixed sauce",
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d8"
     ],
-    "isAddOn": true,
-    "addOnPricePerPlate": 180,
-    "varieties": [
-      {
-        "name": "White Sauce Pasta",
-        "description": "Creamy bechamel with exotic vegetables.",
-        "image": "/uploads/Catering/pasta_white.jpg",
-        "_id": "69bd6dd27c5490a1252fbfdf"
-      },
-      {
-        "name": "Red Sauce Pasta",
-        "description": "Spicy tomato arrabbiata with fresh herbs.",
-        "image": "/uploads/Catering/pasta_red.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe0"
-      },
-      {
-        "name": "Pink Sauce Pasta",
-        "description": "Perfect blend of creamy and tangy flavors.",
-        "image": "/uploads/Catering/pasta_pink.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe1"
-      }
-    ],
+    "isAddOn": false,
+    "addOnPricePerPlate": 0,
+    "varieties": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.393Z",
-    "updatedAt": "2026-03-20T15:54:58.393Z"
+    "createdAt": "2026-10-30T07:13:19.738Z",
+    "updatedAt": "2026-10-30T07:13:19.738Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfe2",
-    "name": "Mumbai Chaat Counter",
-    "description": "Pani Puri, Sev Puri, and Bhel Puri prepared live.",
-    "image": "/uploads/Catering/chaat.jpg",
+    "_id": "6ae4438fee248ec931edd7fc",
+    "name": "Pasta Counter (Add-on)",
+    "description": "Live pasta with choices of red, white, or mixed sauce",
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7"
     ],
     "isAddOn": true,
-    "addOnPricePerPlate": 150,
-    "varieties": [
-      {
-        "name": "Pani Puri",
-        "description": "Crispy puris with chilled spiced mint water.",
-        "image": "/uploads/Catering/pani_puri.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe3"
-      },
-      {
-        "name": "Dahi Puri",
-        "description": "Puris filled with curd, chutneys and sev.",
-        "image": "/uploads/Catering/dahi_puri.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe4"
-      },
-      {
-        "name": "Sev Puri",
-        "description": "Classic street style flat papdi chaat.",
-        "image": "/uploads/Catering/sev_puri.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe5"
-      }
-    ],
+    "addOnPricePerPlate": 80,
+    "varieties": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.393Z",
-    "updatedAt": "2026-03-20T15:54:58.393Z"
+    "createdAt": "2026-10-30T07:13:19.738Z",
+    "updatedAt": "2026-10-30T07:13:19.738Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfe6",
-    "name": "Dosa Counter",
-    "description": "Crispy Masala/Plain Dosa with Sambhar & Chutney.",
-    "image": "/uploads/Catering/dosa.jpg",
+    "_id": "6ae4438fee248ec931edd7fd",
+    "name": "Waffle Station",
+    "description": "Freshly baked waffles with assorted toppings",
+    "image": "https://www.themealdb.com/images/media/meals/jvjnoh1780086318.jpg?w=500&q=80",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "isAddOn": true,
-    "addOnPricePerPlate": 140,
-    "varieties": [
-      {
-        "name": "Masala Dosa",
-        "description": "Crispy crepe with spicy potato filling.",
-        "image": "/uploads/Catering/dosa_masala.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe7"
-      },
-      {
-        "name": "Mysore Masala Dosa",
-        "description": "Spiced with red garlic chutney.",
-        "image": "/uploads/Catering/dosa_mysore.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe8"
-      },
-      {
-        "name": "Cheese Corn Dosa",
-        "description": "Modern fusion with sweet corn and cheese.",
-        "image": "/uploads/Catering/dosa_cheese.jpg",
-        "_id": "69bd6dd27c5490a1252fbfe9"
-      }
-    ],
+    "addOnPricePerPlate": 60,
+    "varieties": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.393Z",
-    "updatedAt": "2026-03-20T15:54:58.393Z"
+    "createdAt": "2026-10-30T07:13:19.738Z",
+    "updatedAt": "2026-10-30T07:13:19.738Z"
   },
   {
-    "_id": "69bd6dd27c5490a1252fbfea",
-    "name": "Chinese Noodles Counter",
-    "description": "Hakka Noodles & Veg Manchurian with Szechuan sauce.",
-    "image": "/uploads/Catering/noodles.jpg",
+    "_id": "6ae4438fee248ec931edd7fe",
+    "name": "Live Chaat Counter",
+    "description": "Samosa chaat, Aloo tikki chaat and more",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80",
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
-    "isAddOn": true,
-    "addOnPricePerPlate": 160,
-    "varieties": [
-      {
-        "name": "Veg Hakka Noodles",
-        "description": "Street style wok-tossed noodles.",
-        "image": "/uploads/Catering/noodles_hakka.jpg",
-        "_id": "69bd6dd27c5490a1252fbfeb"
-      },
-      {
-        "name": "Schezwan Noodles",
-        "description": "Extra spicy tossed in fiery Schezwan.",
-        "image": "/uploads/Catering/noodles_schezwan.jpg",
-        "_id": "69bd6dd27c5490a1252fbfec"
-      },
-      {
-        "name": "Veg Manchurian",
-        "description": "Deep fried veg balls in ginger garlic gravy.",
-        "image": "/uploads/Catering/manchurian.jpg",
-        "_id": "69bd6dd27c5490a1252fbfed"
-      }
-    ],
+    "isAddOn": false,
+    "addOnPricePerPlate": 0,
+    "varieties": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.393Z",
-    "updatedAt": "2026-03-20T15:54:58.393Z"
+    "createdAt": "2026-10-30T07:13:19.738Z",
+    "updatedAt": "2026-10-30T07:13:19.738Z"
   }
 ]

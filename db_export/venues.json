@@ -1,6 +1,6 @@
 [
   {
-    "_id": "69a1c7fdb655d10da80edbf3",
+    "_id": "6ae4461dff309592e96204c2",
     "name": "Royal Banquet Hall",
     "slug": "royal-banquet-hall",
     "type": "banquet_hall",
@@ -18,34 +18,34 @@
       "height": 25
     },
     "location": {
-      "coordinates": {
-        "lat": 18.9442,
-        "lng": 72.8234
-      },
-      "distanceFromKeyLocations": {
-        "airport": "28 km",
-        "railwayStation": "4 km",
-        "metroStation": "1.5 km"
-      },
       "address": "12 Example Street, Civil Lines",
       "area": "South Mumbai",
       "city": "Surat",
       "state": "Maharashtra",
       "pincode": "395003",
+      "coordinates": {
+        "lat": 18.9442,
+        "lng": 72.8234
+      },
       "landmarks": [
         {
           "name": "Gateway of India",
           "distance": "2 km",
           "icon": "🏛️",
-          "_id": "69a1c7fdb655d10da80edbf4"
+          "_id": "6ae4461dff309592e96204c3"
         },
         {
           "name": "Marine Drive",
           "distance": "500 m",
           "icon": "🌊",
-          "_id": "69a1c7fdb655d10da80edbf5"
+          "_id": "6ae4461dff309592e96204c4"
         }
-      ]
+      ],
+      "distanceFromKeyLocations": {
+        "airport": "28 km",
+        "railwayStation": "4 km",
+        "metroStation": "1.5 km"
+      }
     },
     "contact": {
       "phone": "+919000000000",
@@ -86,7 +86,7 @@
         "details": "150 spaces + valet",
         "quantity": 150,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbf6"
+        "_id": "6ae4461dff309592e96204c5"
       },
       {
         "name": "Air Conditioning",
@@ -94,7 +94,7 @@
         "icon": "❄️",
         "details": "Central AC",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbf7"
+        "_id": "6ae4461dff309592e96204c6"
       },
       {
         "name": "Sound System",
@@ -103,14 +103,14 @@
         "details": "Professional Bose system with 4 wireless mics",
         "quantity": 4,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbf8"
+        "_id": "6ae4461dff309592e96204c7"
       },
       {
         "name": "Projector & Screen",
         "category": "av",
         "icon": "📽️",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbf9"
+        "_id": "6ae4461dff309592e96204c8"
       },
       {
         "name": "Elevated Stage",
@@ -118,7 +118,7 @@
         "icon": "🎭",
         "details": "20×15 ft with backstage",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbfa"
+        "_id": "6ae4461dff309592e96204c9"
       },
       {
         "name": "Stage Lighting",
@@ -126,14 +126,14 @@
         "icon": "💡",
         "details": "Professional lighting rig",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbfb"
+        "_id": "6ae4461dff309592e96204ca"
       },
       {
         "name": "Commercial Kitchen",
         "category": "catering",
         "icon": "🍳",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbfc"
+        "_id": "6ae4461dff309592e96204cb"
       },
       {
         "name": "Green Rooms",
@@ -142,7 +142,7 @@
         "details": "2 rooms with vanity mirrors",
         "quantity": 2,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbfd"
+        "_id": "6ae4461dff309592e96204cc"
       },
       {
         "name": "Premium Washrooms",
@@ -150,7 +150,7 @@
         "icon": "🚿",
         "details": "Men: 6, Women: 6",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbfe"
+        "_id": "6ae4461dff309592e96204cd"
       },
       {
         "name": "High-Speed WiFi",
@@ -158,7 +158,7 @@
         "icon": "📶",
         "details": "500 users capacity",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edbff"
+        "_id": "6ae4461dff309592e96204ce"
       },
       {
         "name": "Power Backup",
@@ -166,7 +166,7 @@
         "icon": "🔋",
         "details": "100% backup generator",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc00"
+        "_id": "6ae4461dff309592e96204cf"
       },
       {
         "name": "24/7 Security",
@@ -174,70 +174,52 @@
         "icon": "🛡️",
         "details": "Guards + CCTV",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc01"
+        "_id": "6ae4461dff309592e96204d0"
       },
       {
         "name": "Wheelchair Accessible",
         "category": "other",
         "icon": "♿",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc02"
+        "_id": "6ae4461dff309592e96204d1"
       }
     ],
     "media": [
       {
         "type": "image",
-        "url": "/uploads/image-1772211262498.jpg",
-        "category": "other",
-        "caption": "",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/%22Conference_Delegate_in_Session%2C_Continental_Hall%2C_Washington%2C_D.C.%22.jpg/1920px-%22Conference_Delegate_in_Session%2C_Continental_Hall%2C_Washington%2C_D.C.%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "interior",
+        "caption": "Grand Ballroom",
         "isCover": true,
-        "order": 1,
-        "_id": "69a1cc42466cebac0ec8f51a"
+        "order": 0,
+        "_id": "6ae4461dff309592e96204d2"
       },
       {
         "type": "image",
-        "url": "/uploads/image-1773388326299.jpg",
-        "category": "other",
-        "caption": "",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Easton_Lodge_Gardens_Tudor_Open_Day_Little_Easton_Essex_England.jpg/1920px-Easton_Lodge_Gardens_Tudor_Open_Day_Little_Easton_Essex_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "interior",
+        "caption": "Crystal Chandeliers",
         "isCover": false,
         "order": 1,
-        "_id": "69b3c23e8984244b772c8a8c"
+        "_id": "6ae4461dff309592e96204d3"
       },
       {
         "type": "image",
-        "url": "/uploads/image-1773388331443.jpg",
-        "category": "other",
-        "caption": "",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Brussels_Album_12_-_Banquet_in_the_Townhall_in_Brussels_%28Warsaw_University_Library%2C_inv._10258%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "category": "exterior",
+        "caption": "Entrance",
         "isCover": false,
         "order": 2,
-        "_id": "69b3c23e8984244b772c8a8d"
+        "_id": "6ae4461dff309592e96204d4"
       },
       {
         "type": "image",
-        "url": "/uploads/image-1773388336603.jpg",
-        "category": "other",
-        "caption": "",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/20191205_Haveli_Khazanchi%2C_Gali_Khazanchi%2C_Old_Delhi_0635_6745.jpg/1920px-20191205_Haveli_Khazanchi%2C_Gali_Khazanchi%2C_Old_Delhi_0635_6745.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "events",
+        "caption": "Wedding Setup",
         "isCover": false,
         "order": 3,
-        "_id": "69b3c23e8984244b772c8a8e"
-      },
-      {
-        "type": "image",
-        "url": "/uploads/image-1773388341864.jpg",
-        "category": "other",
-        "caption": "",
-        "isCover": false,
-        "order": 4,
-        "_id": "69b3c23e8984244b772c8a8f"
-      },
-      {
-        "type": "image",
-        "url": "/uploads/image-1773388347305.jpg",
-        "category": "other",
-        "caption": "",
-        "isCover": false,
-        "order": 5,
-        "_id": "69b3c23e8984244b772c8a90"
+        "_id": "6ae4461dff309592e96204d5"
       }
     ],
     "seatingCapacity": {
@@ -246,8 +228,8 @@
       "cocktail": 600,
       "classroom": 250
     },
-    "rating": 3.5,
-    "reviewCount": 2,
+    "rating": 4.8,
+    "reviewCount": 124,
     "reviews": [
       {
         "userName": "Aarav Sharma",
@@ -258,7 +240,7 @@
         "helpfulCount": 0,
         "status": "approved",
         "createdAt": "2024-11-15T00:00:00.000Z",
-        "_id": "69a1c7fdb655d10da80edc07"
+        "_id": "6ae4461dff309592e96204d6"
       },
       {
         "userName": "Diya Patel",
@@ -269,7 +251,7 @@
         "helpfulCount": 0,
         "status": "approved",
         "createdAt": "2024-10-22T00:00:00.000Z",
-        "_id": "69a1c7fdb655d10da80edc08"
+        "_id": "6ae4461dff309592e96204d7"
       }
     ],
     "policies": {
@@ -280,22 +262,22 @@
         {
           "daysBeforeEvent": 30,
           "refundPercent": 100,
-          "_id": "69a1c7fdb655d10da80edc09"
+          "_id": "6ae4461dff309592e96204d8"
         },
         {
           "daysBeforeEvent": 15,
           "refundPercent": 50,
-          "_id": "69a1c7fdb655d10da80edc0a"
+          "_id": "6ae4461dff309592e96204d9"
         },
         {
           "daysBeforeEvent": 7,
           "refundPercent": 25,
-          "_id": "69a1c7fdb655d10da80edc0b"
+          "_id": "6ae4461dff309592e96204da"
         },
         {
           "daysBeforeEvent": 0,
           "refundPercent": 0,
-          "_id": "69a1c7fdb655d10da80edc0c"
+          "_id": "6ae4461dff309592e96204db"
         }
       ],
       "rules": [
@@ -322,15 +304,15 @@
     "seo": {
       "keywords": []
     },
-    "bookingCount": 15,
+    "bookingCount": 0,
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-02-27T16:36:13.517Z",
-    "updatedAt": "2026-03-20T16:41:43.617Z"
+    "createdAt": "2026-10-30T07:24:13.519Z",
+    "updatedAt": "2026-10-30T07:24:13.519Z"
   },
   {
-    "_id": "69a1c7fdb655d10da80edc0d",
+    "_id": "6ae4461dff309592e96204dc",
     "name": "Garden Paradise",
     "slug": "garden-paradise",
     "type": "lawn_garden",
@@ -357,13 +339,13 @@
           "name": "Juhu Beach",
           "distance": "200 m",
           "icon": "🏖️",
-          "_id": "69a1c7fdb655d10da80edc0e"
+          "_id": "6ae4461dff309592e96204dd"
         },
         {
           "name": "ISKCON Temple",
           "distance": "1 km",
           "icon": "🛕",
-          "_id": "69a1c7fdb655d10da80edc0f"
+          "_id": "6ae4461dff309592e96204de"
         }
       ]
     },
@@ -405,7 +387,7 @@
         "details": "200 spaces",
         "quantity": 200,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc10"
+        "_id": "6ae4461dff309592e96204df"
       },
       {
         "name": "Outdoor Cooling",
@@ -413,14 +395,14 @@
         "icon": "💨",
         "details": "Misting fans & coolers",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc11"
+        "_id": "6ae4461dff309592e96204e0"
       },
       {
         "name": "Sound System",
         "category": "av",
         "icon": "🔊",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc12"
+        "_id": "6ae4461dff309592e96204e1"
       },
       {
         "name": "Stage Platform",
@@ -428,7 +410,7 @@
         "icon": "🎭",
         "details": "30×20 ft",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc13"
+        "_id": "6ae4461dff309592e96204e2"
       },
       {
         "name": "Decorative Lighting",
@@ -436,14 +418,14 @@
         "icon": "✨",
         "details": "Fairy lights throughout",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc14"
+        "_id": "6ae4461dff309592e96204e3"
       },
       {
         "name": "Garden Area",
         "category": "outdoor",
         "icon": "🌳",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc15"
+        "_id": "6ae4461dff309592e96204e4"
       },
       {
         "name": "Gazebo",
@@ -451,14 +433,14 @@
         "icon": "⛺",
         "details": "Decorative pavilion",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc16"
+        "_id": "6ae4461dff309592e96204e5"
       },
       {
         "name": "Power Backup",
         "category": "connectivity",
         "icon": "🔋",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc17"
+        "_id": "6ae4461dff309592e96204e6"
       },
       {
         "name": "Fountain",
@@ -466,27 +448,27 @@
         "icon": "⛲",
         "details": "Decorative water fountain",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc18"
+        "_id": "6ae4461dff309592e96204e7"
       }
     ],
     "media": [
       {
         "type": "image",
-        "url": "/images/hero.png",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/BARONA_Casino%2CLakeside%2CCalifornia%2CUSA._-_panoramio.jpg/1920px-BARONA_Casino%2CLakeside%2CCalifornia%2CUSA._-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "category": "exterior",
         "caption": "Lush Garden View",
         "isCover": true,
         "order": 0,
-        "_id": "69a1c7fdb655d10da80edc19"
+        "_id": "6ae4461dff309592e96204e8"
       },
       {
         "type": "image",
-        "url": "/images/hero.png",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Banquet_Hall_-_Biltmore_Estate%2C_Asheville_2024.jpg/1280px-Banquet_Hall_-_Biltmore_Estate%2C_Asheville_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "category": "events",
         "caption": "Evening Event",
         "isCover": false,
         "order": 1,
-        "_id": "69a1c7fdb655d10da80edc1a"
+        "_id": "6ae4461dff309592e96204e9"
       }
     ],
     "seatingCapacity": {
@@ -494,8 +476,8 @@
       "banquet": 500,
       "cocktail": 1000
     },
-    "rating": 4,
-    "reviewCount": 1,
+    "rating": 4.9,
+    "reviewCount": 98,
     "reviews": [
       {
         "userName": "Aarav Sharma",
@@ -506,7 +488,7 @@
         "helpfulCount": 0,
         "status": "approved",
         "createdAt": "2024-12-01T00:00:00.000Z",
-        "_id": "69a1c7fdb655d10da80edc1b"
+        "_id": "6ae4461dff309592e96204ea"
       }
     ],
     "policies": {
@@ -517,17 +499,17 @@
         {
           "daysBeforeEvent": 30,
           "refundPercent": 100,
-          "_id": "69a1c7fdb655d10da80edc1c"
+          "_id": "6ae4461dff309592e96204eb"
         },
         {
           "daysBeforeEvent": 15,
           "refundPercent": 50,
-          "_id": "69a1c7fdb655d10da80edc1d"
+          "_id": "6ae4461dff309592e96204ec"
         },
         {
           "daysBeforeEvent": 7,
           "refundPercent": 25,
-          "_id": "69a1c7fdb655d10da80edc1e"
+          "_id": "6ae4461dff309592e96204ed"
         }
       ],
       "rules": [
@@ -556,11 +538,11 @@
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-02-27T16:36:13.518Z",
-    "updatedAt": "2026-03-13T06:46:40.587Z"
+    "createdAt": "2026-10-30T07:24:13.520Z",
+    "updatedAt": "2026-10-30T07:24:13.520Z"
   },
   {
-    "_id": "69a1c7fdb655d10da80edc1f",
+    "_id": "6ae4461dff309592e96204ee",
     "name": "Skyline Rooftop",
     "slug": "skyline-rooftop",
     "type": "rooftop",
@@ -573,15 +555,15 @@
     },
     "area": 4000,
     "location": {
-      "coordinates": {
-        "lat": 19.0665,
-        "lng": 72.8691
-      },
       "address": "12 Example Street, Civil Lines",
       "area": "BKC",
       "city": "Surat",
       "state": "Maharashtra",
       "pincode": "395003",
+      "coordinates": {
+        "lat": 19.0665,
+        "lng": 72.8691
+      },
       "landmarks": []
     },
     "contact": {
@@ -620,64 +602,64 @@
         "category": "parking",
         "icon": "🛗",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc20"
+        "_id": "6ae4461dff309592e96204ef"
       },
       {
         "name": "Sound System",
         "category": "av",
         "icon": "🔊",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc21"
+        "_id": "6ae4461dff309592e96204f0"
       },
       {
         "name": "LED Screens",
         "category": "av",
         "icon": "📺",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc22"
+        "_id": "6ae4461dff309592e96204f1"
       },
       {
         "name": "Ambient Lighting",
         "category": "lighting",
         "icon": "💡",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc23"
+        "_id": "6ae4461dff309592e96204f2"
       },
       {
         "name": "Bar Counter",
         "category": "catering",
         "icon": "🍸",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc24"
+        "_id": "6ae4461dff309592e96204f3"
       },
       {
         "name": "WiFi",
         "category": "connectivity",
         "icon": "📶",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc25"
+        "_id": "6ae4461dff309592e96204f4"
       },
       {
         "name": "Poolside Area",
         "category": "outdoor",
         "icon": "🏊",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc26"
+        "_id": "6ae4461dff309592e96204f5"
       }
     ],
     "media": [
       {
         "type": "image",
-        "url": "/uploads/image-1772211043380.webp",
-        "category": "other",
-        "caption": "",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Banquet_Hall_Nadiya_hotel.jpg/1920px-Banquet_Hall_Nadiya_hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "exterior",
+        "caption": "Rooftop View",
         "isCover": true,
         "order": 0,
-        "_id": "69a1cb65466cebac0ec8f2df"
+        "_id": "6ae4461dff309592e96204f6"
       }
     ],
-    "rating": 5,
-    "reviewCount": 1,
+    "rating": 4.6,
+    "reviewCount": 67,
     "policies": {
       "minAdvanceBooking": 5,
       "maxAdvanceBooking": 180,
@@ -686,12 +668,12 @@
         {
           "daysBeforeEvent": 15,
           "refundPercent": 75,
-          "_id": "69a1c7fdb655d10da80edc28"
+          "_id": "6ae4461dff309592e96204f7"
         },
         {
           "daysBeforeEvent": 7,
           "refundPercent": 30,
-          "_id": "69a1c7fdb655d10da80edc29"
+          "_id": "6ae4461dff309592e96204f8"
         }
       ],
       "rules": [
@@ -717,16 +699,16 @@
     "seo": {
       "keywords": []
     },
-    "bookingCount": 1,
+    "bookingCount": 0,
     "reviews": [],
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-02-27T16:36:13.519Z",
-    "updatedAt": "2026-03-13T10:35:59.413Z"
+    "createdAt": "2026-10-30T07:24:13.521Z",
+    "updatedAt": "2026-10-30T07:24:13.521Z"
   },
   {
-    "_id": "69a1c7fdb655d10da80edc2a",
+    "_id": "6ae4461dff309592e96204f9",
     "name": "Elite Conference Center",
     "slug": "elite-conference-center",
     "type": "conference_hall",
@@ -739,15 +721,15 @@
     },
     "area": 5000,
     "location": {
-      "coordinates": {
-        "lat": 19.1623,
-        "lng": 72.8603
-      },
       "address": "12 Example Street, Civil Lines",
       "area": "Goregaon East",
       "city": "Surat",
       "state": "Maharashtra",
       "pincode": "395003",
+      "coordinates": {
+        "lat": 19.1623,
+        "lng": 72.8603
+      },
       "landmarks": []
     },
     "contact": {
@@ -788,7 +770,7 @@
         "details": "4K Laser Projectors",
         "quantity": 3,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc2b"
+        "_id": "6ae4461dff309592e96204fa"
       },
       {
         "name": "Video Conferencing",
@@ -796,14 +778,14 @@
         "icon": "📹",
         "details": "Zoom/Teams ready",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc2c"
+        "_id": "6ae4461dff309592e96204fb"
       },
       {
         "name": "Air Conditioning",
         "category": "climate",
         "icon": "❄️",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc2d"
+        "_id": "6ae4461dff309592e96204fc"
       },
       {
         "name": "WiFi",
@@ -811,7 +793,7 @@
         "icon": "📶",
         "details": "Enterprise-grade",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc2e"
+        "_id": "6ae4461dff309592e96204fd"
       },
       {
         "name": "Parking",
@@ -820,7 +802,7 @@
         "details": "100 spaces",
         "quantity": 100,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc2f"
+        "_id": "6ae4461dff309592e96204fe"
       },
       {
         "name": "Breakout Rooms",
@@ -829,25 +811,25 @@
         "details": "4 rooms",
         "quantity": 4,
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc30"
+        "_id": "6ae4461dff309592e96204ff"
       },
       {
         "name": "Whiteboard Walls",
         "category": "other",
         "icon": "📝",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc31"
+        "_id": "6ae4461dff309592e9620500"
       }
     ],
     "media": [
       {
         "type": "image",
-        "url": "/uploads/image-1772210980301.webp",
-        "category": "other",
-        "caption": "",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Banquet_Room_interior%2C_Brother_Hotel_20130212.jpg/1920px-Banquet_Room_interior%2C_Brother_Hotel_20130212.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "interior",
+        "caption": "Main Hall",
         "isCover": true,
-        "order": 1,
-        "_id": "69a1cb2c466cebac0ec8f1e0"
+        "order": 0,
+        "_id": "6ae4461dff309592e9620501"
       }
     ],
     "seatingCapacity": {
@@ -856,8 +838,8 @@
       "classroom": 150,
       "ushape": 80
     },
-    "rating": 3.5,
-    "reviewCount": 2,
+    "rating": 4.5,
+    "reviewCount": 45,
     "policies": {
       "minAdvanceBooking": 7,
       "maxAdvanceBooking": 365,
@@ -881,16 +863,16 @@
     "seo": {
       "keywords": []
     },
-    "bookingCount": 2,
+    "bookingCount": 0,
     "reviews": [],
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-02-27T16:36:13.519Z",
-    "updatedAt": "2026-03-20T17:49:27.181Z"
+    "createdAt": "2026-10-30T07:24:13.521Z",
+    "updatedAt": "2026-10-30T07:24:13.521Z"
   },
   {
-    "_id": "69a1c7fdb655d10da80edc33",
+    "_id": "6ae4461dff309592e9620502",
     "name": "Heritage Haveli",
     "slug": "heritage-haveli",
     "type": "banquet_hall",
@@ -903,15 +885,15 @@
     },
     "area": 10000,
     "location": {
-      "coordinates": {
-        "lat": 18.922,
-        "lng": 72.8347
-      },
       "address": "12 Example Street, Civil Lines",
       "area": "Colaba",
       "city": "Surat",
       "state": "Maharashtra",
       "pincode": "395003",
+      "coordinates": {
+        "lat": 18.922,
+        "lng": 72.8347
+      },
       "landmarks": []
     },
     "contact": {
@@ -951,64 +933,64 @@
         "icon": "🅿️",
         "details": "100 spaces",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc34"
+        "_id": "6ae4461dff309592e9620503"
       },
       {
         "name": "Heritage Architecture",
         "category": "other",
         "icon": "🏰",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc35"
+        "_id": "6ae4461dff309592e9620504"
       },
       {
         "name": "Courtyard",
         "category": "outdoor",
         "icon": "🌺",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc36"
+        "_id": "6ae4461dff309592e9620505"
       },
       {
         "name": "Indoor Hall",
         "category": "other",
         "icon": "🏛️",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc37"
+        "_id": "6ae4461dff309592e9620506"
       },
       {
         "name": "Air Conditioning",
         "category": "climate",
         "icon": "❄️",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc38"
+        "_id": "6ae4461dff309592e9620507"
       },
       {
         "name": "Sound System",
         "category": "av",
         "icon": "🔊",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc39"
+        "_id": "6ae4461dff309592e9620508"
       },
       {
         "name": "Photo Booth Area",
         "category": "other",
         "icon": "📸",
         "available": true,
-        "_id": "69a1c7fdb655d10da80edc3a"
+        "_id": "6ae4461dff309592e9620509"
       }
     ],
     "media": [
       {
         "type": "image",
-        "url": "/uploads/image-1772211065583.webp",
-        "category": "other",
-        "caption": "",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Banquet_hall%2C_Royal_Castle%2C_Laeken%2C_2026.jpg/1920px-Banquet_hall%2C_Royal_Castle%2C_Laeken%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "exterior",
+        "caption": "Haveli Entrance",
         "isCover": true,
-        "order": 1,
-        "_id": "69a1cb7b466cebac0ec8f348"
+        "order": 0,
+        "_id": "6ae4461dff309592e962050a"
       }
     ],
-    "rating": 4,
-    "reviewCount": 2,
+    "rating": 4.7,
+    "reviewCount": 89,
     "policies": {
       "minAdvanceBooking": 7,
       "maxAdvanceBooking": 365,
@@ -1033,12 +1015,171 @@
     "seo": {
       "keywords": []
     },
-    "bookingCount": 9,
+    "bookingCount": 0,
     "reviews": [],
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-02-27T16:36:13.519Z",
-    "updatedAt": "2026-03-14T09:25:44.120Z"
+    "createdAt": "2026-10-30T07:24:13.521Z",
+    "updatedAt": "2026-10-30T07:24:13.521Z"
+  },
+  {
+    "_id": "6ae4461dff309592e962050b",
+    "name": "Lakeview Farmhouse",
+    "slug": "lakeview-farmhouse",
+    "type": "farmhouse",
+    "setting": "both",
+    "description": "Escape the city and celebrate at our serene lakeside farmhouse. Spread across 2 acres with a private lake, lush landscapes, and rustic-chic interiors. Perfect for intimate destination-style events within the city.",
+    "shortDescription": "Rustic-chic farmhouse with private lake and 2 acres of gardens for up to 400 guests.",
+    "capacity": {
+      "min": 50,
+      "max": 400
+    },
+    "area": 15000,
+    "location": {
+      "address": "12 Example Street, Civil Lines",
+      "area": "Powai",
+      "city": "Surat",
+      "state": "Maharashtra",
+      "pincode": "395003",
+      "coordinates": {
+        "lat": 19.1255,
+        "lng": 72.9086
+      },
+      "landmarks": []
+    },
+    "contact": {
+      "phone": "+919000000000",
+      "email": "bookings@example.com",
+      "officeHours": "09:00 AM - 08:00 PM"
+    },
+    "pricing": {
+      "weekday": {
+        "morning": 35000,
+        "afternoon": 38000,
+        "evening": 55000,
+        "fullDay": 85000
+      },
+      "weekend": {
+        "morning": 50000,
+        "afternoon": 55000,
+        "evening": 75000,
+        "fullDay": 120000
+      },
+      "holiday": {
+        "morning": 60000,
+        "afternoon": 65000,
+        "evening": 90000,
+        "fullDay": 150000
+      },
+      "securityDeposit": 12000,
+      "cleaningFee": 3000,
+      "extraHourCharge": 5000,
+      "gstRate": 18,
+      "gstIncluded": false
+    },
+    "amenities": [
+      {
+        "name": "Ample Parking",
+        "category": "parking",
+        "icon": "🅿️",
+        "details": "250+ spaces",
+        "available": true,
+        "_id": "6ae4461dff309592e962050c"
+      },
+      {
+        "name": "Private Lake",
+        "category": "outdoor",
+        "icon": "🏞️",
+        "available": true,
+        "_id": "6ae4461dff309592e962050d"
+      },
+      {
+        "name": "Swimming Pool",
+        "category": "outdoor",
+        "icon": "🏊",
+        "available": true,
+        "_id": "6ae4461dff309592e962050e"
+      },
+      {
+        "name": "Indoor AC Hall",
+        "category": "climate",
+        "icon": "❄️",
+        "available": true,
+        "_id": "6ae4461dff309592e962050f"
+      },
+      {
+        "name": "Garden Lawns",
+        "category": "outdoor",
+        "icon": "🌳",
+        "available": true,
+        "_id": "6ae4461dff309592e9620510"
+      },
+      {
+        "name": "Kids Play Area",
+        "category": "other",
+        "icon": "🎠",
+        "available": true,
+        "_id": "6ae4461dff309592e9620511"
+      },
+      {
+        "name": "BBQ Area",
+        "category": "catering",
+        "icon": "🍖",
+        "available": true,
+        "_id": "6ae4461dff309592e9620512"
+      },
+      {
+        "name": "Power Backup",
+        "category": "connectivity",
+        "icon": "🔋",
+        "available": true,
+        "_id": "6ae4461dff309592e9620513"
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/2021_Maastricht%2C_Eiffelgebouw%2C_Bold_%282%29.jpg/1920px-2021_Maastricht%2C_Eiffelgebouw%2C_Bold_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "category": "exterior",
+        "caption": "Lake View",
+        "isCover": true,
+        "order": 0,
+        "_id": "6ae4461dff309592e9620514"
+      }
+    ],
+    "rating": 4.6,
+    "reviewCount": 56,
+    "policies": {
+      "minAdvanceBooking": 7,
+      "maxAdvanceBooking": 365,
+      "advancePaymentPercent": 40,
+      "rules": [],
+      "noSmoking": true,
+      "noOutsideAlcohol": true,
+      "noiseRestrictionAfter": "11:00 PM",
+      "cancellation": []
+    },
+    "status": "active",
+    "featured": false,
+    "trending": false,
+    "tags": [
+      "farmhouse",
+      "lake",
+      "rustic",
+      "destination",
+      "nature"
+    ],
+    "priorityScore": 7,
+    "seo": {
+      "keywords": []
+    },
+    "bookingCount": 0,
+    "reviews": [],
+    "blockedDates": [],
+    "seasonalPricing": [],
+    "__v": 0,
+    "createdAt": "2026-10-30T07:24:13.521Z",
+    "updatedAt": "2026-10-30T07:24:13.521Z"
   }
 ]

@@ -1,258 +1,98 @@
 [
   {
-    "_id": "65f0e2a1b2c3d4e5f6000011",
+    "_id": "6ae4438fee248ec931edd7da",
     "name": "Welcome Drinks",
     "selectionLimit": 2,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf7c"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 3,
-        "_id": "69bd6dd27c5490a1252fbf7d"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 4,
-        "_id": "69bd6dd27c5490a1252fbf7e"
-      }
-    ],
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "isMandatory": true,
     "sortOrder": 1,
+    "packageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.364Z",
-    "updatedAt": "2026-03-20T15:54:58.364Z"
+    "createdAt": "2026-10-30T07:13:19.721Z",
+    "updatedAt": "2026-10-30T07:13:19.721Z"
   },
   {
-    "_id": "65f0e2a1b2c3d4e5f6000012",
-    "name": "Soup",
-    "selectionLimit": 1,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 1,
-        "_id": "69bd6dd27c5490a1252fbf80"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 1,
-        "_id": "69bd6dd27c5490a1252fbf81"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf82"
-      }
-    ],
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "isMandatory": false,
-    "sortOrder": 2,
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.364Z",
-    "updatedAt": "2026-03-20T15:54:58.364Z"
-  },
-  {
-    "_id": "65f0e2a1b2c3d4e5f6000013",
-    "name": "Starters",
+    "_id": "6ae4438fee248ec931edd7db",
+    "name": "Starters (Veg)",
     "selectionLimit": 3,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 3,
-        "_id": "69bd6dd27c5490a1252fbf84"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 5,
-        "_id": "69bd6dd27c5490a1252fbf85"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 7,
-        "_id": "69bd6dd27c5490a1252fbf86"
-      }
-    ],
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
+    ],
+    "isMandatory": true,
+    "sortOrder": 2,
+    "packageLimits": [],
+    "__v": 0,
+    "createdAt": "2026-10-30T07:13:19.721Z",
+    "updatedAt": "2026-10-30T07:13:19.721Z"
+  },
+  {
+    "_id": "6ae4438fee248ec931edd7dc",
+    "name": "Main Course",
+    "selectionLimit": 4,
+    "packageIds": [
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "isMandatory": true,
     "sortOrder": 3,
+    "packageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.364Z",
-    "updatedAt": "2026-03-20T15:54:58.364Z"
+    "createdAt": "2026-10-30T07:13:19.721Z",
+    "updatedAt": "2026-10-30T07:13:19.721Z"
   },
   {
-    "_id": "65f0e2a1b2c3d4e5f6000014",
-    "name": "Main Course Veg Sabzi",
-    "selectionLimit": 3,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 3,
-        "_id": "69bd6dd27c5490a1252fbf88"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 5,
-        "_id": "69bd6dd27c5490a1252fbf89"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 6,
-        "_id": "69bd6dd27c5490a1252fbf8a"
-      }
-    ],
+    "_id": "6ae4438fee248ec931edd7dd",
+    "name": "Indian Breads",
+    "selectionLimit": 2,
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "isMandatory": true,
     "sortOrder": 4,
+    "packageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.364Z",
-    "updatedAt": "2026-03-20T15:54:58.364Z"
+    "createdAt": "2026-10-30T07:13:19.721Z",
+    "updatedAt": "2026-10-30T07:13:19.721Z"
   },
   {
-    "_id": "65f0e2a1b2c3d4e5f6000015",
-    "name": "Dal Kadhi",
+    "_id": "6ae4438fee248ec931edd7de",
+    "name": "Rice & Biryani",
     "selectionLimit": 1,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 1,
-        "_id": "69bd6dd27c5490a1252fbf8c"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 1,
-        "_id": "69bd6dd27c5490a1252fbf8d"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf8e"
-      }
-    ],
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "isMandatory": true,
     "sortOrder": 5,
+    "packageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.365Z",
-    "updatedAt": "2026-03-20T15:54:58.365Z"
+    "createdAt": "2026-10-30T07:13:19.721Z",
+    "updatedAt": "2026-10-30T07:13:19.721Z"
   },
   {
-    "_id": "65f0e2a1b2c3d4e5f6000016",
-    "name": "Indian Breads",
+    "_id": "6ae4438fee248ec931edd7df",
+    "name": "Desserts",
     "selectionLimit": 2,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf90"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 3,
-        "_id": "69bd6dd27c5490a1252fbf91"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 4,
-        "_id": "69bd6dd27c5490a1252fbf92"
-      }
-    ],
     "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
+      "6ae4438fee248ec931edd7d6",
+      "6ae4438fee248ec931edd7d7",
+      "6ae4438fee248ec931edd7d8"
     ],
     "isMandatory": true,
     "sortOrder": 6,
+    "packageLimits": [],
     "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.365Z",
-    "updatedAt": "2026-03-20T15:54:58.365Z"
-  },
-  {
-    "_id": "65f0e2a1b2c3d4e5f6000017",
-    "name": "Rice",
-    "selectionLimit": 1,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 1,
-        "_id": "69bd6dd27c5490a1252fbf94"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf95"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf96"
-      }
-    ],
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "isMandatory": true,
-    "sortOrder": 7,
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.365Z",
-    "updatedAt": "2026-03-20T15:54:58.365Z"
-  },
-  {
-    "_id": "65f0e2a1b2c3d4e5f6000018",
-    "name": "Desserts",
-    "selectionLimit": 1,
-    "packageLimits": [
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000001",
-        "limit": 1,
-        "_id": "69bd6dd27c5490a1252fbf98"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000002",
-        "limit": 2,
-        "_id": "69bd6dd27c5490a1252fbf99"
-      },
-      {
-        "packageId": "65f0e1a1b2c3d4e5f6000003",
-        "limit": 3,
-        "_id": "69bd6dd27c5490a1252fbf9a"
-      }
-    ],
-    "packageIds": [
-      "65f0e1a1b2c3d4e5f6000001",
-      "65f0e1a1b2c3d4e5f6000002",
-      "65f0e1a1b2c3d4e5f6000003"
-    ],
-    "isMandatory": true,
-    "sortOrder": 8,
-    "__v": 0,
-    "createdAt": "2026-03-20T15:54:58.365Z",
-    "updatedAt": "2026-03-20T15:54:58.365Z"
+    "createdAt": "2026-10-30T07:13:19.722Z",
+    "updatedAt": "2026-10-30T07:13:19.722Z"
   }
 ]
