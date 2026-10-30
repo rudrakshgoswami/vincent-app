@@ -386,13 +386,16 @@ redirect never ran. Worth repeating because the build never caught it.
 
 ### What you cannot test without keys
 
-| Feature | Needs |
-|---|---|
-| Real SMS delivery | `FAST2SMS_API_KEY` or Twilio credentials |
-| Email replies to contact messages | `EMAIL_USER`, `EMAIL_PASS` |
-| Completing a payment | `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, test mode |
+Nothing is blocked. Without credentials the app runs in demo mode:
 
-Everything up to the payment step works without any of them.
+| Feature | Without credentials | With credentials |
+|---|---|---|
+| OTP | The code is shown on the verify screen and printed in the server console | Sent by SMS or email |
+| Payments | A demo gateway mints the order and marks it paid, no checkout opens | Razorpay checkout, real flow |
+| Contact replies | Printed in the server console | Emailed |
+
+Demo payments are refused the moment real Razorpay credentials are present,
+so the demo path cannot be used to skip a real payment.
 
 ---
 

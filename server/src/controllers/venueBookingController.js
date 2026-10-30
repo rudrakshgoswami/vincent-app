@@ -12,7 +12,7 @@ import VenueSlotLock from '../models/VenueSlotLock.js';
 // ============================================
 
 // POST /api/venue-bookings/create-order — creates temporary lock + razorpay order
-import razorpay from '../utils/razorpay.js';
+import { createOrder, verifySignature } from '../utils/paymentGateway.js';
 
 export const createBookingOrder = async (req, res) => {
     try {
@@ -108,7 +108,7 @@ export const createBookingOrder = async (req, res) => {
 
         let rzpOrder;
         try {
-            rzpOrder = await razorpay.orders.create(rzpOptions);
+            rzpOrder = await createOrder(rzpOptions);
         } catch (rzpErr) {
             console.error('Razorpay Order Creation Error:', rzpErr);
             return res.status(500).json({ 
@@ -207,13 +207,14 @@ export const verifyBookingPayment = async (req, res) => {
         }
 
         // 1. Verify Signature
-        const generated_signature = crypto
-            .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
-            .update(`${razorpayOrderId}|${razorpayPaymentId}`)
-            .digest('hex');
+        const signatureValid = verifySignature({
+            orderId: razorpayOrderId,
+            paymentId: razorpayPaymentId,
+            signature: razorpaySignature,
+        });
 
-        if (generated_signature !== razorpaySignature) {
-            console.error('Signature Mismatch!', { generated_signature, razorpaySignature });
+        if (!signatureValid) {
+            console.error('Payment signature did not verify.');
             
             // Log failure in DB if booking exists
             const booking = await VenueBooking.findById(bookingId);

@@ -358,6 +358,16 @@ export const reorder = async (orderId) => {
 // PAYMENT APIs (Razorpay) - âœ… NEW
 // ==========================================
 
+// Stands in for Razorpay checkout while the server has no credentials.
+export const createDemoPayment = async (orderId) => {
+    const res = await authFetch(`${API_URL}/payment/demo-pay`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orderId }),
+    });
+    return handleResponse(res);
+};
+
 export const getRazorpayKey = async () => {
     const res = await fetch(`${API_URL}/payment/key`);
     return handleResponse(res);

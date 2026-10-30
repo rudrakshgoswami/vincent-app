@@ -1,9 +1,25 @@
 import User from '../models/User.js';
 import { generateAccessToken, generateRefreshToken } from '../utils/generateToken.js';
-import sendEmail from '../utils/sendEmail.js';
-import sendSMS from '../utils/sendSMS.js';
+import sendEmail, { emailConfigured } from '../utils/sendEmail.js';
+import sendSMS, { smsConfigured } from '../utils/sendSMS.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+
+/*
+ * When neither SMS nor email is configured the code only reaches the server
+ * terminal, which is no use to someone clicking through the interface. In
+ * that case it is returned in the response so the verify screen can show it.
+ * With a real provider configured this is never included.
+ */
+const demoOtp = (preference, otp) => {
+    const canDeliver = preference === 'email' ? emailConfigured() : smsConfigured();
+    if (canDeliver) return {};
+    return {
+        devOtp: otp,
+        devNote: 'No SMS or email provider is configured, so the code is shown here and printed in the server console.',
+    };
+};
+
 
 // @desc    Register user
 // @route   POST /api/auth/register
@@ -79,7 +95,8 @@ const registerUser = async (req, res) => {
             success: true,
             message: preference === 'email' ? `OTP sent to ${email}` : `OTP sent to ${phone}`,
             userId: user._id,
-            otpPreference: preference
+            otpPreference: preference,
+            ...demoOtp(preference, otp)
         });
 
     } catch (error) {
@@ -146,7 +163,7 @@ const resendOTP = async (req, res) => {
             await sendSMS(user.phone, `Your new Vincent Restaurant verification code is: ${otp}. Valid for 10 minutes.`);
         }
 
-        res.json({ success: true, message: 'OTP Resent' });
+        res.json({ success: true, message: 'OTP Resent', ...demoOtp(preference, otp) });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server Error' });
@@ -347,7 +364,7 @@ const forgotPassword = async (req, res) => {
         res.json({
             success: true,
             message: 'Password reset OTP sent to your phone'
-        });
+        , ...demoOtp('phone', otp) });
 
     } catch (error) {
         console.error('[Forgot Password Error]:', error);

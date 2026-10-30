@@ -6,7 +6,7 @@ import { getIO } from '../utils/socket.js';
 // @desc    Create reservation payment order
 // @route   POST /api/table-reservations/create-order
 // @access  Private
-import razorpay from '../utils/razorpay.js';
+import { createOrder, verifySignature } from '../utils/paymentGateway.js';
 
 export const createReservationOrder = async (req, res) => {
     try {
@@ -81,7 +81,7 @@ export const createReservationOrder = async (req, res) => {
 
         let rzpOrder;
         try {
-            rzpOrder = await razorpay.orders.create(rzpOptions);
+            rzpOrder = await createOrder(rzpOptions);
         } catch (rzpErr) {
             console.error('Razorpay Reservation Order Error:', rzpErr);
             return res.status(500).json({ message: 'Could not initiate Razorpay payment' });
@@ -150,13 +150,13 @@ export const verifyReservationPayment = async (req, res) => {
         }
 
         // 1. Verify Signature
-        const body = razorpayOrderId + '|' + razorpayPaymentId;
-        const expectedSignature = crypto
-            .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
-            .update(body.toString())
-            .digest('hex');
+        const signatureValid = verifySignature({
+            orderId: razorpayOrderId,
+            paymentId: razorpayPaymentId,
+            signature: razorpaySignature,
+        });
 
-        if (expectedSignature !== razorpaySignature) {
+        if (!signatureValid) {
             return res.status(400).json({ message: 'Invalid payment signature' });
         }
 

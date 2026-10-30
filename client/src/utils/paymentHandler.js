@@ -1,4 +1,4 @@
-import { createRazorpayOrder, getRazorpayKey } from '../api';
+import { createRazorpayOrder, getRazorpayKey, createDemoPayment } from '../api';
 
 export const loadRazorpayScript = () => {
     return new Promise((resolve) => {
@@ -49,11 +49,37 @@ export const initiatePayment = async ({
             key = orderRes?.data?.key || orderRes?.key;
         }
 
-        // 2. Ensure we have the Key
+        // 2. Ensure we have the Key, and find out whether the gateway is live
+        const keyRes = await getRazorpayKey();
+        const demoMode = !!(keyRes?.data?.demo ?? keyRes?.demo);
         if (!key) {
-            const keyRes = await getRazorpayKey();
             key = keyRes?.data?.key || keyRes?.key || '';
             if (!key) throw new Error('Razorpay API Key missing. Please contact support.');
+        }
+
+        /*
+         * Demo mode: no Razorpay credentials are configured on the server, so
+         * there is no checkout to open. Ask the server for the payment id and
+         * signature that checkout would have returned, then hand them to the
+         * same success handler. Everything downstream is unchanged.
+         *
+         * The server refuses this the moment real credentials exist, so this
+         * cannot be used to skip a real payment.
+         */
+        if (demoMode) {
+            const demo = await createDemoPayment(orderId);
+            const payload = {
+                razorpay_order_id: orderId,
+                razorpay_payment_id: demo?.data?.paymentId || demo?.paymentId,
+                razorpay_signature: demo?.data?.signature || demo?.signature,
+            };
+            try {
+                await onSuccess(payload);
+            } catch (err) {
+                console.error('Demo payment handler error:', err);
+                if (onError) onError(err);
+            }
+            return;
         }
 
         // 3. Configure Razorpay Options

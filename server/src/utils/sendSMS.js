@@ -23,6 +23,13 @@ import https from 'https';
 
 const PLACEHOLDER = /^(your[_-]|<|xxx|placeholder|changeme|todo)/i;
 
+/** True when at least one SMS provider is actually configured. */
+export const smsConfigured = () =>
+    configured(process.env.FAST2SMS_API_KEY)
+    || (configured(process.env.TWILIO_ACCOUNT_SID)
+        && configured(process.env.TWILIO_AUTH_TOKEN)
+        && configured(process.env.TWILIO_PHONE_NUMBER));
+
 const configured = (value) =>
     typeof value === 'string' && value.trim() !== '' && !PLACEHOLDER.test(value.trim());
 

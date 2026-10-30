@@ -1,4 +1,4 @@
-import razorpay from '../utils/razorpay.js';
+import { createOrder, verifySignature } from '../utils/paymentGateway.js';
 import Order from '../models/Order.js';
 import MenuItem from '../models/MenuItem.js';
 import Settings from '../models/Settings.js';
@@ -31,7 +31,7 @@ export const createRazorpayOrder = async (req, res) => {
             }
         };
 
-        const rzpOrder = await razorpay.orders.create(options);
+        const rzpOrder = await createOrder(options);
 
         res.json({
             data: {
@@ -68,13 +68,13 @@ export const verifyPayment = async (req, res) => {
         }
 
         // 1. Verify Signature
-        const body = razorpayOrderId + "|" + razorpayPaymentId;
-        const expectedSignature = crypto
-            .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
-            .update(body.toString())
-            .digest('hex');
+        const signatureValid = verifySignature({
+            orderId: razorpayOrderId,
+            paymentId: razorpayPaymentId,
+            signature: razorpaySignature,
+        });
 
-        if (expectedSignature !== razorpaySignature) {
+        if (!signatureValid) {
             return res.status(400).json({ message: 'Invalid payment signature' });
         }
 

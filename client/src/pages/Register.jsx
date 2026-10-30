@@ -64,7 +64,10 @@ export default function Register() {
                 state: {
                     email: formData.email,
                     phone: formData.phone,
-                    otpPreference: preference
+                    otpPreference: preference,
+                    // present only when no SMS or email provider is configured
+                    devOtp: response?.devOtp,
+                    devNote: response?.devNote
                 }
             });
         } catch (err) {

@@ -10,6 +10,9 @@ export default function VerifyOtp() {
     const { login } = useAuth();
 
     const [contact, setContact] = useState({ email: '', phone: '', otpPreference: 'phone' });
+    // Shown only when the server could not deliver the code, which happens
+    // when neither an SMS provider nor a mailbox is configured.
+    const [devOtp, setDevOtp] = useState('');
     const [otp, setOtp] = useState(['', '', '', '', '', '']);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -24,6 +27,7 @@ export default function VerifyOtp() {
                 phone: location.state.phone || '',
                 otpPreference: location.state.otpPreference || 'phone'
             });
+            if (location.state.devOtp) setDevOtp(location.state.devOtp);
         } else {
             navigate('/register');
         }
@@ -133,6 +137,24 @@ export default function VerifyOtp() {
 
                 {/* Messages */}
                 <div className="space-y-4 mb-12">
+                    {devOtp && (
+                        <div className="mb-4 rounded-xl border border-amber-300 bg-amber-50 p-4 text-center">
+                            <p className="text-[11px] font-bold uppercase tracking-wider text-amber-700">
+                                Demo mode, no SMS or email configured
+                            </p>
+                            <p className="my-1 font-mono text-3xl font-bold tracking-[0.3em] text-amber-900">
+                                {devOtp}
+                            </p>
+                            <button
+                                type="button"
+                                onClick={() => setOtp(devOtp.split(''))}
+                                className="text-xs font-semibold text-amber-700 underline"
+                            >
+                                Fill it in for me
+                            </button>
+                        </div>
+                    )}
+
                     {error && (
                         <div className="p-5 bg-red-50 border border-red-100 rounded-2xl text-[11px] font-black uppercase tracking-widest text-red-600 animate-slide-in-right flex items-center gap-3">
                             <AlertCircle size={16} />
