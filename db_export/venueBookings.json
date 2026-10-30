@@ -1,0 +1,1183 @@
+[
+  {
+    "_id": "69b4f8fc339cf5da9c05ed5d",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "venueName": "Royal Banquet Hall",
+    "eventDate": "2026-03-14T00:00:00.000Z",
+    "timeSlot": "fullDay",
+    "slotLabel": "6:00 AM - 12:00 AM",
+    "eventType": "wedding_reception",
+    "guestCount": 200,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Aarav Sharma",
+      "email": "aarav.sharma@example.com",
+      "phone": "+919000000001",
+      "alternatePhone": "+919000000002",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "69a3eb585f1dacb58674ac78",
+      "packageName": "Premium Veg Buffet",
+      "pricePerPlate": 800,
+      "guestCount": 200,
+      "baseTotal": 160000,
+      "extraItems": [],
+      "extraItemsTotal": 0,
+      "subtotal": 160000,
+      "gstRate": 5,
+      "gstAmount": 8000,
+      "total": 168000,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 120000,
+    "venueGstRate": 18,
+    "venueGstAmount": 21600,
+    "venueTotal": 141600,
+    "securityDeposit": 10000,
+    "grandTotal": 319600,
+    "advancePercent": 30.98,
+    "advanceAmount": 99000,
+    "balanceAmount": 220600,
+    "balanceDueDate": "2026-03-17T05:58:20.562Z",
+    "paymentStatus": "FULLY_PAID",
+    "razorpayOrderId": "demo_orderid_1",
+    "status": "COMPLETED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69b4f8fc339cf5da9c05ed5e",
+        "timestamp": "2026-03-14T05:58:20.565Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69b4f921339cf5da9c05ed72",
+        "timestamp": "2026-03-14T05:58:57.423Z"
+      },
+      {
+        "status": "COMPLETED",
+        "changedBy": "admin",
+        "reason": "Status updated to COMPLETED",
+        "_id": "69b52a21339cf5da9c06076b",
+        "timestamp": "2026-03-14T09:28:01.457Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0001",
+        "orderId": "demo_txn_0002",
+        "amount": 99000,
+        "currency": "INR",
+        "status": "captured",
+        "method": "upi",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "931c05eedc6ce8423eb9ab56270510ac5fde55476462e0537e039bb2faccf002",
+        "_id": "69b4f921339cf5da9c05ed71",
+        "timestamp": "2026-03-14T05:58:57.422Z"
+      },
+      {
+        "transactionId": "MAN-1773480477839",
+        "amount": 220600,
+        "currency": "INR",
+        "status": "captured",
+        "method": "cash",
+        "purpose": "balance",
+        "recordedBy": "Harshit Gohil",
+        "_id": "69b52a1d339cf5da9c060737",
+        "timestamp": "2026-03-14T09:27:57.839Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-14T05:58:20.568Z",
+    "updatedAt": "2026-03-14T09:28:01.457Z",
+    "bookingRef": "VEN2026030001",
+    "__v": 3,
+    "paymentMethod": "upi",
+    "razorpayPaymentId": "demo_paymentid_1",
+    "razorpaySignature": "demo_signature_1"
+  },
+  {
+    "_id": "69b4f940339cf5da9c05ef2d",
+    "user": "697f75a6155558b41767f2e1",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "venueName": "Royal Banquet Hall",
+    "eventDate": "2026-03-15T00:00:00.000Z",
+    "timeSlot": "morning",
+    "slotLabel": "6:00 AM - 12:00 PM",
+    "eventType": "wedding_reception",
+    "guestCount": 200,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Diya Patel",
+      "email": "diya.patel@example.com",
+      "phone": "+919000000002",
+      "alternatePhone": "+919000000003",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "69a3eb585f1dacb58674ac77",
+      "packageName": "Standard Veg Thali",
+      "pricePerPlate": 500,
+      "guestCount": 200,
+      "baseTotal": 100000,
+      "extraItems": [],
+      "extraItemsTotal": 0,
+      "subtotal": 100000,
+      "gstRate": 5,
+      "gstAmount": 5000,
+      "total": 105000,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 40000,
+    "venueGstRate": 18,
+    "venueGstAmount": 7200,
+    "venueTotal": 47200,
+    "securityDeposit": 10000,
+    "grandTotal": 162200,
+    "advancePercent": 40,
+    "advanceAmount": 64880,
+    "balanceAmount": 97320,
+    "balanceDueDate": "2026-03-17T05:59:28.623Z",
+    "paymentStatus": "ADVANCE_PAID",
+    "razorpayOrderId": "demo_orderid_2",
+    "status": "COMPLETED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69b4f940339cf5da9c05ef2e",
+        "timestamp": "2026-03-14T05:59:28.625Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69b4f962339cf5da9c05ef3e",
+        "timestamp": "2026-03-14T06:00:02.265Z"
+      },
+      {
+        "status": "COMPLETED",
+        "changedBy": "admin",
+        "reason": "Status updated to COMPLETED",
+        "_id": "69b5237e339cf5da9c05fa50",
+        "timestamp": "2026-03-14T08:59:42.088Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0003",
+        "orderId": "demo_txn_0004",
+        "amount": 64880,
+        "currency": "INR",
+        "status": "captured",
+        "method": "upi",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "2fc8fc107b91b6c6df97e3736ccccc8e1300c5db4f269061030a8b1b9d82b7ac",
+        "_id": "69b4f962339cf5da9c05ef3d",
+        "timestamp": "2026-03-14T06:00:02.265Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-14T05:59:28.628Z",
+    "updatedAt": "2026-03-14T08:59:42.089Z",
+    "bookingRef": "VEN2026030002",
+    "__v": 2,
+    "paymentMethod": "upi",
+    "razorpayPaymentId": "demo_paymentid_2",
+    "razorpaySignature": "demo_signature_2"
+  },
+  {
+    "_id": "69b52728339cf5da9c0600dd",
+    "user": "697f75a6155558b41767f2e1",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "venueName": "Royal Banquet Hall",
+    "eventDate": "2026-03-16T00:00:00.000Z",
+    "timeSlot": "fullDay",
+    "slotLabel": "6:00 AM - 12:00 AM",
+    "eventType": "engagement",
+    "guestCount": 290,
+    "specialRequirements": "azsdfghjkl",
+    "contactInfo": {
+      "fullName": "Vivaan Reddy",
+      "email": "vivaan.reddy@example.com",
+      "phone": "+919000000003",
+      "alternatePhone": "+919000000004",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "69a3eb585f1dacb58674ac77",
+      "packageName": "Standard Veg Thali",
+      "pricePerPlate": 500,
+      "guestCount": 290,
+      "baseTotal": 145000,
+      "extraItems": [
+        {
+          "itemId": "69a3eb585f1dacb58674aca2",
+          "name": "Premium Cutlery Set",
+          "pricePerPlate": 5000,
+          "total": 1450000,
+          "_id": "69b52728339cf5da9c0600de"
+        },
+        {
+          "itemId": "69a3eb585f1dacb58674aca1",
+          "name": "Mineral Water Bottles (250ml)",
+          "pricePerPlate": 20,
+          "total": 5800,
+          "_id": "69b52728339cf5da9c0600df"
+        },
+        {
+          "itemId": "69a3eb585f1dacb58674aca3",
+          "name": "Midnight Snack Boxes",
+          "pricePerPlate": 150,
+          "total": 43500,
+          "_id": "69b52728339cf5da9c0600e0"
+        }
+      ],
+      "extraItemsTotal": 94900,
+      "subtotal": 239900,
+      "gstRate": 5,
+      "gstAmount": 11995,
+      "total": 251895,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 90000,
+    "venueGstRate": 18,
+    "venueGstAmount": 16200,
+    "venueTotal": 106200,
+    "securityDeposit": 10000,
+    "grandTotal": 368095,
+    "advancePercent": 26.9,
+    "advanceAmount": 99000,
+    "balanceAmount": 269095,
+    "balanceDueDate": "2026-03-17T09:15:20.478Z",
+    "paymentStatus": "FULLY_PAID",
+    "razorpayOrderId": "demo_orderid_3",
+    "status": "COMPLETED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69b52728339cf5da9c0600e1",
+        "timestamp": "2026-03-14T09:15:20.482Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69b52742339cf5da9c0600f4",
+        "timestamp": "2026-03-14T09:15:46.972Z"
+      },
+      {
+        "status": "COMPLETED",
+        "changedBy": "admin",
+        "reason": "Status updated to COMPLETED",
+        "_id": "69b527e6339cf5da9c06024c",
+        "timestamp": "2026-03-14T09:18:30.721Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0005",
+        "orderId": "demo_txn_0006",
+        "amount": 99000,
+        "currency": "INR",
+        "status": "captured",
+        "method": "upi",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "d8d25ff5cdb9e50b776abf64e6ad774f0a03055f1b45fa02681840a105baf21f",
+        "_id": "69b52742339cf5da9c0600f3",
+        "timestamp": "2026-03-14T09:15:46.972Z"
+      },
+      {
+        "transactionId": "MAN-1773479827215",
+        "amount": 269095,
+        "currency": "INR",
+        "status": "captured",
+        "method": "cash",
+        "purpose": "balance",
+        "recordedBy": "Harshit Gohil",
+        "_id": "69b52793339cf5da9c0601ce",
+        "timestamp": "2026-03-14T09:17:07.215Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-14T09:15:20.486Z",
+    "updatedAt": "2026-03-14T09:18:30.723Z",
+    "bookingRef": "VEN2026030003",
+    "__v": 3,
+    "paymentMethod": "upi",
+    "razorpayPaymentId": "demo_paymentid_3",
+    "razorpaySignature": "demo_signature_3"
+  },
+  {
+    "_id": "69b5297c339cf5da9c060495",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "venue": "69a1c7fdb655d10da80edc33",
+    "venueName": "Heritage Haveli",
+    "eventDate": "2026-03-16T00:00:00.000Z",
+    "timeSlot": "morning",
+    "slotLabel": "6:00 AM - 12:00 PM",
+    "eventType": "wedding_reception",
+    "guestCount": 200,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Ananya Iyer",
+      "email": "ananya.iyer@example.com",
+      "phone": "+919000000004",
+      "alternatePhone": "+919000000005",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "69a3eb585f1dacb58674ac77",
+      "packageName": "Standard Veg Thali",
+      "pricePerPlate": 500,
+      "guestCount": 200,
+      "baseTotal": 100000,
+      "extraItems": [],
+      "extraItemsTotal": 0,
+      "subtotal": 100000,
+      "gstRate": 5,
+      "gstAmount": 5000,
+      "total": 105000,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 45000,
+    "venueGstRate": 18,
+    "venueGstAmount": 8100,
+    "venueTotal": 53100,
+    "securityDeposit": 20000,
+    "grandTotal": 178100,
+    "advancePercent": 40,
+    "advanceAmount": 71240,
+    "balanceAmount": 106860,
+    "balanceDueDate": "2026-03-17T09:25:16.601Z",
+    "paymentStatus": "FULLY_PAID",
+    "razorpayOrderId": "demo_orderid_4",
+    "status": "COMPLETED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69b5297c339cf5da9c060496",
+        "timestamp": "2026-03-14T09:25:16.603Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69b52998339cf5da9c0604a2",
+        "timestamp": "2026-03-14T09:25:44.115Z"
+      },
+      {
+        "status": "COMPLETED",
+        "changedBy": "admin",
+        "reason": "Status updated to COMPLETED",
+        "_id": "69b52a16339cf5da9c0606e9",
+        "timestamp": "2026-03-14T09:27:50.271Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0007",
+        "orderId": "demo_txn_0008",
+        "amount": 71240,
+        "currency": "INR",
+        "status": "captured",
+        "method": "upi",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "d52161983a014bc2e2b91ec9e162e17e9cd26edc985020a6d9950b8bdfce1905",
+        "_id": "69b52998339cf5da9c0604a1",
+        "timestamp": "2026-03-14T09:25:44.115Z"
+      },
+      {
+        "transactionId": "MAN-1773480371535",
+        "amount": 106859.99,
+        "currency": "INR",
+        "status": "captured",
+        "method": "cash",
+        "purpose": "balance",
+        "recordedBy": "Harshit Gohil",
+        "_id": "69b529b3339cf5da9c060514",
+        "timestamp": "2026-03-14T09:26:11.535Z"
+      },
+      {
+        "transactionId": "MAN-1773480390148",
+        "amount": 0.010000000009313226,
+        "currency": "INR",
+        "status": "captured",
+        "method": "cash",
+        "purpose": "balance",
+        "recordedBy": "Harshit Gohil",
+        "_id": "69b529c6339cf5da9c060566",
+        "timestamp": "2026-03-14T09:26:30.148Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-14T09:25:16.604Z",
+    "updatedAt": "2026-03-14T09:27:50.271Z",
+    "bookingRef": "VEN2026030004",
+    "__v": 4,
+    "paymentMethod": "upi",
+    "razorpayPaymentId": "demo_paymentid_4",
+    "razorpaySignature": "demo_signature_4"
+  },
+  {
+    "_id": "69b664ce757b5a909228919f",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "venueName": "Royal Banquet Hall",
+    "eventDate": "2026-03-20T00:00:00.000Z",
+    "timeSlot": "fullDay",
+    "slotLabel": "6:00 AM - 12:00 AM",
+    "eventType": "wedding_reception",
+    "guestCount": 200,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Arjun Nair",
+      "email": "arjun.nair@example.com",
+      "phone": "+919000000005",
+      "alternatePhone": "+919000000006",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "65f0e1a1b2c3d4e5f6000002",
+      "packageName": "Premium Package",
+      "pricePerPlate": 950,
+      "guestCount": 200,
+      "baseTotal": 190000,
+      "extraItems": [
+        {
+          "itemId": "69b663defe21cda1433d8b2a",
+          "name": "Mineral Water Bottle",
+          "pricePerPlate": 20,
+          "total": 4000,
+          "_id": "69b664ce757b5a90922891a0"
+        },
+        {
+          "itemId": "69b663defe21cda1433d8b2b",
+          "name": "Disposable Plate Upgrade",
+          "pricePerPlate": 40,
+          "total": 8000,
+          "_id": "69b664ce757b5a90922891a1"
+        }
+      ],
+      "extraItemsTotal": 72000,
+      "subtotal": 262000,
+      "gstRate": 5,
+      "gstAmount": 13100,
+      "total": 275100,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 90000,
+    "venueGstRate": 18,
+    "venueGstAmount": 16200,
+    "venueTotal": 106200,
+    "securityDeposit": 10000,
+    "grandTotal": 391300,
+    "advancePercent": 25.3,
+    "advanceAmount": 99000,
+    "balanceAmount": 292300,
+    "balanceDueDate": "2026-03-18T07:50:38.408Z",
+    "paymentStatus": "FULLY_PAID",
+    "razorpayOrderId": "demo_orderid_5",
+    "status": "COMPLETED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69b664ce757b5a90922891a2",
+        "timestamp": "2026-03-15T07:50:38.416Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69b664f1757b5a90922891b4",
+        "timestamp": "2026-03-15T07:51:13.855Z"
+      },
+      {
+        "status": "COMPLETED",
+        "changedBy": "admin",
+        "reason": "Status updated to COMPLETED",
+        "_id": "69b66508757b5a90922892d8",
+        "timestamp": "2026-03-15T07:51:36.608Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0009",
+        "orderId": "demo_txn_0010",
+        "amount": 99000,
+        "currency": "INR",
+        "status": "captured",
+        "method": "upi",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "7f715451c96882f2ae095fb1a35487bc47087968973609166338acfcdde24360",
+        "_id": "69b664f1757b5a90922891b3",
+        "timestamp": "2026-03-15T07:51:13.855Z"
+      },
+      {
+        "transactionId": "MAN-1773561093425",
+        "amount": 292300,
+        "currency": "INR",
+        "status": "captured",
+        "method": "cash",
+        "purpose": "balance",
+        "recordedBy": "Harshit Gohil",
+        "_id": "69b66505757b5a909228929b",
+        "timestamp": "2026-03-15T07:51:33.425Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-15T07:50:38.422Z",
+    "updatedAt": "2026-03-15T07:51:36.610Z",
+    "bookingRef": "VEN2026030005",
+    "__v": 3,
+    "paymentMethod": "upi",
+    "razorpayPaymentId": "demo_paymentid_5",
+    "razorpaySignature": "demo_signature_5"
+  },
+  {
+    "_id": "69b6881db971d71fe2ca3bc5",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "venueName": "Royal Banquet Hall",
+    "eventDate": "2026-03-17T00:00:00.000Z",
+    "timeSlot": "morning",
+    "slotLabel": "6:00 AM - 12:00 PM",
+    "eventType": "wedding_reception",
+    "guestCount": 200,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Isha Desai",
+      "email": "isha.desai@example.com",
+      "phone": "+919000000006",
+      "alternatePhone": "+919000000007",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": false,
+    "catering": {
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      },
+      "pricePerPlate": 0,
+      "guestCount": 0,
+      "baseTotal": 0,
+      "extraItemsTotal": 0,
+      "liveStationsTotal": 0,
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "staffTotal": 0,
+      "equipmentTotal": 0,
+      "subtotal": 0,
+      "gstRate": 5,
+      "gstAmount": 0,
+      "total": 0,
+      "extraItems": [],
+      "liveStations": [],
+      "dietaryOptions": [],
+      "additionalStaff": [],
+      "equipment": []
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 30000,
+    "venueGstRate": 18,
+    "venueGstAmount": 5400,
+    "venueTotal": 35400,
+    "securityDeposit": 10000,
+    "grandTotal": 45400,
+    "advancePercent": 40,
+    "advanceAmount": 18160,
+    "balanceAmount": 27240,
+    "balanceDueDate": "2026-03-18T10:21:17.358Z",
+    "paymentStatus": "BALANCE_OVERDUE",
+    "razorpayOrderId": "demo_orderid_6",
+    "status": "CONFIRMED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69b6881db971d71fe2ca3bc6",
+        "timestamp": "2026-03-15T10:21:17.365Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69b6886eb971d71fe2ca3c50",
+        "timestamp": "2026-03-15T10:22:38.845Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0011",
+        "orderId": "demo_txn_0012",
+        "amount": 18160,
+        "currency": "INR",
+        "status": "captured",
+        "method": "online",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "d275d6f85120907be28f30c66e63ea19aaca0c93a3649ee8e1e16e9dcc307f13",
+        "_id": "69b6886eb971d71fe2ca3c4f",
+        "timestamp": "2026-03-15T10:22:38.845Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-15T10:21:17.372Z",
+    "updatedAt": "2026-03-18T14:33:03.510Z",
+    "bookingRef": "VEN2026030006",
+    "__v": 1,
+    "paymentMethod": "online",
+    "razorpayPaymentId": "demo_paymentid_6",
+    "razorpaySignature": "demo_signature_6"
+  },
+  {
+    "_id": "69bacbe0cd8356ec7308bac2",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "venue": "69a1c7fdb655d10da80edc0d",
+    "venueName": "Garden Paradise",
+    "eventDate": "2026-03-19T00:00:00.000Z",
+    "timeSlot": "fullDay",
+    "slotLabel": "6:00 AM - 12:00 AM",
+    "eventType": "wedding_reception",
+    "guestCount": 800,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Kabir Mehta",
+      "email": "kabir.mehta@example.com",
+      "phone": "+919000000007",
+      "alternatePhone": "+919000000008",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "65f0e1a1b2c3d4e5f6000003",
+      "packageName": "Royal Wedding Package",
+      "pricePerPlate": 1350,
+      "guestCount": 800,
+      "baseTotal": 1080000,
+      "extraItems": [
+        {
+          "itemId": "69b68cf039d42dae8268af21",
+          "name": "Mineral Water Bottle",
+          "pricePerPlate": 20,
+          "total": 16000,
+          "_id": "69bacbe0cd8356ec7308bac3"
+        },
+        {
+          "itemId": "69b68cf039d42dae8268af24",
+          "name": "VIP Sofa Seating",
+          "pricePerPlate": 7000,
+          "total": 5600000,
+          "_id": "69bacbe0cd8356ec7308bac4"
+        },
+        {
+          "itemId": "69b68cf039d42dae8268af25",
+          "name": "Extra Sweet Dish",
+          "pricePerPlate": 60,
+          "total": 48000,
+          "_id": "69bacbe0cd8356ec7308bac5"
+        },
+        {
+          "itemId": "69b68cf039d42dae8268af22",
+          "name": "Disposable Plate Upgrade",
+          "pricePerPlate": 40,
+          "total": 32000,
+          "_id": "69bacbe0cd8356ec7308bac6"
+        },
+        {
+          "itemId": "69b68cf039d42dae8268af23",
+          "name": "Welcome Flower Garland",
+          "pricePerPlate": 3000,
+          "total": 2400000,
+          "_id": "69bacbe0cd8356ec7308bac7"
+        }
+      ],
+      "extraItemsTotal": 706000,
+      "subtotal": 1786000,
+      "gstRate": 5,
+      "gstAmount": 89300,
+      "total": 1875300,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 100000,
+    "venueGstRate": 18,
+    "venueGstAmount": 18000,
+    "venueTotal": 118000,
+    "securityDeposit": 15000,
+    "grandTotal": 2008300,
+    "advancePercent": 4.93,
+    "advanceAmount": 99000,
+    "balanceAmount": 1909300,
+    "balanceDueDate": "2026-03-21T15:59:28.519Z",
+    "paymentStatus": "FAILED",
+    "razorpayOrderId": "demo_orderid_7",
+    "status": "CANCELLED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69bacbe0cd8356ec7308bac8",
+        "timestamp": "2026-03-18T15:59:28.524Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-18T15:59:28.528Z",
+    "updatedAt": "2026-03-19T05:34:44.195Z",
+    "bookingRef": "VEN2026030007",
+    "__v": 0,
+    "cancellationReason": "Advance payment window expired (15 mins)",
+    "cancelledBy": "system"
+  },
+  {
+    "_id": "69bd78a15113d8bef979fe45",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "venueName": "Royal Banquet Hall",
+    "eventDate": "2026-03-21T00:00:00.000Z",
+    "timeSlot": "fullDay",
+    "slotLabel": "6:00 AM - 12:00 AM",
+    "eventType": "wedding_reception",
+    "guestCount": 200,
+    "specialRequirements": "",
+    "contactInfo": {
+      "fullName": "Aarav Sharma",
+      "email": "aarav.sharma@example.com",
+      "phone": "+919000000008",
+      "alternatePhone": "+919000000009",
+      "address": "12 Example Street, Civil Lines"
+    },
+    "specialInstructions": "",
+    "hasCatering": true,
+    "catering": {
+      "package": "65f0e1a1b2c3d4e5f6000003",
+      "packageName": "Royal Wedding Package",
+      "pricePerPlate": 1350,
+      "guestCount": 200,
+      "baseTotal": 270000,
+      "extraItems": [
+        {
+          "itemId": "69bd6dd27c5490a1252fbff0",
+          "name": "Disposable Plate Upgrade",
+          "pricePerPlate": 40,
+          "total": 8000,
+          "_id": "69bd78a15113d8bef979fe46"
+        }
+      ],
+      "extraItemsTotal": 74000,
+      "subtotal": 344000,
+      "gstRate": 5,
+      "gstAmount": 17200,
+      "total": 361200,
+      "liveStations": [],
+      "liveStationsTotal": 0,
+      "beveragePackage": {
+        "pricePerPerson": 0,
+        "total": 0
+      },
+      "dietaryOptions": [],
+      "dietaryTotal": 0,
+      "serviceStyle": "buffet",
+      "serviceStyleExtra": 0,
+      "kidsMenu": {
+        "enabled": false,
+        "count": 0,
+        "pricePerChild": 250,
+        "total": 0
+      },
+      "additionalStaff": [],
+      "staffTotal": 0,
+      "equipment": [],
+      "equipmentTotal": 0,
+      "foodTasting": {
+        "requested": false,
+        "fee": 2000,
+        "status": "pending"
+      },
+      "midnightSnacks": {
+        "enabled": false,
+        "pricePerPerson": 150,
+        "total": 0
+      }
+    },
+    "additionalServices": [],
+    "servicesSubtotal": 0,
+    "servicesGstRate": 18,
+    "servicesGstAmount": 0,
+    "servicesTotal": 0,
+    "venueBasePrice": 120000,
+    "venueGstRate": 18,
+    "venueGstAmount": 21600,
+    "venueTotal": 141600,
+    "securityDeposit": 10000,
+    "grandTotal": 512800,
+    "advancePercent": 19.31,
+    "advanceAmount": 99000,
+    "balanceAmount": 413800,
+    "balanceDueDate": "2026-03-23T16:41:05.023Z",
+    "paymentStatus": "FULLY_PAID",
+    "razorpayOrderId": "demo_orderid_8",
+    "status": "COMPLETED",
+    "statusHistory": [
+      {
+        "status": "PAYMENT_PENDING",
+        "changedBy": "system",
+        "reason": "Booking initiated (Slot locked for 15 mins)",
+        "_id": "69bd78a15113d8bef979fe47",
+        "timestamp": "2026-03-20T16:41:05.032Z"
+      },
+      {
+        "status": "CONFIRMED",
+        "changedBy": "system",
+        "reason": "Advance payment verified. Booking confirmed.",
+        "_id": "69bd78c75113d8bef979fe5c",
+        "timestamp": "2026-03-20T16:41:43.600Z"
+      },
+      {
+        "status": "COMPLETED",
+        "changedBy": "admin",
+        "reason": "Status updated to COMPLETED",
+        "_id": "69bd79d75113d8bef97a002b",
+        "timestamp": "2026-03-20T16:46:15.020Z"
+      }
+    ],
+    "refundAmount": 0,
+    "refundStatus": "none",
+    "lockExtended": false,
+    "bookingSource": "online",
+    "paymentHistory": [
+      {
+        "transactionId": "demo_txn_0013",
+        "orderId": "demo_txn_0014",
+        "amount": 99000,
+        "currency": "INR",
+        "status": "captured",
+        "method": "upi",
+        "purpose": "advance",
+        "recordedBy": "system",
+        "signature": "b53535a039f6b679758287075c6b356185f87d5cb3b338cd95b3d9600eab1620",
+        "_id": "69bd78c75113d8bef979fe5b",
+        "timestamp": "2026-03-20T16:41:43.600Z"
+      },
+      {
+        "transactionId": "MAN-1774025166798",
+        "amount": 413800,
+        "currency": "INR",
+        "status": "captured",
+        "method": "cash",
+        "purpose": "balance",
+        "recordedBy": "Harshit Gohil",
+        "_id": "69bd79ce5113d8bef979ffa9",
+        "timestamp": "2026-03-20T16:46:06.798Z"
+      }
+    ],
+    "balancePayments": [],
+    "adminNotes": [],
+    "assignedVendors": [],
+    "createdAt": "2026-03-20T16:41:05.039Z",
+    "updatedAt": "2026-03-20T16:46:15.022Z",
+    "bookingRef": "VEN2026030008",
+    "__v": 3,
+    "paymentMethod": "upi",
+    "razorpayPaymentId": "demo_paymentid_8",
+    "razorpaySignature": "demo_signature_8"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "697f11e2fc9282ebedae6512",
+    "isOrderingEnabled": true,
+    "isDeliveryEnabled": true,
+    "isDineInEnabled": true,
+    "defaultPrepTime": 30,
+    "taxPercentage": 5,
+    "deliveryCharge": 40,
+    "createdAt": "2026-02-01T08:42:10.807Z",
+    "updatedAt": "2026-03-12T17:27:26.908Z",
+    "__v": 0,
+    "address": "12 Example Street, Civil Lines, Surat 395003",
+    "allowTableMerging": true,
+    "email": "hello@example.com",
+    "googleMapLink": "https://maps.example.com/",
+    "landmark": "",
+    "maxTablesPerMerge": 3,
+    "name": "Vincent Demo Restaurant",
+    "phone": "+919000000000",
+    "socialLinks": {
+      "instagram": "https://example.com/",
+      "facebook": "https://example.com/",
+      "whatsapp": "https://example.com/"
+    },
+    "weekdayHours": "11:00 AM - 11:00 PM",
+    "weekendHours": "10:00 AM - 12:00 AM"
+  }
+]

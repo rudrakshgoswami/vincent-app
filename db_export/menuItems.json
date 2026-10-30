@@ -1,0 +1,15 @@
+[
+  {
+    "_id": "69b6ef1368666d216c859918",
+    "name": "Margherita",
+    "description": "eee",
+    "price": 250,
+    "image": "/uploads/image-1773596478572.jpg",
+    "category": "69b6eed068666d216c859904",
+    "isAvailable": true,
+    "isVeg": true,
+    "createdAt": "2026-03-15T17:40:35.284Z",
+    "updatedAt": "2026-03-15T17:41:32.453Z",
+    "__v": 0
+  }
+]

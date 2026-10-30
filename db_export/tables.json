@@ -1,0 +1,142 @@
+[
+  {
+    "_id": "697f446ddab3baa0b91dcaf5",
+    "tableNumber": "T1",
+    "capacity": 2,
+    "shape": "round",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 15,
+      "y": 20
+    },
+    "reservationPrice": 50,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcaf6",
+    "tableNumber": "T2",
+    "capacity": 4,
+    "shape": "square",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 45,
+      "y": 20
+    },
+    "reservationPrice": 100,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcaf7",
+    "tableNumber": "T3",
+    "capacity": 6,
+    "shape": "rectangle",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 75,
+      "y": 20
+    },
+    "reservationPrice": 150,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcaf8",
+    "tableNumber": "T4",
+    "capacity": 4,
+    "shape": "square",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 15,
+      "y": 50
+    },
+    "reservationPrice": 100,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcaf9",
+    "tableNumber": "T5",
+    "capacity": 2,
+    "shape": "round",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 45,
+      "y": 50
+    },
+    "reservationPrice": 50,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcafa",
+    "tableNumber": "T6",
+    "capacity": 8,
+    "shape": "rectangle",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 75,
+      "y": 50
+    },
+    "reservationPrice": 200,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcafb",
+    "tableNumber": "T7",
+    "capacity": 4,
+    "shape": "square",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 30,
+      "y": 80
+    },
+    "reservationPrice": 100,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcafc",
+    "tableNumber": "T8",
+    "capacity": 4,
+    "shape": "square",
+    "area": "Indoor",
+    "isActive": true,
+    "position": {
+      "x": 60,
+      "y": 80
+    },
+    "reservationPrice": 100,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcafd",
+    "tableNumber": "T9",
+    "capacity": 4,
+    "shape": "round",
+    "area": "Outdoor",
+    "isActive": true,
+    "position": {
+      "x": 20,
+      "y": 30
+    },
+    "reservationPrice": 120,
+    "__v": 0
+  },
+  {
+    "_id": "697f446ddab3baa0b91dcafe",
+    "tableNumber": "T10",
+    "capacity": 6,
+    "shape": "rectangle",
+    "area": "Rooftop",
+    "isActive": true,
+    "position": {
+      "x": 50,
+      "y": 50
+    },
+    "reservationPrice": 180,
+    "__v": 0
+  }
+]

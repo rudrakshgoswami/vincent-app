@@ -1,0 +1,41 @@
+[
+  {
+    "_id": "65f0e1a1b2c3d4e5f6000001",
+    "name": "Classic Package",
+    "description": "Elegant Indian buffet setup for budget-friendly premium events.",
+    "thumbnail": "/uploads/Catering/pkg_classic.jpg",
+    "pricePerPlate": 650,
+    "minGuests": 100,
+    "maxGuests": 500,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.346Z",
+    "updatedAt": "2026-03-20T15:54:58.346Z"
+  },
+  {
+    "_id": "65f0e1a1b2c3d4e5f6000002",
+    "name": "Premium Package",
+    "description": "Luxury wedding buffet with expanded variety and premium service.",
+    "thumbnail": "/uploads/Catering/pkg_premium.jpg",
+    "pricePerPlate": 950,
+    "minGuests": 150,
+    "maxGuests": 800,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.347Z",
+    "updatedAt": "2026-03-20T15:54:58.347Z"
+  },
+  {
+    "_id": "65f0e1a1b2c3d4e5f6000003",
+    "name": "Royal Wedding Package",
+    "description": "Grand royal banquet food spread for the ultimate celebratory experience.",
+    "thumbnail": "/uploads/Catering/pkg_royal.jpg",
+    "pricePerPlate": 1350,
+    "minGuests": 200,
+    "maxGuests": 1500,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.347Z",
+    "updatedAt": "2026-03-20T15:54:58.347Z"
+  }
+]

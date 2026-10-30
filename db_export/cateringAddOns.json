@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "69bd6dd27c5490a1252fbfef",
+    "name": "Mineral Water Bottle",
+    "description": "Chilled 500ml water bottles.",
+    "pricingType": "per_plate",
+    "price": 20,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.397Z",
+    "updatedAt": "2026-03-20T15:54:58.397Z"
+  },
+  {
+    "_id": "69bd6dd27c5490a1252fbff0",
+    "name": "Disposable Plate Upgrade",
+    "description": "Premium biodegradable plates.",
+    "pricingType": "per_plate",
+    "price": 40,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.397Z",
+    "updatedAt": "2026-03-20T15:54:58.397Z"
+  },
+  {
+    "_id": "69bd6dd27c5490a1252fbff1",
+    "name": "Welcome Flower Garland",
+    "description": "Traditional flower welcome.",
+    "pricingType": "flat",
+    "price": 3000,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.397Z",
+    "updatedAt": "2026-03-20T15:54:58.397Z"
+  },
+  {
+    "_id": "69bd6dd27c5490a1252fbff2",
+    "name": "VIP Sofa Seating",
+    "description": "Luxury sofa seating for front rows.",
+    "pricingType": "flat",
+    "price": 7000,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.397Z",
+    "updatedAt": "2026-03-20T15:54:58.397Z"
+  },
+  {
+    "_id": "69bd6dd27c5490a1252fbff3",
+    "name": "Extra Sweet Dish",
+    "description": "Additional dessert choice from menu.",
+    "pricingType": "per_plate",
+    "price": 60,
+    "isActive": true,
+    "__v": 0,
+    "createdAt": "2026-03-20T15:54:58.397Z",
+    "updatedAt": "2026-03-20T15:54:58.397Z"
+  }
+]

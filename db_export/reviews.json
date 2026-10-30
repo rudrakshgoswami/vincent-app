@@ -1,0 +1,99 @@
+[
+  {
+    "_id": "69b3b185f60443de4124d541",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "userName": "Aarav Sharma",
+    "rating": 5,
+    "comment": "Great venue, the staff were helpful and everything ran on time.",
+    "status": "approved",
+    "createdAt": "2026-03-13T06:41:09.478Z",
+    "updatedAt": "2026-03-13T06:41:09.478Z",
+    "__v": 0
+  },
+  {
+    "_id": "69b3b2c24668dc266238b11b",
+    "venue": "69a1c7fdb655d10da80edc33",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "userName": "Diya Patel",
+    "rating": 3,
+    "comment": "Good food and a clean space. Parking was a little tight.",
+    "status": "approved",
+    "createdAt": "2026-03-13T06:46:26.221Z",
+    "updatedAt": "2026-03-13T06:46:26.221Z",
+    "__v": 0
+  },
+  {
+    "_id": "69b3b2d04668dc266238b21d",
+    "venue": "69a1c7fdb655d10da80edc0d",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "userName": "Vivaan Reddy",
+    "rating": 4,
+    "comment": "Booked for a family function and it went smoothly. Would use again.",
+    "status": "approved",
+    "createdAt": "2026-03-13T06:46:40.585Z",
+    "updatedAt": "2026-03-13T06:46:40.585Z",
+    "__v": 0
+  },
+  {
+    "_id": "69b3b2dc4668dc266238b316",
+    "venue": "69a1c7fdb655d10da80edc1f",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "userName": "Ananya Iyer",
+    "rating": 5,
+    "comment": "Decent experience overall. The hall was bigger than expected.",
+    "status": "approved",
+    "createdAt": "2026-03-13T06:46:52.089Z",
+    "updatedAt": "2026-03-13T06:47:30.080Z",
+    "__v": 0,
+    "adminReply": "thank you for appreciation"
+  },
+  {
+    "_id": "69b3b2e74668dc266238b3f0",
+    "venue": "69a1c7fdb655d10da80edc2a",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "userName": "Arjun Nair",
+    "rating": 5,
+    "comment": "Service was prompt and the catering was well organised.",
+    "status": "approved",
+    "createdAt": "2026-03-13T06:47:03.956Z",
+    "updatedAt": "2026-03-13T06:47:03.956Z",
+    "__v": 0
+  },
+  {
+    "_id": "69b3f5a76d5a65ba8928447c",
+    "venue": "69a1c7fdb655d10da80edbf3",
+    "user": "697f75a6155558b41767f2e1",
+    "userName": "Isha Desai",
+    "rating": 2,
+    "comment": "Nice ambience. Sound system could be better.",
+    "status": "approved",
+    "createdAt": "2026-03-13T11:31:51.088Z",
+    "updatedAt": "2026-03-13T11:31:51.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "69b3f5c36d5a65ba89284596",
+    "venue": "69a1c7fdb655d10da80edc33",
+    "user": "697f75a6155558b41767f2e1",
+    "userName": "Kabir Mehta",
+    "rating": 5,
+    "comment": "Everything was as described. No complaints.",
+    "status": "approved",
+    "createdAt": "2026-03-13T11:32:19.804Z",
+    "updatedAt": "2026-03-13T11:32:19.804Z",
+    "__v": 0
+  },
+  {
+    "_id": "69bd88a75113d8bef97a0f30",
+    "venue": "69a1c7fdb655d10da80edc2a",
+    "user": "697f75a6155558b41767f2e1",
+    "userName": "Aarav Sharma",
+    "rating": 2,
+    "comment": "Friendly team and a straightforward booking process.",
+    "status": "approved",
+    "createdAt": "2026-03-20T17:49:27.160Z",
+    "updatedAt": "2026-03-20T17:49:27.160Z",
+    "__v": 0
+  }
+]

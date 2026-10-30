@@ -1,0 +1,41 @@
+[
+  {
+    "_id": "69b6ef8868666d216c85996b",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "table": null,
+    "tables": [
+      "697f446ddab3baa0b91dcaf5",
+      "697f446ddab3baa0b91dcaf6"
+    ],
+    "totalCapacity": 6,
+    "isCombined": true,
+    "date": "2026-03-15T00:00:00.000Z",
+    "timeSlot": {
+      "start": "19:00",
+      "end": "21:00"
+    },
+    "guestCount": 2,
+    "occasion": "Casual Dining",
+    "specialRequests": "",
+    "preferences": {
+      "area": "Indoor"
+    },
+    "status": "cancelled",
+    "paymentStatus": "paid",
+    "advanceAmount": 150,
+    "razorpayOrderId": "demo_orderid_1",
+    "graceTimeExpired": false,
+    "refundAmount": 0,
+    "refundStatus": "completed",
+    "reminderSent": false,
+    "createdAt": "2026-03-15T17:42:32.076Z",
+    "updatedAt": "2026-03-15T17:44:02.997Z",
+    "reservationNumber": "RES00001",
+    "__v": 0,
+    "razorpayPaymentId": "demo_paymentid_1",
+    "razorpaySignature": "demo_signature_1",
+    "cancellationReason": "eeeeeeeee",
+    "cancelledAt": "2026-03-15T17:44:02.995Z",
+    "cancelledBy": "admin"
+  }
+]

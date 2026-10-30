@@ -1,0 +1,174 @@
+[
+  {
+    "_id": "697e4d8e9d15e6bda9351dc1",
+    "name": "Demo Admin",
+    "email": "admin@example.com",
+    "phone": "+919000000001",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "697e4d8e9d15e6bda9351dc2"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": true,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-01-31T18:44:30.345Z",
+    "updatedAt": "2026-03-12T17:29:36.743Z",
+    "__v": 0,
+    "profilePicture": "/uploads/dummy.png"
+  },
+  {
+    "_id": "697f75a6155558b41767f2e1",
+    "name": "Diya Patel",
+    "email": "diya.patel@example.com",
+    "phone": "+919000000002",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "697f75a6155558b41767f2e2"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-02-01T15:47:50.341Z",
+    "updatedAt": "2026-03-14T05:52:45.521Z",
+    "__v": 0,
+    "profilePicture": "/uploads/dummy.png"
+  },
+  {
+    "_id": "698099de8263b1b229adba84",
+    "name": "Vivaan Reddy",
+    "email": "vivaan.reddy@example.com",
+    "phone": "+919000000003",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "698099de8263b1b229adba85"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-02-02T12:34:38.211Z",
+    "updatedAt": "2026-02-02T12:35:15.434Z",
+    "__v": 0
+  },
+  {
+    "_id": "6980b1c8f3bd9f2f7dfc37c8",
+    "name": "Ananya Iyer",
+    "email": "ananya.iyer@example.com",
+    "phone": "+919000000004",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "6980b1c8f3bd9f2f7dfc37c9"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-02-02T14:16:40.416Z",
+    "updatedAt": "2026-02-25T12:38:14.699Z",
+    "__v": 1,
+    "profilePicture": "/uploads/dummy.png",
+    "otpExpiresAt": "2026-02-03T17:26:56.579Z",
+    "otpHash": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "blockReason": "dd"
+  },
+  {
+    "_id": "69954f7cce9b75a567bec94a",
+    "name": "Arjun Nair",
+    "email": "arjun.nair@example.com",
+    "phone": "+919000000005",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "69954f7cce9b75a567bec94b"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-02-18T05:34:52.049Z",
+    "updatedAt": "2026-03-14T09:58:25.421Z",
+    "__v": 0,
+    "blockReason": "llll",
+    "profilePicture": "/uploads/dummy.png"
+  },
+  {
+    "_id": "69a2f9d174c4bac49c9753ea",
+    "name": "Isha Desai",
+    "email": "isha.desai@example.com",
+    "phone": "+919000000006",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "69a2f9d174c4bac49c9753eb"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-02-28T14:21:05.135Z",
+    "updatedAt": "2026-03-12T17:20:54.045Z",
+    "__v": 1,
+    "profilePicture": "/uploads/dummy.png",
+    "blockReason": null
+  },
+  {
+    "_id": "69b1b3f343ccf275cd1e342b",
+    "name": "Kabir Mehta",
+    "email": "kabir.mehta@example.com",
+    "phone": "+919000000007",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "69b1b3f343ccf275cd1e342c"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "createdAt": "2026-03-11T18:26:59.169Z",
+    "updatedAt": "2026-03-12T17:20:31.589Z",
+    "__v": 0,
+    "blockReason": null
+  }
+]

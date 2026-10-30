@@ -1,0 +1,1044 @@
+[
+  {
+    "_id": "69a1c7fdb655d10da80edbf3",
+    "name": "Royal Banquet Hall",
+    "slug": "royal-banquet-hall",
+    "type": "banquet_hall",
+    "setting": "indoor",
+    "description": "Experience grandeur at its finest in our Royal Banquet Hall. Featuring crystal chandeliers, marble flooring, and state-of-the-art climate control, this venue is perfect for weddings, receptions, and corporate galas. With dedicated changing rooms, a commercial kitchen, and ample parking, every detail is taken care of.",
+    "shortDescription": "Elegant indoor banquet hall with crystal chandeliers and premium amenities for up to 500 guests.",
+    "capacity": {
+      "min": 100,
+      "max": 500
+    },
+    "area": 8000,
+    "dimensions": {
+      "length": 100,
+      "width": 80,
+      "height": 25
+    },
+    "location": {
+      "coordinates": {
+        "lat": 18.9442,
+        "lng": 72.8234
+      },
+      "distanceFromKeyLocations": {
+        "airport": "28 km",
+        "railwayStation": "4 km",
+        "metroStation": "1.5 km"
+      },
+      "address": "12 Example Street, Civil Lines",
+      "area": "South Mumbai",
+      "city": "Surat",
+      "state": "Maharashtra",
+      "pincode": "395003",
+      "landmarks": [
+        {
+          "name": "Gateway of India",
+          "distance": "2 km",
+          "icon": "🏛️",
+          "_id": "69a1c7fdb655d10da80edbf4"
+        },
+        {
+          "name": "Marine Drive",
+          "distance": "500 m",
+          "icon": "🌊",
+          "_id": "69a1c7fdb655d10da80edbf5"
+        }
+      ]
+    },
+    "contact": {
+      "phone": "+919000000000",
+      "email": "bookings@example.com",
+      "website": "www.royalbanquet.com",
+      "officeHours": "09:00 AM - 09:00 PM"
+    },
+    "pricing": {
+      "weekday": {
+        "morning": 30000,
+        "afternoon": 35000,
+        "evening": 50000,
+        "fullDay": 90000
+      },
+      "weekend": {
+        "morning": 40000,
+        "afternoon": 45000,
+        "evening": 65000,
+        "fullDay": 120000
+      },
+      "holiday": {
+        "morning": 50000,
+        "afternoon": 55000,
+        "evening": 80000,
+        "fullDay": 150000
+      },
+      "securityDeposit": 10000,
+      "cleaningFee": 2000,
+      "extraHourCharge": 5000,
+      "gstRate": 18,
+      "gstIncluded": false
+    },
+    "amenities": [
+      {
+        "name": "Car Parking",
+        "category": "parking",
+        "icon": "🅿️",
+        "details": "150 spaces + valet",
+        "quantity": 150,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbf6"
+      },
+      {
+        "name": "Air Conditioning",
+        "category": "climate",
+        "icon": "❄️",
+        "details": "Central AC",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbf7"
+      },
+      {
+        "name": "Sound System",
+        "category": "av",
+        "icon": "🔊",
+        "details": "Professional Bose system with 4 wireless mics",
+        "quantity": 4,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbf8"
+      },
+      {
+        "name": "Projector & Screen",
+        "category": "av",
+        "icon": "📽️",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbf9"
+      },
+      {
+        "name": "Elevated Stage",
+        "category": "stage",
+        "icon": "🎭",
+        "details": "20×15 ft with backstage",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbfa"
+      },
+      {
+        "name": "Stage Lighting",
+        "category": "lighting",
+        "icon": "💡",
+        "details": "Professional lighting rig",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbfb"
+      },
+      {
+        "name": "Commercial Kitchen",
+        "category": "catering",
+        "icon": "🍳",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbfc"
+      },
+      {
+        "name": "Green Rooms",
+        "category": "stage",
+        "icon": "🚪",
+        "details": "2 rooms with vanity mirrors",
+        "quantity": 2,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbfd"
+      },
+      {
+        "name": "Premium Washrooms",
+        "category": "restrooms",
+        "icon": "🚿",
+        "details": "Men: 6, Women: 6",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbfe"
+      },
+      {
+        "name": "High-Speed WiFi",
+        "category": "connectivity",
+        "icon": "📶",
+        "details": "500 users capacity",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edbff"
+      },
+      {
+        "name": "Power Backup",
+        "category": "connectivity",
+        "icon": "🔋",
+        "details": "100% backup generator",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc00"
+      },
+      {
+        "name": "24/7 Security",
+        "category": "security",
+        "icon": "🛡️",
+        "details": "Guards + CCTV",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc01"
+      },
+      {
+        "name": "Wheelchair Accessible",
+        "category": "other",
+        "icon": "♿",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc02"
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "url": "/uploads/image-1772211262498.jpg",
+        "category": "other",
+        "caption": "",
+        "isCover": true,
+        "order": 1,
+        "_id": "69a1cc42466cebac0ec8f51a"
+      },
+      {
+        "type": "image",
+        "url": "/uploads/image-1773388326299.jpg",
+        "category": "other",
+        "caption": "",
+        "isCover": false,
+        "order": 1,
+        "_id": "69b3c23e8984244b772c8a8c"
+      },
+      {
+        "type": "image",
+        "url": "/uploads/image-1773388331443.jpg",
+        "category": "other",
+        "caption": "",
+        "isCover": false,
+        "order": 2,
+        "_id": "69b3c23e8984244b772c8a8d"
+      },
+      {
+        "type": "image",
+        "url": "/uploads/image-1773388336603.jpg",
+        "category": "other",
+        "caption": "",
+        "isCover": false,
+        "order": 3,
+        "_id": "69b3c23e8984244b772c8a8e"
+      },
+      {
+        "type": "image",
+        "url": "/uploads/image-1773388341864.jpg",
+        "category": "other",
+        "caption": "",
+        "isCover": false,
+        "order": 4,
+        "_id": "69b3c23e8984244b772c8a8f"
+      },
+      {
+        "type": "image",
+        "url": "/uploads/image-1773388347305.jpg",
+        "category": "other",
+        "caption": "",
+        "isCover": false,
+        "order": 5,
+        "_id": "69b3c23e8984244b772c8a90"
+      }
+    ],
+    "seatingCapacity": {
+      "theater": 500,
+      "banquet": 350,
+      "cocktail": 600,
+      "classroom": 250
+    },
+    "rating": 3.5,
+    "reviewCount": 2,
+    "reviews": [
+      {
+        "userName": "Aarav Sharma",
+        "rating": 5,
+        "comment": "Great venue, the staff were helpful and everything ran on time.",
+        "eventType": "wedding_reception",
+        "photos": [],
+        "helpfulCount": 0,
+        "status": "approved",
+        "createdAt": "2024-11-15T00:00:00.000Z",
+        "_id": "69a1c7fdb655d10da80edc07"
+      },
+      {
+        "userName": "Diya Patel",
+        "rating": 4.5,
+        "comment": "Good food and a clean space. Parking was a little tight.",
+        "eventType": "corporate_event",
+        "photos": [],
+        "helpfulCount": 0,
+        "status": "approved",
+        "createdAt": "2024-10-22T00:00:00.000Z",
+        "_id": "69a1c7fdb655d10da80edc08"
+      }
+    ],
+    "policies": {
+      "minAdvanceBooking": 7,
+      "maxAdvanceBooking": 365,
+      "advancePaymentPercent": 40,
+      "cancellation": [
+        {
+          "daysBeforeEvent": 30,
+          "refundPercent": 100,
+          "_id": "69a1c7fdb655d10da80edc09"
+        },
+        {
+          "daysBeforeEvent": 15,
+          "refundPercent": 50,
+          "_id": "69a1c7fdb655d10da80edc0a"
+        },
+        {
+          "daysBeforeEvent": 7,
+          "refundPercent": 25,
+          "_id": "69a1c7fdb655d10da80edc0b"
+        },
+        {
+          "daysBeforeEvent": 0,
+          "refundPercent": 0,
+          "_id": "69a1c7fdb655d10da80edc0c"
+        }
+      ],
+      "rules": [
+        "No smoking indoors",
+        "No outside alcohol",
+        "Noise restrictions after 11 PM",
+        "Decorations allowed with approval"
+      ],
+      "noSmoking": true,
+      "noOutsideAlcohol": true,
+      "noiseRestrictionAfter": "11:00 PM"
+    },
+    "status": "active",
+    "featured": true,
+    "trending": true,
+    "tags": [
+      "luxury",
+      "wedding",
+      "corporate",
+      "spacious",
+      "premium"
+    ],
+    "priorityScore": 9,
+    "seo": {
+      "keywords": []
+    },
+    "bookingCount": 15,
+    "blockedDates": [],
+    "seasonalPricing": [],
+    "__v": 0,
+    "createdAt": "2026-02-27T16:36:13.517Z",
+    "updatedAt": "2026-03-20T16:41:43.617Z"
+  },
+  {
+    "_id": "69a1c7fdb655d10da80edc0d",
+    "name": "Garden Paradise",
+    "slug": "garden-paradise",
+    "type": "lawn_garden",
+    "setting": "outdoor",
+    "description": "A lush green paradise perfect for outdoor celebrations. Our beautifully landscaped garden spans over 12,000 sq ft with manicured lawns, decorative fountains, and ambient lighting. Ideal for weddings, receptions, and social gatherings under the stars.",
+    "shortDescription": "Beautiful outdoor garden venue with lush lawns and fountains for up to 800 guests.",
+    "capacity": {
+      "min": 150,
+      "max": 800
+    },
+    "area": 12000,
+    "location": {
+      "address": "12 Example Street, Civil Lines",
+      "area": "Juhu",
+      "city": "Surat",
+      "state": "Maharashtra",
+      "pincode": "395003",
+      "coordinates": {
+        "lat": 19.0988,
+        "lng": 72.8267
+      },
+      "landmarks": [
+        {
+          "name": "Juhu Beach",
+          "distance": "200 m",
+          "icon": "🏖️",
+          "_id": "69a1c7fdb655d10da80edc0e"
+        },
+        {
+          "name": "ISKCON Temple",
+          "distance": "1 km",
+          "icon": "🛕",
+          "_id": "69a1c7fdb655d10da80edc0f"
+        }
+      ]
+    },
+    "contact": {
+      "phone": "+919000000000",
+      "email": "bookings@example.com",
+      "officeHours": "09:00 AM - 08:00 PM"
+    },
+    "pricing": {
+      "weekday": {
+        "morning": 40000,
+        "afternoon": 45000,
+        "evening": 60000,
+        "fullDay": 100000
+      },
+      "weekend": {
+        "morning": 55000,
+        "afternoon": 60000,
+        "evening": 80000,
+        "fullDay": 140000
+      },
+      "holiday": {
+        "morning": 65000,
+        "afternoon": 70000,
+        "evening": 95000,
+        "fullDay": 170000
+      },
+      "securityDeposit": 15000,
+      "cleaningFee": 3000,
+      "extraHourCharge": 6000,
+      "gstRate": 18,
+      "gstIncluded": false
+    },
+    "amenities": [
+      {
+        "name": "Car Parking",
+        "category": "parking",
+        "icon": "🅿️",
+        "details": "200 spaces",
+        "quantity": 200,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc10"
+      },
+      {
+        "name": "Outdoor Cooling",
+        "category": "climate",
+        "icon": "💨",
+        "details": "Misting fans & coolers",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc11"
+      },
+      {
+        "name": "Sound System",
+        "category": "av",
+        "icon": "🔊",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc12"
+      },
+      {
+        "name": "Stage Platform",
+        "category": "stage",
+        "icon": "🎭",
+        "details": "30×20 ft",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc13"
+      },
+      {
+        "name": "Decorative Lighting",
+        "category": "lighting",
+        "icon": "✨",
+        "details": "Fairy lights throughout",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc14"
+      },
+      {
+        "name": "Garden Area",
+        "category": "outdoor",
+        "icon": "🌳",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc15"
+      },
+      {
+        "name": "Gazebo",
+        "category": "outdoor",
+        "icon": "⛺",
+        "details": "Decorative pavilion",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc16"
+      },
+      {
+        "name": "Power Backup",
+        "category": "connectivity",
+        "icon": "🔋",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc17"
+      },
+      {
+        "name": "Fountain",
+        "category": "outdoor",
+        "icon": "⛲",
+        "details": "Decorative water fountain",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc18"
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/hero.png",
+        "category": "exterior",
+        "caption": "Lush Garden View",
+        "isCover": true,
+        "order": 0,
+        "_id": "69a1c7fdb655d10da80edc19"
+      },
+      {
+        "type": "image",
+        "url": "/images/hero.png",
+        "category": "events",
+        "caption": "Evening Event",
+        "isCover": false,
+        "order": 1,
+        "_id": "69a1c7fdb655d10da80edc1a"
+      }
+    ],
+    "seatingCapacity": {
+      "theater": 800,
+      "banquet": 500,
+      "cocktail": 1000
+    },
+    "rating": 4,
+    "reviewCount": 1,
+    "reviews": [
+      {
+        "userName": "Aarav Sharma",
+        "rating": 5,
+        "comment": "Great venue, the staff were helpful and everything ran on time.",
+        "eventType": "wedding_reception",
+        "photos": [],
+        "helpfulCount": 0,
+        "status": "approved",
+        "createdAt": "2024-12-01T00:00:00.000Z",
+        "_id": "69a1c7fdb655d10da80edc1b"
+      }
+    ],
+    "policies": {
+      "minAdvanceBooking": 10,
+      "maxAdvanceBooking": 365,
+      "advancePaymentPercent": 40,
+      "cancellation": [
+        {
+          "daysBeforeEvent": 30,
+          "refundPercent": 100,
+          "_id": "69a1c7fdb655d10da80edc1c"
+        },
+        {
+          "daysBeforeEvent": 15,
+          "refundPercent": 50,
+          "_id": "69a1c7fdb655d10da80edc1d"
+        },
+        {
+          "daysBeforeEvent": 7,
+          "refundPercent": 25,
+          "_id": "69a1c7fdb655d10da80edc1e"
+        }
+      ],
+      "rules": [
+        "Weather-dependent events",
+        "No fireworks",
+        "Noise restrictions after 10:30 PM"
+      ],
+      "noSmoking": true,
+      "noOutsideAlcohol": true,
+      "noiseRestrictionAfter": "11:00 PM"
+    },
+    "status": "active",
+    "featured": true,
+    "trending": false,
+    "tags": [
+      "outdoor",
+      "wedding",
+      "garden",
+      "romantic"
+    ],
+    "priorityScore": 8,
+    "seo": {
+      "keywords": []
+    },
+    "bookingCount": 0,
+    "blockedDates": [],
+    "seasonalPricing": [],
+    "__v": 0,
+    "createdAt": "2026-02-27T16:36:13.518Z",
+    "updatedAt": "2026-03-13T06:46:40.587Z"
+  },
+  {
+    "_id": "69a1c7fdb655d10da80edc1f",
+    "name": "Skyline Rooftop",
+    "slug": "skyline-rooftop",
+    "type": "rooftop",
+    "setting": "outdoor",
+    "description": "Elevate your event at Skyline Rooftop with breathtaking panoramic city views. This modern rooftop venue features contemporary design, ambient lighting, and a stunning infinity pool backdrop. Perfect for cocktail parties, birthdays, and intimate celebrations.",
+    "shortDescription": "Modern rooftop venue with panoramic city views for up to 200 guests.",
+    "capacity": {
+      "min": 50,
+      "max": 200
+    },
+    "area": 4000,
+    "location": {
+      "coordinates": {
+        "lat": 19.0665,
+        "lng": 72.8691
+      },
+      "address": "12 Example Street, Civil Lines",
+      "area": "BKC",
+      "city": "Surat",
+      "state": "Maharashtra",
+      "pincode": "395003",
+      "landmarks": []
+    },
+    "contact": {
+      "phone": "+919000000000",
+      "email": "bookings@example.com",
+      "officeHours": "09:00 AM - 08:00 PM"
+    },
+    "pricing": {
+      "weekday": {
+        "morning": 25000,
+        "afternoon": 28000,
+        "evening": 45000,
+        "fullDay": 75000
+      },
+      "weekend": {
+        "morning": 35000,
+        "afternoon": 38000,
+        "evening": 58000,
+        "fullDay": 95000
+      },
+      "holiday": {
+        "morning": 40000,
+        "afternoon": 45000,
+        "evening": 70000,
+        "fullDay": 120000
+      },
+      "securityDeposit": 8000,
+      "cleaningFee": 2500,
+      "extraHourCharge": 4000,
+      "gstRate": 18,
+      "gstIncluded": false
+    },
+    "amenities": [
+      {
+        "name": "Elevator Access",
+        "category": "parking",
+        "icon": "🛗",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc20"
+      },
+      {
+        "name": "Sound System",
+        "category": "av",
+        "icon": "🔊",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc21"
+      },
+      {
+        "name": "LED Screens",
+        "category": "av",
+        "icon": "📺",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc22"
+      },
+      {
+        "name": "Ambient Lighting",
+        "category": "lighting",
+        "icon": "💡",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc23"
+      },
+      {
+        "name": "Bar Counter",
+        "category": "catering",
+        "icon": "🍸",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc24"
+      },
+      {
+        "name": "WiFi",
+        "category": "connectivity",
+        "icon": "📶",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc25"
+      },
+      {
+        "name": "Poolside Area",
+        "category": "outdoor",
+        "icon": "🏊",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc26"
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "url": "/uploads/image-1772211043380.webp",
+        "category": "other",
+        "caption": "",
+        "isCover": true,
+        "order": 0,
+        "_id": "69a1cb65466cebac0ec8f2df"
+      }
+    ],
+    "rating": 5,
+    "reviewCount": 1,
+    "policies": {
+      "minAdvanceBooking": 5,
+      "maxAdvanceBooking": 180,
+      "advancePaymentPercent": 50,
+      "cancellation": [
+        {
+          "daysBeforeEvent": 15,
+          "refundPercent": 75,
+          "_id": "69a1c7fdb655d10da80edc28"
+        },
+        {
+          "daysBeforeEvent": 7,
+          "refundPercent": 30,
+          "_id": "69a1c7fdb655d10da80edc29"
+        }
+      ],
+      "rules": [
+        "No loud music after 10 PM",
+        "Max 200 guests",
+        "Weather conditions apply"
+      ],
+      "noSmoking": true,
+      "noOutsideAlcohol": true,
+      "noiseRestrictionAfter": "11:00 PM"
+    },
+    "status": "active",
+    "featured": false,
+    "trending": false,
+    "tags": [
+      "rooftop",
+      "cocktail",
+      "birthday",
+      "city-views",
+      "modern"
+    ],
+    "priorityScore": 7,
+    "seo": {
+      "keywords": []
+    },
+    "bookingCount": 1,
+    "reviews": [],
+    "blockedDates": [],
+    "seasonalPricing": [],
+    "__v": 0,
+    "createdAt": "2026-02-27T16:36:13.519Z",
+    "updatedAt": "2026-03-13T10:35:59.413Z"
+  },
+  {
+    "_id": "69a1c7fdb655d10da80edc2a",
+    "name": "Elite Conference Center",
+    "slug": "elite-conference-center",
+    "type": "conference_hall",
+    "setting": "indoor",
+    "description": "State-of-the-art conference facility equipped with the latest technology for corporate events, seminars, and product launches. Features modular spaces that can be configured for theater, classroom, or boardroom setups.",
+    "shortDescription": "Modern conference center with cutting-edge AV tech for up to 300 professionals.",
+    "capacity": {
+      "min": 30,
+      "max": 300
+    },
+    "area": 5000,
+    "location": {
+      "coordinates": {
+        "lat": 19.1623,
+        "lng": 72.8603
+      },
+      "address": "12 Example Street, Civil Lines",
+      "area": "Goregaon East",
+      "city": "Surat",
+      "state": "Maharashtra",
+      "pincode": "395003",
+      "landmarks": []
+    },
+    "contact": {
+      "phone": "+919000000000",
+      "email": "bookings@example.com",
+      "officeHours": "09:00 AM - 08:00 PM"
+    },
+    "pricing": {
+      "weekday": {
+        "morning": 20000,
+        "afternoon": 22000,
+        "evening": 35000,
+        "fullDay": 55000
+      },
+      "weekend": {
+        "morning": 28000,
+        "afternoon": 30000,
+        "evening": 42000,
+        "fullDay": 70000
+      },
+      "holiday": {
+        "morning": 32000,
+        "afternoon": 35000,
+        "evening": 48000,
+        "fullDay": 80000
+      },
+      "securityDeposit": 5000,
+      "cleaningFee": 1500,
+      "extraHourCharge": 3500,
+      "gstRate": 18,
+      "gstIncluded": false
+    },
+    "amenities": [
+      {
+        "name": "Projectors",
+        "category": "av",
+        "icon": "📽️",
+        "details": "4K Laser Projectors",
+        "quantity": 3,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc2b"
+      },
+      {
+        "name": "Video Conferencing",
+        "category": "av",
+        "icon": "📹",
+        "details": "Zoom/Teams ready",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc2c"
+      },
+      {
+        "name": "Air Conditioning",
+        "category": "climate",
+        "icon": "❄️",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc2d"
+      },
+      {
+        "name": "WiFi",
+        "category": "connectivity",
+        "icon": "📶",
+        "details": "Enterprise-grade",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc2e"
+      },
+      {
+        "name": "Parking",
+        "category": "parking",
+        "icon": "🅿️",
+        "details": "100 spaces",
+        "quantity": 100,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc2f"
+      },
+      {
+        "name": "Breakout Rooms",
+        "category": "other",
+        "icon": "🚪",
+        "details": "4 rooms",
+        "quantity": 4,
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc30"
+      },
+      {
+        "name": "Whiteboard Walls",
+        "category": "other",
+        "icon": "📝",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc31"
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "url": "/uploads/image-1772210980301.webp",
+        "category": "other",
+        "caption": "",
+        "isCover": true,
+        "order": 1,
+        "_id": "69a1cb2c466cebac0ec8f1e0"
+      }
+    ],
+    "seatingCapacity": {
+      "theater": 300,
+      "banquet": 200,
+      "classroom": 150,
+      "ushape": 80
+    },
+    "rating": 3.5,
+    "reviewCount": 2,
+    "policies": {
+      "minAdvanceBooking": 7,
+      "maxAdvanceBooking": 365,
+      "advancePaymentPercent": 40,
+      "rules": [],
+      "noSmoking": true,
+      "noOutsideAlcohol": true,
+      "noiseRestrictionAfter": "11:00 PM",
+      "cancellation": []
+    },
+    "status": "active",
+    "featured": false,
+    "trending": false,
+    "tags": [
+      "corporate",
+      "conference",
+      "seminar",
+      "tech-ready"
+    ],
+    "priorityScore": 6,
+    "seo": {
+      "keywords": []
+    },
+    "bookingCount": 2,
+    "reviews": [],
+    "blockedDates": [],
+    "seasonalPricing": [],
+    "__v": 0,
+    "createdAt": "2026-02-27T16:36:13.519Z",
+    "updatedAt": "2026-03-20T17:49:27.181Z"
+  },
+  {
+    "_id": "69a1c7fdb655d10da80edc33",
+    "name": "Heritage Haveli",
+    "slug": "heritage-haveli",
+    "type": "banquet_hall",
+    "setting": "both",
+    "description": "A stunning restored heritage property combining old-world charm with modern amenities. Features magnificent Rajasthani architecture, intricate jali work, hand-painted murals, and expansive courtyards. Both indoor halls and outdoor courtyards available.",
+    "shortDescription": "Heritage-style venue with Rajasthani architecture, indoor halls and courtyards for up to 600 guests.",
+    "capacity": {
+      "min": 100,
+      "max": 600
+    },
+    "area": 10000,
+    "location": {
+      "coordinates": {
+        "lat": 18.922,
+        "lng": 72.8347
+      },
+      "address": "12 Example Street, Civil Lines",
+      "area": "Colaba",
+      "city": "Surat",
+      "state": "Maharashtra",
+      "pincode": "395003",
+      "landmarks": []
+    },
+    "contact": {
+      "phone": "+919000000000",
+      "email": "bookings@example.com",
+      "officeHours": "09:00 AM - 08:00 PM"
+    },
+    "pricing": {
+      "weekday": {
+        "morning": 45000,
+        "afternoon": 50000,
+        "evening": 70000,
+        "fullDay": 130000
+      },
+      "weekend": {
+        "morning": 60000,
+        "afternoon": 65000,
+        "evening": 90000,
+        "fullDay": 160000
+      },
+      "holiday": {
+        "morning": 75000,
+        "afternoon": 80000,
+        "evening": 110000,
+        "fullDay": 200000
+      },
+      "securityDeposit": 20000,
+      "cleaningFee": 5000,
+      "extraHourCharge": 8000,
+      "gstRate": 18,
+      "gstIncluded": false
+    },
+    "amenities": [
+      {
+        "name": "Valet Parking",
+        "category": "parking",
+        "icon": "🅿️",
+        "details": "100 spaces",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc34"
+      },
+      {
+        "name": "Heritage Architecture",
+        "category": "other",
+        "icon": "🏰",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc35"
+      },
+      {
+        "name": "Courtyard",
+        "category": "outdoor",
+        "icon": "🌺",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc36"
+      },
+      {
+        "name": "Indoor Hall",
+        "category": "other",
+        "icon": "🏛️",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc37"
+      },
+      {
+        "name": "Air Conditioning",
+        "category": "climate",
+        "icon": "❄️",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc38"
+      },
+      {
+        "name": "Sound System",
+        "category": "av",
+        "icon": "🔊",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc39"
+      },
+      {
+        "name": "Photo Booth Area",
+        "category": "other",
+        "icon": "📸",
+        "available": true,
+        "_id": "69a1c7fdb655d10da80edc3a"
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "url": "/uploads/image-1772211065583.webp",
+        "category": "other",
+        "caption": "",
+        "isCover": true,
+        "order": 1,
+        "_id": "69a1cb7b466cebac0ec8f348"
+      }
+    ],
+    "rating": 4,
+    "reviewCount": 2,
+    "policies": {
+      "minAdvanceBooking": 7,
+      "maxAdvanceBooking": 365,
+      "advancePaymentPercent": 40,
+      "rules": [],
+      "noSmoking": true,
+      "noOutsideAlcohol": true,
+      "noiseRestrictionAfter": "11:00 PM",
+      "cancellation": []
+    },
+    "status": "active",
+    "featured": true,
+    "trending": false,
+    "tags": [
+      "heritage",
+      "wedding",
+      "traditional",
+      "premium",
+      "photography"
+    ],
+    "priorityScore": 8,
+    "seo": {
+      "keywords": []
+    },
+    "bookingCount": 9,
+    "reviews": [],
+    "blockedDates": [],
+    "seasonalPricing": [],
+    "__v": 0,
+    "createdAt": "2026-02-27T16:36:13.519Z",
+    "updatedAt": "2026-03-14T09:25:44.120Z"
+  }
+]

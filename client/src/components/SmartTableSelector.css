@@ -1,0 +1,209 @@
+.smart-table-selector {
+    --color-available: #B69A71;
+    --color-selected: #1A2421;
+    --color-booked: #E8E5DF;
+    --color-hold: #D4C1A5;
+    --color-blocked: #A6A6A6;
+    --bg-card: #ffffff;
+    --border-radius: 12px;
+}
+
+.zone-section {
+    margin-bottom: 2rem;
+}
+
+.zone-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E8E5DF;
+}
+
+.zone-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    color: #1A2421;
+}
+
+.table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Table Card Base */
+.table-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #E8E5DF;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
+}
+
+.table-card:hover:not(.is-disabled) {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+    border-color: #B69A71;
+}
+
+.table-card.too-large {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Table States */
+.table-card.state-available {
+    border-left: 4px solid var(--color-available);
+}
+
+.table-card.state-selected {
+    border: 2px solid var(--color-selected);
+    background: #1A2421;
+    z-index: 10;
+}
+
+.table-card.state-selected .table-num,
+.table-card.state-selected .table-capacity,
+.table-card.state-selected .table-price {
+    color: white !important;
+}
+
+.table-card.state-selected .table-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.table-card.state-booked {
+    background: #F8F8F6;
+    border-color: #E8E8E6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.table-card.state-booked .table-num {
+    color: #A6A6A6;
+}
+
+/* Card Content */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-num {
+    font-size: 1.5rem;
+    font-family: 'DM Serif Display', serif;
+    color: #1A2421;
+    transition: color 0.3s;
+}
+
+.table-badge {
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    background: #F0F0EE;
+    color: #717171;
+}
+
+.table-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.table-capacity {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #717171;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.table-price {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #B69A71;
+}
+
+/* Smart Tags */
+.smart-tag {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    font-size: 0.55rem;
+    font-weight: 900;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+.tag-best-match {
+    background: #1A2421;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tag-cheapest {
+    background: #B69A71;
+}
+
+.tag-popular {
+    background: #7c2d12;
+}
+
+/* Icons */
+.lock-icon {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #D1D1D1;
+}
+
+.selection-check {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #B69A71;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 10px 20px -5px rgba(182, 154, 113, 0.5);
+    z-index: 30;
+    animation: scale-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scale-up {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
