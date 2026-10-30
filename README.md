@@ -192,9 +192,7 @@ Honest list, in rough order of how much they matter.
 Vincent was a group project. The code here is the work of the whole team, not
 one person, and it is published with their agreement.
 
-> **Add your teammates' names here.** Open a pull request or edit this section
-> directly.
-
+- Akshar Vala
 - Rudraksh Goswami ([@rudrakshgoswami](https://github.com/rudrakshgoswami))
 
 ---
