@@ -1,6 +1,6 @@
 [
   {
-    "_id": "6ae4461dff309592e96204c2",
+    "_id": "6ae450f2f2279f512fa05385",
     "name": "Royal Banquet Hall",
     "slug": "royal-banquet-hall",
     "type": "banquet_hall",
@@ -32,13 +32,13 @@
           "name": "Gateway of India",
           "distance": "2 km",
           "icon": "🏛️",
-          "_id": "6ae4461dff309592e96204c3"
+          "_id": "6ae450f2f2279f512fa05386"
         },
         {
           "name": "Marine Drive",
           "distance": "500 m",
           "icon": "🌊",
-          "_id": "6ae4461dff309592e96204c4"
+          "_id": "6ae450f2f2279f512fa05387"
         }
       ],
       "distanceFromKeyLocations": {
@@ -86,7 +86,7 @@
         "details": "150 spaces + valet",
         "quantity": 150,
         "available": true,
-        "_id": "6ae4461dff309592e96204c5"
+        "_id": "6ae450f2f2279f512fa05388"
       },
       {
         "name": "Air Conditioning",
@@ -94,7 +94,7 @@
         "icon": "❄️",
         "details": "Central AC",
         "available": true,
-        "_id": "6ae4461dff309592e96204c6"
+        "_id": "6ae450f2f2279f512fa05389"
       },
       {
         "name": "Sound System",
@@ -103,14 +103,14 @@
         "details": "Professional Bose system with 4 wireless mics",
         "quantity": 4,
         "available": true,
-        "_id": "6ae4461dff309592e96204c7"
+        "_id": "6ae450f2f2279f512fa0538a"
       },
       {
         "name": "Projector & Screen",
         "category": "av",
         "icon": "📽️",
         "available": true,
-        "_id": "6ae4461dff309592e96204c8"
+        "_id": "6ae450f2f2279f512fa0538b"
       },
       {
         "name": "Elevated Stage",
@@ -118,7 +118,7 @@
         "icon": "🎭",
         "details": "20×15 ft with backstage",
         "available": true,
-        "_id": "6ae4461dff309592e96204c9"
+        "_id": "6ae450f2f2279f512fa0538c"
       },
       {
         "name": "Stage Lighting",
@@ -126,14 +126,14 @@
         "icon": "💡",
         "details": "Professional lighting rig",
         "available": true,
-        "_id": "6ae4461dff309592e96204ca"
+        "_id": "6ae450f2f2279f512fa0538d"
       },
       {
         "name": "Commercial Kitchen",
         "category": "catering",
         "icon": "🍳",
         "available": true,
-        "_id": "6ae4461dff309592e96204cb"
+        "_id": "6ae450f2f2279f512fa0538e"
       },
       {
         "name": "Green Rooms",
@@ -142,7 +142,7 @@
         "details": "2 rooms with vanity mirrors",
         "quantity": 2,
         "available": true,
-        "_id": "6ae4461dff309592e96204cc"
+        "_id": "6ae450f2f2279f512fa0538f"
       },
       {
         "name": "Premium Washrooms",
@@ -150,7 +150,7 @@
         "icon": "🚿",
         "details": "Men: 6, Women: 6",
         "available": true,
-        "_id": "6ae4461dff309592e96204cd"
+        "_id": "6ae450f2f2279f512fa05390"
       },
       {
         "name": "High-Speed WiFi",
@@ -158,7 +158,7 @@
         "icon": "📶",
         "details": "500 users capacity",
         "available": true,
-        "_id": "6ae4461dff309592e96204ce"
+        "_id": "6ae450f2f2279f512fa05391"
       },
       {
         "name": "Power Backup",
@@ -166,7 +166,7 @@
         "icon": "🔋",
         "details": "100% backup generator",
         "available": true,
-        "_id": "6ae4461dff309592e96204cf"
+        "_id": "6ae450f2f2279f512fa05392"
       },
       {
         "name": "24/7 Security",
@@ -174,14 +174,14 @@
         "icon": "🛡️",
         "details": "Guards + CCTV",
         "available": true,
-        "_id": "6ae4461dff309592e96204d0"
+        "_id": "6ae450f2f2279f512fa05393"
       },
       {
         "name": "Wheelchair Accessible",
         "category": "other",
         "icon": "♿",
         "available": true,
-        "_id": "6ae4461dff309592e96204d1"
+        "_id": "6ae450f2f2279f512fa05394"
       }
     ],
     "media": [
@@ -192,7 +192,7 @@
         "caption": "Grand Ballroom",
         "isCover": true,
         "order": 0,
-        "_id": "6ae4461dff309592e96204d2"
+        "_id": "6ae450f2f2279f512fa05395"
       },
       {
         "type": "image",
@@ -201,7 +201,7 @@
         "caption": "Crystal Chandeliers",
         "isCover": false,
         "order": 1,
-        "_id": "6ae4461dff309592e96204d3"
+        "_id": "6ae450f2f2279f512fa05396"
       },
       {
         "type": "image",
@@ -210,7 +210,7 @@
         "caption": "Entrance",
         "isCover": false,
         "order": 2,
-        "_id": "6ae4461dff309592e96204d4"
+        "_id": "6ae450f2f2279f512fa05397"
       },
       {
         "type": "image",
@@ -219,7 +219,7 @@
         "caption": "Wedding Setup",
         "isCover": false,
         "order": 3,
-        "_id": "6ae4461dff309592e96204d5"
+        "_id": "6ae450f2f2279f512fa05398"
       }
     ],
     "seatingCapacity": {
@@ -240,7 +240,7 @@
         "helpfulCount": 0,
         "status": "approved",
         "createdAt": "2024-11-15T00:00:00.000Z",
-        "_id": "6ae4461dff309592e96204d6"
+        "_id": "6ae450f2f2279f512fa05399"
       },
       {
         "userName": "Diya Patel",
@@ -251,7 +251,7 @@
         "helpfulCount": 0,
         "status": "approved",
         "createdAt": "2024-10-22T00:00:00.000Z",
-        "_id": "6ae4461dff309592e96204d7"
+        "_id": "6ae450f2f2279f512fa0539a"
       }
     ],
     "policies": {
@@ -262,22 +262,22 @@
         {
           "daysBeforeEvent": 30,
           "refundPercent": 100,
-          "_id": "6ae4461dff309592e96204d8"
+          "_id": "6ae450f2f2279f512fa0539b"
         },
         {
           "daysBeforeEvent": 15,
           "refundPercent": 50,
-          "_id": "6ae4461dff309592e96204d9"
+          "_id": "6ae450f2f2279f512fa0539c"
         },
         {
           "daysBeforeEvent": 7,
           "refundPercent": 25,
-          "_id": "6ae4461dff309592e96204da"
+          "_id": "6ae450f2f2279f512fa0539d"
         },
         {
           "daysBeforeEvent": 0,
           "refundPercent": 0,
-          "_id": "6ae4461dff309592e96204db"
+          "_id": "6ae450f2f2279f512fa0539e"
         }
       ],
       "rules": [
@@ -304,15 +304,15 @@
     "seo": {
       "keywords": []
     },
-    "bookingCount": 0,
+    "bookingCount": 1,
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.519Z",
-    "updatedAt": "2026-10-30T07:24:13.519Z"
+    "createdAt": "2026-10-30T08:10:27.006Z",
+    "updatedAt": "2026-10-30T08:51:23.962Z"
   },
   {
-    "_id": "6ae4461dff309592e96204dc",
+    "_id": "6ae450f2f2279f512fa0539f",
     "name": "Garden Paradise",
     "slug": "garden-paradise",
     "type": "lawn_garden",
@@ -339,13 +339,13 @@
           "name": "Juhu Beach",
           "distance": "200 m",
           "icon": "🏖️",
-          "_id": "6ae4461dff309592e96204dd"
+          "_id": "6ae450f2f2279f512fa053a0"
         },
         {
           "name": "ISKCON Temple",
           "distance": "1 km",
           "icon": "🛕",
-          "_id": "6ae4461dff309592e96204de"
+          "_id": "6ae450f2f2279f512fa053a1"
         }
       ]
     },
@@ -387,7 +387,7 @@
         "details": "200 spaces",
         "quantity": 200,
         "available": true,
-        "_id": "6ae4461dff309592e96204df"
+        "_id": "6ae450f2f2279f512fa053a2"
       },
       {
         "name": "Outdoor Cooling",
@@ -395,14 +395,14 @@
         "icon": "💨",
         "details": "Misting fans & coolers",
         "available": true,
-        "_id": "6ae4461dff309592e96204e0"
+        "_id": "6ae450f2f2279f512fa053a3"
       },
       {
         "name": "Sound System",
         "category": "av",
         "icon": "🔊",
         "available": true,
-        "_id": "6ae4461dff309592e96204e1"
+        "_id": "6ae450f2f2279f512fa053a4"
       },
       {
         "name": "Stage Platform",
@@ -410,7 +410,7 @@
         "icon": "🎭",
         "details": "30×20 ft",
         "available": true,
-        "_id": "6ae4461dff309592e96204e2"
+        "_id": "6ae450f2f2279f512fa053a5"
       },
       {
         "name": "Decorative Lighting",
@@ -418,14 +418,14 @@
         "icon": "✨",
         "details": "Fairy lights throughout",
         "available": true,
-        "_id": "6ae4461dff309592e96204e3"
+        "_id": "6ae450f2f2279f512fa053a6"
       },
       {
         "name": "Garden Area",
         "category": "outdoor",
         "icon": "🌳",
         "available": true,
-        "_id": "6ae4461dff309592e96204e4"
+        "_id": "6ae450f2f2279f512fa053a7"
       },
       {
         "name": "Gazebo",
@@ -433,14 +433,14 @@
         "icon": "⛺",
         "details": "Decorative pavilion",
         "available": true,
-        "_id": "6ae4461dff309592e96204e5"
+        "_id": "6ae450f2f2279f512fa053a8"
       },
       {
         "name": "Power Backup",
         "category": "connectivity",
         "icon": "🔋",
         "available": true,
-        "_id": "6ae4461dff309592e96204e6"
+        "_id": "6ae450f2f2279f512fa053a9"
       },
       {
         "name": "Fountain",
@@ -448,7 +448,7 @@
         "icon": "⛲",
         "details": "Decorative water fountain",
         "available": true,
-        "_id": "6ae4461dff309592e96204e7"
+        "_id": "6ae450f2f2279f512fa053aa"
       }
     ],
     "media": [
@@ -459,7 +459,7 @@
         "caption": "Lush Garden View",
         "isCover": true,
         "order": 0,
-        "_id": "6ae4461dff309592e96204e8"
+        "_id": "6ae450f2f2279f512fa053ab"
       },
       {
         "type": "image",
@@ -468,7 +468,7 @@
         "caption": "Evening Event",
         "isCover": false,
         "order": 1,
-        "_id": "6ae4461dff309592e96204e9"
+        "_id": "6ae450f2f2279f512fa053ac"
       }
     ],
     "seatingCapacity": {
@@ -488,7 +488,7 @@
         "helpfulCount": 0,
         "status": "approved",
         "createdAt": "2024-12-01T00:00:00.000Z",
-        "_id": "6ae4461dff309592e96204ea"
+        "_id": "6ae450f2f2279f512fa053ad"
       }
     ],
     "policies": {
@@ -499,17 +499,17 @@
         {
           "daysBeforeEvent": 30,
           "refundPercent": 100,
-          "_id": "6ae4461dff309592e96204eb"
+          "_id": "6ae450f2f2279f512fa053ae"
         },
         {
           "daysBeforeEvent": 15,
           "refundPercent": 50,
-          "_id": "6ae4461dff309592e96204ec"
+          "_id": "6ae450f2f2279f512fa053af"
         },
         {
           "daysBeforeEvent": 7,
           "refundPercent": 25,
-          "_id": "6ae4461dff309592e96204ed"
+          "_id": "6ae450f2f2279f512fa053b0"
         }
       ],
       "rules": [
@@ -538,11 +538,11 @@
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.520Z",
-    "updatedAt": "2026-10-30T07:24:13.520Z"
+    "createdAt": "2026-10-30T08:10:27.008Z",
+    "updatedAt": "2026-10-30T08:10:27.008Z"
   },
   {
-    "_id": "6ae4461dff309592e96204ee",
+    "_id": "6ae450f2f2279f512fa053b1",
     "name": "Skyline Rooftop",
     "slug": "skyline-rooftop",
     "type": "rooftop",
@@ -602,49 +602,49 @@
         "category": "parking",
         "icon": "🛗",
         "available": true,
-        "_id": "6ae4461dff309592e96204ef"
+        "_id": "6ae450f2f2279f512fa053b2"
       },
       {
         "name": "Sound System",
         "category": "av",
         "icon": "🔊",
         "available": true,
-        "_id": "6ae4461dff309592e96204f0"
+        "_id": "6ae450f2f2279f512fa053b3"
       },
       {
         "name": "LED Screens",
         "category": "av",
         "icon": "📺",
         "available": true,
-        "_id": "6ae4461dff309592e96204f1"
+        "_id": "6ae450f2f2279f512fa053b4"
       },
       {
         "name": "Ambient Lighting",
         "category": "lighting",
         "icon": "💡",
         "available": true,
-        "_id": "6ae4461dff309592e96204f2"
+        "_id": "6ae450f2f2279f512fa053b5"
       },
       {
         "name": "Bar Counter",
         "category": "catering",
         "icon": "🍸",
         "available": true,
-        "_id": "6ae4461dff309592e96204f3"
+        "_id": "6ae450f2f2279f512fa053b6"
       },
       {
         "name": "WiFi",
         "category": "connectivity",
         "icon": "📶",
         "available": true,
-        "_id": "6ae4461dff309592e96204f4"
+        "_id": "6ae450f2f2279f512fa053b7"
       },
       {
         "name": "Poolside Area",
         "category": "outdoor",
         "icon": "🏊",
         "available": true,
-        "_id": "6ae4461dff309592e96204f5"
+        "_id": "6ae450f2f2279f512fa053b8"
       }
     ],
     "media": [
@@ -655,7 +655,7 @@
         "caption": "Rooftop View",
         "isCover": true,
         "order": 0,
-        "_id": "6ae4461dff309592e96204f6"
+        "_id": "6ae450f2f2279f512fa053b9"
       }
     ],
     "rating": 4.6,
@@ -668,12 +668,12 @@
         {
           "daysBeforeEvent": 15,
           "refundPercent": 75,
-          "_id": "6ae4461dff309592e96204f7"
+          "_id": "6ae450f2f2279f512fa053ba"
         },
         {
           "daysBeforeEvent": 7,
           "refundPercent": 30,
-          "_id": "6ae4461dff309592e96204f8"
+          "_id": "6ae450f2f2279f512fa053bb"
         }
       ],
       "rules": [
@@ -704,11 +704,11 @@
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.521Z",
-    "updatedAt": "2026-10-30T07:24:13.521Z"
+    "createdAt": "2026-10-30T08:10:27.008Z",
+    "updatedAt": "2026-10-30T08:10:27.008Z"
   },
   {
-    "_id": "6ae4461dff309592e96204f9",
+    "_id": "6ae450f2f2279f512fa053bc",
     "name": "Elite Conference Center",
     "slug": "elite-conference-center",
     "type": "conference_hall",
@@ -770,7 +770,7 @@
         "details": "4K Laser Projectors",
         "quantity": 3,
         "available": true,
-        "_id": "6ae4461dff309592e96204fa"
+        "_id": "6ae450f2f2279f512fa053bd"
       },
       {
         "name": "Video Conferencing",
@@ -778,14 +778,14 @@
         "icon": "📹",
         "details": "Zoom/Teams ready",
         "available": true,
-        "_id": "6ae4461dff309592e96204fb"
+        "_id": "6ae450f2f2279f512fa053be"
       },
       {
         "name": "Air Conditioning",
         "category": "climate",
         "icon": "❄️",
         "available": true,
-        "_id": "6ae4461dff309592e96204fc"
+        "_id": "6ae450f2f2279f512fa053bf"
       },
       {
         "name": "WiFi",
@@ -793,7 +793,7 @@
         "icon": "📶",
         "details": "Enterprise-grade",
         "available": true,
-        "_id": "6ae4461dff309592e96204fd"
+        "_id": "6ae450f2f2279f512fa053c0"
       },
       {
         "name": "Parking",
@@ -802,7 +802,7 @@
         "details": "100 spaces",
         "quantity": 100,
         "available": true,
-        "_id": "6ae4461dff309592e96204fe"
+        "_id": "6ae450f2f2279f512fa053c1"
       },
       {
         "name": "Breakout Rooms",
@@ -811,14 +811,14 @@
         "details": "4 rooms",
         "quantity": 4,
         "available": true,
-        "_id": "6ae4461dff309592e96204ff"
+        "_id": "6ae450f2f2279f512fa053c2"
       },
       {
         "name": "Whiteboard Walls",
         "category": "other",
         "icon": "📝",
         "available": true,
-        "_id": "6ae4461dff309592e9620500"
+        "_id": "6ae450f2f2279f512fa053c3"
       }
     ],
     "media": [
@@ -829,7 +829,7 @@
         "caption": "Main Hall",
         "isCover": true,
         "order": 0,
-        "_id": "6ae4461dff309592e9620501"
+        "_id": "6ae450f2f2279f512fa053c4"
       }
     ],
     "seatingCapacity": {
@@ -868,11 +868,11 @@
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.521Z",
-    "updatedAt": "2026-10-30T07:24:13.521Z"
+    "createdAt": "2026-10-30T08:10:27.008Z",
+    "updatedAt": "2026-10-30T08:10:27.008Z"
   },
   {
-    "_id": "6ae4461dff309592e9620502",
+    "_id": "6ae450f2f2279f512fa053c5",
     "name": "Heritage Haveli",
     "slug": "heritage-haveli",
     "type": "banquet_hall",
@@ -933,49 +933,49 @@
         "icon": "🅿️",
         "details": "100 spaces",
         "available": true,
-        "_id": "6ae4461dff309592e9620503"
+        "_id": "6ae450f2f2279f512fa053c6"
       },
       {
         "name": "Heritage Architecture",
         "category": "other",
         "icon": "🏰",
         "available": true,
-        "_id": "6ae4461dff309592e9620504"
+        "_id": "6ae450f2f2279f512fa053c7"
       },
       {
         "name": "Courtyard",
         "category": "outdoor",
         "icon": "🌺",
         "available": true,
-        "_id": "6ae4461dff309592e9620505"
+        "_id": "6ae450f2f2279f512fa053c8"
       },
       {
         "name": "Indoor Hall",
         "category": "other",
         "icon": "🏛️",
         "available": true,
-        "_id": "6ae4461dff309592e9620506"
+        "_id": "6ae450f2f2279f512fa053c9"
       },
       {
         "name": "Air Conditioning",
         "category": "climate",
         "icon": "❄️",
         "available": true,
-        "_id": "6ae4461dff309592e9620507"
+        "_id": "6ae450f2f2279f512fa053ca"
       },
       {
         "name": "Sound System",
         "category": "av",
         "icon": "🔊",
         "available": true,
-        "_id": "6ae4461dff309592e9620508"
+        "_id": "6ae450f2f2279f512fa053cb"
       },
       {
         "name": "Photo Booth Area",
         "category": "other",
         "icon": "📸",
         "available": true,
-        "_id": "6ae4461dff309592e9620509"
+        "_id": "6ae450f2f2279f512fa053cc"
       }
     ],
     "media": [
@@ -986,7 +986,7 @@
         "caption": "Haveli Entrance",
         "isCover": true,
         "order": 0,
-        "_id": "6ae4461dff309592e962050a"
+        "_id": "6ae450f2f2279f512fa053cd"
       }
     ],
     "rating": 4.7,
@@ -1020,11 +1020,11 @@
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.521Z",
-    "updatedAt": "2026-10-30T07:24:13.521Z"
+    "createdAt": "2026-10-30T08:10:27.009Z",
+    "updatedAt": "2026-10-30T08:10:27.009Z"
   },
   {
-    "_id": "6ae4461dff309592e962050b",
+    "_id": "6ae450f2f2279f512fa053ce",
     "name": "Lakeview Farmhouse",
     "slug": "lakeview-farmhouse",
     "type": "farmhouse",
@@ -1085,56 +1085,56 @@
         "icon": "🅿️",
         "details": "250+ spaces",
         "available": true,
-        "_id": "6ae4461dff309592e962050c"
+        "_id": "6ae450f2f2279f512fa053cf"
       },
       {
         "name": "Private Lake",
         "category": "outdoor",
         "icon": "🏞️",
         "available": true,
-        "_id": "6ae4461dff309592e962050d"
+        "_id": "6ae450f2f2279f512fa053d0"
       },
       {
         "name": "Swimming Pool",
         "category": "outdoor",
         "icon": "🏊",
         "available": true,
-        "_id": "6ae4461dff309592e962050e"
+        "_id": "6ae450f2f2279f512fa053d1"
       },
       {
         "name": "Indoor AC Hall",
         "category": "climate",
         "icon": "❄️",
         "available": true,
-        "_id": "6ae4461dff309592e962050f"
+        "_id": "6ae450f2f2279f512fa053d2"
       },
       {
         "name": "Garden Lawns",
         "category": "outdoor",
         "icon": "🌳",
         "available": true,
-        "_id": "6ae4461dff309592e9620510"
+        "_id": "6ae450f2f2279f512fa053d3"
       },
       {
         "name": "Kids Play Area",
         "category": "other",
         "icon": "🎠",
         "available": true,
-        "_id": "6ae4461dff309592e9620511"
+        "_id": "6ae450f2f2279f512fa053d4"
       },
       {
         "name": "BBQ Area",
         "category": "catering",
         "icon": "🍖",
         "available": true,
-        "_id": "6ae4461dff309592e9620512"
+        "_id": "6ae450f2f2279f512fa053d5"
       },
       {
         "name": "Power Backup",
         "category": "connectivity",
         "icon": "🔋",
         "available": true,
-        "_id": "6ae4461dff309592e9620513"
+        "_id": "6ae450f2f2279f512fa053d6"
       }
     ],
     "media": [
@@ -1145,7 +1145,7 @@
         "caption": "Lake View",
         "isCover": true,
         "order": 0,
-        "_id": "6ae4461dff309592e9620514"
+        "_id": "6ae450f2f2279f512fa053d7"
       }
     ],
     "rating": 4.6,
@@ -1179,7 +1179,7 @@
     "blockedDates": [],
     "seasonalPricing": [],
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.521Z",
-    "updatedAt": "2026-10-30T07:24:13.521Z"
+    "createdAt": "2026-10-30T08:10:27.009Z",
+    "updatedAt": "2026-10-30T08:10:27.009Z"
   }
 ]

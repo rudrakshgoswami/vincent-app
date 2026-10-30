@@ -1,6 +1,6 @@
 [
   {
-    "_id": "6ae4461dff309592e962051b",
+    "_id": "6ae450f3f2279f512fa053de",
     "name": "Paneer Malai Tikka",
     "description": "extra_item",
     "icon": "🧀",
@@ -8,11 +8,11 @@
     "price": 80,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e962051c",
+    "_id": "6ae450f3f2279f512fa053df",
     "name": "Stuffed Mushrooms",
     "description": "extra_item",
     "icon": "🍄",
@@ -20,11 +20,11 @@
     "price": 90,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e962051d",
+    "_id": "6ae450f3f2279f512fa053e0",
     "name": "Crispy Corn",
     "description": "extra_item",
     "icon": "🌽",
@@ -32,11 +32,11 @@
     "price": 70,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e962051e",
+    "_id": "6ae450f3f2279f512fa053e1",
     "name": "Shahi Paneer",
     "description": "extra_item",
     "icon": "🧀",
@@ -44,11 +44,11 @@
     "price": 120,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e962051f",
+    "_id": "6ae450f3f2279f512fa053e2",
     "name": "Malai Kofta",
     "description": "extra_item",
     "icon": "🍛",
@@ -56,11 +56,11 @@
     "price": 110,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e9620520",
+    "_id": "6ae450f3f2279f512fa053e3",
     "name": "Pasta Alfredo",
     "description": "extra_item",
     "icon": "🍝",
@@ -68,11 +68,11 @@
     "price": 100,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e9620521",
+    "_id": "6ae450f3f2279f512fa053e4",
     "name": "Rasmalai",
     "description": "extra_item",
     "icon": "🍮",
@@ -80,11 +80,11 @@
     "price": 60,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e9620522",
+    "_id": "6ae450f3f2279f512fa053e5",
     "name": "Ice Cream Bar",
     "description": "extra_item",
     "icon": "🍦",
@@ -92,11 +92,11 @@
     "price": 80,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.542Z",
-    "updatedAt": "2026-10-30T07:24:13.542Z"
+    "createdAt": "2026-10-30T08:10:27.029Z",
+    "updatedAt": "2026-10-30T08:10:27.029Z"
   },
   {
-    "_id": "6ae4461dff309592e9620523",
+    "_id": "6ae450f3f2279f512fa053e6",
     "name": "Live Dosa Counter",
     "description": "Fresh dosas made to order",
     "icon": "🥞",
@@ -104,11 +104,11 @@
     "price": 80,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620524",
+    "_id": "6ae450f3f2279f512fa053e7",
     "name": "Live Pasta Station",
     "description": "Fresh pasta with choice of sauces",
     "icon": "🍝",
@@ -116,11 +116,11 @@
     "price": 120,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620525",
+    "_id": "6ae450f3f2279f512fa053e8",
     "name": "Chaat Counter",
     "description": "Pani Puri, Dahi Puri, Sev Puri",
     "icon": "🍽️",
@@ -128,11 +128,11 @@
     "price": 100,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620526",
+    "_id": "6ae450f3f2279f512fa053e9",
     "name": "Pizza Counter",
     "description": "live_station",
     "icon": "🍕",
@@ -140,11 +140,11 @@
     "price": 150,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620527",
+    "_id": "6ae450f3f2279f512fa053ea",
     "name": "Pav Bhaji Counter",
     "description": "live_station",
     "icon": "🍛",
@@ -152,11 +152,11 @@
     "price": 70,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620528",
+    "_id": "6ae450f3f2279f512fa053eb",
     "name": "Live Jalebi Counter",
     "description": "live_station",
     "icon": "🍩",
@@ -164,11 +164,11 @@
     "price": 60,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620529",
+    "_id": "6ae450f3f2279f512fa053ec",
     "name": "Fresh Juice Bar",
     "description": "live_station",
     "icon": "🥤",
@@ -176,11 +176,11 @@
     "price": 50,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e962052a",
+    "_id": "6ae450f3f2279f512fa053ed",
     "name": "Basic Beverages",
     "description": "Soft drinks, water, juice",
     "icon": "",
@@ -188,11 +188,11 @@
     "price": 50,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e962052b",
+    "_id": "6ae450f3f2279f512fa053ee",
     "name": "Premium Beverages",
     "description": "Fresh juices, mocktails, lassi",
     "icon": "",
@@ -200,11 +200,11 @@
     "price": 100,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e962052c",
+    "_id": "6ae450f3f2279f512fa053ef",
     "name": "Deluxe Beverages",
     "description": "All premium + specialty drinks",
     "icon": "",
@@ -212,11 +212,11 @@
     "price": 150,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e962052d",
+    "_id": "6ae450f3f2279f512fa053f0",
     "name": "Jain Food Options",
     "description": "No onion, no garlic preparations",
     "icon": "",
@@ -224,11 +224,11 @@
     "price": 50,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e962052e",
+    "_id": "6ae450f3f2279f512fa053f1",
     "name": "Gluten-Free Options",
     "description": "dietary",
     "icon": "",
@@ -236,11 +236,11 @@
     "price": 80,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e962052f",
+    "_id": "6ae450f3f2279f512fa053f2",
     "name": "Sugar-Free Desserts",
     "description": "dietary",
     "icon": "",
@@ -248,11 +248,11 @@
     "price": 40,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620530",
+    "_id": "6ae450f3f2279f512fa053f3",
     "name": "Semi-Buffet Service",
     "description": "Partial table service with buffet",
     "icon": "",
@@ -260,11 +260,11 @@
     "price": 50,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620531",
+    "_id": "6ae450f3f2279f512fa053f4",
     "name": "Plated Service",
     "description": "Full table service with plated courses",
     "icon": "",
@@ -272,11 +272,11 @@
     "price": 100,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620532",
+    "_id": "6ae450f3f2279f512fa053f5",
     "name": "Family Style Service",
     "description": "Shared platters at each table",
     "icon": "",
@@ -284,11 +284,11 @@
     "price": 80,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620533",
+    "_id": "6ae450f3f2279f512fa053f6",
     "name": "Extra Service Staff",
     "description": "Additional trained server",
     "icon": "",
@@ -296,11 +296,11 @@
     "price": 0,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.543Z",
-    "updatedAt": "2026-10-30T07:24:13.543Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620534",
+    "_id": "6ae450f3f2279f512fa053f7",
     "name": "Mocktail Bartender",
     "description": "Professional mocktail barman",
     "icon": "",
@@ -308,11 +308,11 @@
     "price": 0,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.544Z",
-    "updatedAt": "2026-10-30T07:24:13.544Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620535",
+    "_id": "6ae450f3f2279f512fa053f8",
     "name": "Supervisor/Captain",
     "description": "Dedicated event supervisor",
     "icon": "",
@@ -320,11 +320,11 @@
     "price": 0,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.544Z",
-    "updatedAt": "2026-10-30T07:24:13.544Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620536",
+    "_id": "6ae450f3f2279f512fa053f9",
     "name": "Premium Crockery",
     "description": "Fine bone china service",
     "icon": "",
@@ -332,11 +332,11 @@
     "price": 50,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.544Z",
-    "updatedAt": "2026-10-30T07:24:13.544Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620537",
+    "_id": "6ae450f3f2279f512fa053fa",
     "name": "Table Linen Package",
     "description": "Per table – includes tablecloth and napkins",
     "icon": "",
@@ -344,11 +344,11 @@
     "price": 0,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.544Z",
-    "updatedAt": "2026-10-30T07:24:13.544Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620538",
+    "_id": "6ae450f3f2279f512fa053fb",
     "name": "Sanitization Stations",
     "description": "Touchless sanitizer dispensers",
     "icon": "",
@@ -356,11 +356,11 @@
     "price": 0,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.544Z",
-    "updatedAt": "2026-10-30T07:24:13.544Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   },
   {
-    "_id": "6ae4461dff309592e9620539",
+    "_id": "6ae450f3f2279f512fa053fc",
     "name": "Kids Menu",
     "description": "Pizzas, Pasta, Fries, Ice Cream",
     "icon": "",
@@ -368,7 +368,7 @@
     "price": 250,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.544Z",
-    "updatedAt": "2026-10-30T07:24:13.544Z"
+    "createdAt": "2026-10-30T08:10:27.030Z",
+    "updatedAt": "2026-10-30T08:10:27.030Z"
   }
 ]

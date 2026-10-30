@@ -1,50 +1,54 @@
 [
   {
-    "_id": "6ae4461dff309592e9620516",
+    "_id": "6ae450f3f2279f512fa053d9",
     "name": "Basic Package",
     "description": "A simple yet satisfying menu perfect for budget-conscious events. Features essential dishes that please every palate.",
+    "thumbnail": "https://www.themealdb.com/images/media/meals/o2cd4r1764113576.jpg",
     "pricePerPlate": 350,
     "minGuests": 50,
     "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.536Z",
-    "updatedAt": "2026-10-30T07:24:13.536Z"
+    "createdAt": "2026-10-30T08:10:27.023Z",
+    "updatedAt": "2026-10-30T08:10:27.023Z"
   },
   {
-    "_id": "6ae4461dff309592e9620517",
+    "_id": "6ae450f3f2279f512fa053da",
     "name": "Standard Package",
     "description": "Our most popular package with a perfect balance of variety and value. Features an extensive menu with live counter and multiple dessert options.",
+    "thumbnail": "https://www.themealdb.com/images/media/meals/02s6gc1763799560.jpg",
     "pricePerPlate": 550,
     "minGuests": 50,
     "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.536Z",
-    "updatedAt": "2026-10-30T07:24:13.536Z"
+    "createdAt": "2026-10-30T08:10:27.023Z",
+    "updatedAt": "2026-10-30T08:10:27.023Z"
   },
   {
-    "_id": "6ae4461dff309592e9620518",
+    "_id": "6ae450f3f2279f512fa053db",
     "name": "Premium Package",
     "description": "An elevated dining experience with extensive menu, multiple live counters, mocktail stations, and premium desserts. Perfect for special celebrations.",
+    "thumbnail": "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
     "pricePerPlate": 800,
     "minGuests": 50,
     "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.536Z",
-    "updatedAt": "2026-10-30T07:24:13.536Z"
+    "createdAt": "2026-10-30T08:10:27.023Z",
+    "updatedAt": "2026-10-30T08:10:27.023Z"
   },
   {
-    "_id": "6ae4461dff309592e9620519",
+    "_id": "6ae450f3f2279f512fa053dc",
     "name": "Deluxe Package",
     "description": "The ultimate luxury dining experience with our most comprehensive menu, premium ingredients, dedicated chef stations, and white-glove service. An unforgettable culinary journey.",
+    "thumbnail": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg",
     "pricePerPlate": 1200,
     "minGuests": 50,
     "maxGuests": 1000,
     "isActive": true,
     "__v": 0,
-    "createdAt": "2026-10-30T07:24:13.536Z",
-    "updatedAt": "2026-10-30T07:24:13.536Z"
+    "createdAt": "2026-10-30T08:10:27.023Z",
+    "updatedAt": "2026-10-30T08:10:27.023Z"
   }
 ]

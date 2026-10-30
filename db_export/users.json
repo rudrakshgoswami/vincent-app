@@ -191,7 +191,64 @@
     "isActive": true,
     "otpAttempts": 0,
     "createdAt": "2026-04-17T13:13:51.675Z",
-    "updatedAt": "2026-04-17T13:14:13.465Z",
+    "updatedAt": "2026-10-30T08:59:14.108Z",
+    "__v": 0,
+    "otpExpiresAt": "2026-10-30T09:09:14.101Z",
+    "otpHash": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO"
+  },
+  {
+    "_id": "6ae44e81d8050230aac8d5fc",
+    "name": "Demo Admin",
+    "email": "admin@example.com",
+    "phone": "+919000000009",
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": true,
+    "isActive": true,
+    "otpAttempts": 0,
+    "addresses": [],
+    "createdAt": "2026-10-30T08:00:02.002Z",
+    "updatedAt": "2026-10-30T08:00:02.002Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae44e82d8050230aac8d600",
+    "name": "Vivaan Reddy",
+    "email": "vivaan.reddy@example.com",
+    "phone": "+919000000010",
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": true,
+    "isAdmin": false,
+    "isActive": true,
+    "otpAttempts": 0,
+    "addresses": [],
+    "createdAt": "2026-10-30T08:00:02.129Z",
+    "updatedAt": "2026-10-30T08:00:02.129Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae45800609c6f3378074085",
+    "name": "Ananya Iyer",
+    "email": "ananya.iyer@example.com",
+    "phone": "+919000000011",
+    "addresses": [
+      {
+        "street": "12 Example Street, Civil Lines",
+        "city": "Surat",
+        "state": "Gujarat",
+        "pincode": "395003",
+        "_id": "6ae45800609c6f3378074086"
+      }
+    ],
+    "password": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "isVerified": false,
+    "isAdmin": false,
+    "isActive": true,
+    "otpHash": "$2a$10$yhOopYGr5wnL4Dajxu.NJOVu7NnznLIFY77jlAYZOUlgt9JGMquHO",
+    "otpExpiresAt": "2026-10-30T08:50:32.170Z",
+    "otpAttempts": 0,
+    "createdAt": "2026-10-30T08:40:32.171Z",
+    "updatedAt": "2026-10-30T08:40:32.171Z",
     "__v": 0
   }
 ]
