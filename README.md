@@ -58,6 +58,10 @@ groups.
 
 ## Running it
 
+> A fuller walkthrough, covering every page and endpoint, the five main
+> flows and a step-by-step manual test pass, is in
+> [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md).
+
 You need Node 18 or newer and a MongoDB instance (local is fine).
 
 ```bash
