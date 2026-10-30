@@ -290,8 +290,21 @@ npm run dev          # http://localhost:5173
 
 ### Signing in
 
-Seeded accounts all share the password **`Password123!`**. Emails are in
-`db_export/users.json`, all on `example.com`.
+Create the two demo accounts:
+
+```bash
+cd server
+node scripts/create-demo-users.js
+```
+
+| Role | Email | Password | Sign in at |
+|---|---|---|---|
+| Admin | `admin@example.com` | `Password123!` | `/admin/login` |
+| Customer | `customer@example.com` | `Password123!` | `/login` |
+
+Both are created already verified, so they skip the phone OTP step. The
+script is safe to re-run: it resets only those two accounts and leaves
+everything else alone.
 
 **To register a new account with no SMS configured**, watch the *server*
 terminal after submitting the form. You will see:

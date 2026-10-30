@@ -102,7 +102,18 @@ node scripts/seed-all-items.js     # restaurant menu
 node scripts/create-admin.js       # admin user, reads ADMIN_EMAIL / ADMIN_PASSWORD
 ```
 
-Seeded user accounts all share the password **`Password123!`**.
+Then create the two demo logins:
+
+```bash
+node scripts/create-demo-users.js
+```
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | `admin@example.com` | `Password123!` |
+| Customer | `customer@example.com` | `Password123!` |
+
+Both arrive verified, so they skip the phone OTP step.
 
 ---
 
