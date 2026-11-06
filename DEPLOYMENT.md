@@ -82,15 +82,41 @@ password twice:
 
 ### Then seed it
 
-A new cluster is empty. One command fills it:
+A new cluster is empty. `npm run seed` fills it, but read this first if the
+password lives only on Vercel.
+
+`npm run seed` reads `server/.env`, which points at your local MongoDB. Run
+it as-is and it will fill your laptop, not the cluster, and print "Seeding
+Complete!" either way. That is not hypothetical: one of these scripts had a
+hardcoded localhost URI and did exactly that.
+
+To seed the deployed database, pull its connection string from Vercel and
+run the seed against that instead:
 
 ```bash
-cd server && npm run seed
+cd server && vercel env pull .env.production.local --environment production
 ```
 
-That runs venues, catering, menu items, the admin account and the demo users,
-in the order they depend on each other. Check it worked by opening
-https://vincent-app-omega.vercel.app/venues — six venues, prices from ₹30,000.
+```powershell
+$env:NODE_OPTIONS='--require=./scripts/with-production-env.cjs'; npm run seed; Remove-Item env:NODE_OPTIONS
+```
+
+The preload puts the pulled URI into the environment before dotenv runs.
+dotenv does not overwrite variables that are already set, so it wins over
+`server/.env` without that file changing. It prints the host and database it
+is about to seed before anything is written, and refuses a URI with no
+database name. `.env.production.local` is gitignored; delete it afterwards.
+
+If `server/.env` already holds the Atlas string, none of that is needed —
+just `npm run seed`.
+
+Either way it runs the menu categories and items, the catering packages and
+their menus, the venues, add-ons and services, then the admin account and the
+demo users, in the order they depend on each other. The seeds begin by
+emptying the collections they own, so check which database you are pointed at
+before running them against anything you care about. Check it worked by
+opening https://vincent-app-omega.vercel.app/venues — six venues, prices from
+₹30,000.
 
 ## A note on the access list
 
