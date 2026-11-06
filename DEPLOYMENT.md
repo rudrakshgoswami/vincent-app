@@ -34,14 +34,18 @@ one you set, or open
 [Database Access](https://cloud.mongodb.com/v2/694a63e1346a7179401924e7#/security/database/users)
 → **Edit** → **Edit Password** → **Autogenerate Secure Password** → **Copy**.
 
-The connection string is then:
+The connection string is then this, with the password in place of
+`THEPASSWORD` and nothing else changed:
 
 ```
-mongodb+srv://rudrakshgoswami5555_db_user:THEPASSWORD@cluster0.XXXXX.mongodb.net/vincent_db
+mongodb+srv://rudrakshgoswami5555_db_user:THEPASSWORD@cluster0.yngtpdq.mongodb.net/vincent_db?retryWrites=true&w=majority
 ```
 
-Take the `cluster0.XXXXX` host from **Connect → Drivers** on the cluster. Keep
-`/vincent_db` on the end — without a database name, Mongoose writes to `test`.
+Keep `/vincent_db` on the end — without a database name Mongoose writes to
+`test`, and the seeds and the API would then disagree about where the data
+is. If the password contains `@`, `:`, `/` or `%`, percent-encode it or
+autogenerate a new one, because those characters end a field in a connection
+string and it will fail to parse.
 
 Set it in two places:
 
