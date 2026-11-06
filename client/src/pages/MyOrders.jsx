@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useSocket } from '../context/SocketContext';
 import { fetchMyOrders, getImageUrl } from '../api';
 import OrderCancellationModal from '../components/OrderCancellationModal';
+import LoadError from '../components/LoadError';
 import {
     Package,
     CheckCircle,
@@ -43,6 +44,7 @@ export default function MyOrders() {
     const [allOrders, setAllOrders] = useState([]);
     const [filteredOrders, setFilteredOrders] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [activeTab, setActiveTab] = useState('all'); // 'all', 'active', 'history'
     const [showSuccess, setShowSuccess] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -99,11 +101,13 @@ export default function MyOrders() {
     const loadOrders = async () => {
         try {
             setLoading(true);
+            setLoadError(null);
             const response = await fetchMyOrders();
             const orders = response.data?.orders || response.orders || [];
             setAllOrders(orders);
         } catch (error) {
             console.error('Error loading orders:', error);
+            setLoadError(error);
         } finally {
             setLoading(false);
         }
@@ -192,7 +196,9 @@ export default function MyOrders() {
                 </div>
 
                 {/* Orders Grid */}
-                {filteredOrders.length === 0 ? (
+                {loadError ? (
+                    <LoadError what="your orders" onRetry={loadOrders} />
+                ) : filteredOrders.length === 0 ? (
                     <div className="py-40 text-center animate-fade-in bg-white/50 rounded-[4rem] border border-border mt-10 border-dashed">
                         <SearchX size={64} className="text-text-muted/20 mx-auto mb-8" />
                         <h3 className="text-3xl font-heading text-secondary mb-4">No Records Discovered</h3>

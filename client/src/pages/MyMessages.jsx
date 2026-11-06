@@ -6,24 +6,30 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fetchMyMessages } from '../api';
+import LoadError from '../components/LoadError';
 
 export default function MyMessages() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [expandedId, setExpandedId] = useState(null);
 
+    const loadMessages = async () => {
+        setLoading(true);
+        setLoadError(null);
+        try {
+            const res = await fetchMyMessages();
+            setMessages(res.data || []);
+        } catch (err) {
+            console.error('Failed to load messages:', err);
+            setLoadError(err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
-        const load = async () => {
-            try {
-                const res = await fetchMyMessages();
-                setMessages(res.data || []);
-            } catch (err) {
-                console.error('Failed to load messages:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        load();
+        loadMessages();
     }, []);
 
     const toggleExpand = (id) => {
@@ -85,7 +91,9 @@ export default function MyMessages() {
             </div>
 
             <div className="max-w-4xl mx-auto px-4 py-12 -mt-6 relative z-20">
-                {messages.length === 0 ? (
+                {loadError ? (
+                    <LoadError what="your messages" onRetry={loadMessages} />
+                ) : messages.length === 0 ? (
                     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-16 text-center">
                         <MessageSquare className="w-16 h-16 text-gray-200 mx-auto mb-6" />
                         <h3 className="text-xl font-heading text-secondary mb-3">No Messages Yet</h3>

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { fetchVenue, fetchMonthlyAvailability, checkVenueAvailability, getImageUrl, fetchVenueReviews, submitReview, lockVenueSlot } from '../../api';
 import { useAuth } from '../../context/AuthContext';
+import LoadError from '../../components/LoadError';
 import { useSocketEvent, SOCKET_EVENTS } from '../../context/SocketContext';
 
 
@@ -32,6 +33,7 @@ export default function VenueDetails() {
     const location = useLocation();
     const [venue, setVenue] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [activeImage, setActiveImage] = useState(0);
     const [showAllAmenities, setShowAllAmenities] = useState(false);
     const [showAllReviews, setShowAllReviews] = useState(false);
@@ -109,11 +111,13 @@ export default function VenueDetails() {
 
     const loadVenue = async () => {
         setLoading(true);
+        setLoadError(null);
         try {
             const data = await fetchVenue(id);
             setVenue(data);
         } catch (err) {
             console.error(err);
+            setLoadError(err);
         } finally {
             setLoading(false);
         }
@@ -243,6 +247,14 @@ export default function VenueDetails() {
                     <div className="w-10 h-10 border-3 border-primary border-t-transparent rounded-full animate-spin" />
                     <p className="text-text-muted text-sm">Loading venue details...</p>
                 </div>
+            </div>
+        );
+    }
+
+    if (loadError) {
+        return (
+            <div className="min-h-screen bg-background flex items-center justify-center">
+                <LoadError what="this venue" onRetry={loadVenue} />
             </div>
         );
     }

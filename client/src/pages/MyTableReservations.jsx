@@ -18,6 +18,7 @@ import {
     ShieldCheck
 } from 'lucide-react';
 import { fetchMyReservations, cancelReservation } from '../api';
+import LoadError from '../components/LoadError';
 
 export default function MyTableReservations() {
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function MyTableReservations() {
 
     const [reservations, setReservations] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [filter, setFilter] = useState('upcoming'); // all, upcoming, past
     const [showSuccess, setShowSuccess] = useState(false);
     const [cancellingId, setCancellingId] = useState(null);
@@ -46,6 +48,7 @@ export default function MyTableReservations() {
 
     const loadReservations = async () => {
         setLoading(true);
+        setLoadError(null);
         try {
             const res = await fetchMyReservations();
             if (res.success) {
@@ -53,6 +56,7 @@ export default function MyTableReservations() {
             }
         } catch (error) {
             console.error('Fetch reservations error:', error);
+            setLoadError(error);
         } finally {
             setLoading(false);
         }
@@ -165,6 +169,8 @@ export default function MyTableReservations() {
                         <Loader2 className="w-10 h-10 animate-spin text-primary mb-4" />
                         <p className="text-xs font-bold uppercase tracking-[0.3em]">Synching with Curated Database...</p>
                     </div>
+                ) : loadError ? (
+                    <LoadError what="your reservations" onRetry={loadReservations} />
                 ) : filteredReservations.length === 0 ? (
                     <div className="text-center py-24 bg-white rounded-3xl border border-border border-dashed shadow-inner-soft animate-fade-in">
                         <div className="w-20 h-20 mx-auto mb-6 bg-surface rounded-full flex items-center justify-center text-text-muted/30">

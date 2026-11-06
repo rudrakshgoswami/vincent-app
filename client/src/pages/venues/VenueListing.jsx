@@ -7,6 +7,7 @@ import {
     TreePine, Monitor, CircleParking, Heart, Eye
 } from 'lucide-react';
 import { fetchVenues, getImageUrl } from '../../api';
+import LoadError from '../../components/LoadError';
 
 const VENUE_TYPES = [
     { value: '', label: 'All Types', icon: '🏛️' },
@@ -69,6 +70,7 @@ export default function VenueListing() {
     const navigate = useNavigate();
     const [venues, setVenues] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [totalPages, setTotalPages] = useState(1);
     const [totalCount, setTotalCount] = useState(0);
     const [viewMode, setViewMode] = useState('grid');
@@ -97,6 +99,7 @@ export default function VenueListing() {
 
     const loadVenues = async () => {
         setLoading(true);
+        setLoadError(null);
         try {
             const params = {};
             if (filters.type) params.type = filters.type;
@@ -115,6 +118,7 @@ export default function VenueListing() {
             setTotalCount(data.total || 0);
         } catch (err) {
             console.error('Error fetching venues:', err);
+            setLoadError(err);
         } finally {
             setLoading(false);
         }
@@ -215,7 +219,11 @@ export default function VenueListing() {
                 <div className="container mx-auto px-6 py-3">
                     <div className="flex items-center justify-between">
                         <p className="text-sm text-text-muted">
-                            <span className="font-semibold text-text">{totalCount}</span> venues found
+                            {loadError ? (
+                                <span className="font-semibold text-text">Venue list unavailable</span>
+                            ) : (
+                                <><span className="font-semibold text-text">{totalCount}</span> venues found</>
+                            )}
                         </p>
 
                         <div className="flex items-center gap-3">
@@ -371,6 +379,8 @@ export default function VenueListing() {
                             </div>
                         ))}
                     </div>
+                ) : loadError ? (
+                    <LoadError what="the venues" onRetry={loadVenues} />
                 ) : venues.length === 0 ? (
                     <div className="text-center py-20">
                         <div className="text-6xl mb-4">🏛️</div>
