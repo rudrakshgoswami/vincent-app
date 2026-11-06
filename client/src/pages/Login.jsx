@@ -55,7 +55,8 @@ export default function Login() {
             // refresh token → sessionStorage (per tab, tab-isolated)
             // user → React state
             login(response.data.accessToken, response.data.refreshToken, response.data.user);
-            const from = location.state?.from?.pathname || '/';
+            const fromState = location.state?.from;
+            const from = (typeof fromState === 'string' ? fromState : fromState?.pathname) || '/';
             setTimeout(() => {
                 navigate(from, { replace: true });
             }, 800);

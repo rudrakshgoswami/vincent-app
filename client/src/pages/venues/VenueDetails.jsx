@@ -185,7 +185,7 @@ export default function VenueDetails() {
     const handleBookNow = async (date, slotKey) => {
         if (!user) {
             navigate('/login', {
-                state: { from: location.pathname, reason: 'Please login to book a venue' }
+                state: { from: location, reason: 'Please login to book a venue' }
             });
             return;
         }
@@ -267,7 +267,10 @@ export default function VenueDetails() {
     };
 
     const priceKey = selectedDate ? (isWeekend(selectedDate) ? 'weekend' : 'weekday') : 'weekday';
-    const eveningPrice = venue.pricing?.[priceKey]?.evening || 0;
+    // "Starting at" is the cheapest slot of the day, not the evening one.
+    const slotPrices = Object.values(venue.pricing?.[priceKey] || {})
+        .filter(p => typeof p === 'number' && p > 0);
+    const startingPrice = slotPrices.length ? Math.min(...slotPrices) : 0;
 
     // Calendar rendering
     const renderCalendar = () => {
@@ -291,11 +294,22 @@ export default function VenueDetails() {
             else cellClass += 'bg-green-50 text-green-700 hover:bg-green-100';
             if (isSelected) cellClass = 'p-1.5 rounded-lg text-center cursor-pointer transition-all text-sm font-medium bg-primary text-white ring-2 ring-primary/30';
 
+            const selectable = status !== 'past' && status !== 'blocked';
+            const pick = () => selectable && onDateClick(dateStr);
+
             cells.push(
                 <div
                     key={d}
                     className={`relative ${cellClass}`}
-                    onClick={() => status !== 'past' && status !== 'blocked' && onDateClick(dateStr)}
+                    role="button"
+                    tabIndex={selectable ? 0 : -1}
+                    aria-disabled={!selectable}
+                    aria-pressed={isSelected}
+                    aria-label={`${d} ${monthName}${selectable ? '' : ', unavailable'}`}
+                    onClick={pick}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+                    }}
                 >
                     {d}
                     {dayInfo && status !== 'past' && (
@@ -809,7 +823,7 @@ export default function VenueDetails() {
                                 <div className="flex items-center justify-between mb-4">
                                     <div>
                                         <p className="text-xs text-text-muted uppercase tracking-wider">Starting at</p>
-                                        <p className="text-3xl font-heading text-secondary">{formatPrice(eveningPrice)}</p>
+                                        <p className="text-3xl font-heading text-secondary">{formatPrice(startingPrice)}</p>
                                         <p className="text-xs text-text-muted">per slot + GST</p>
                                     </div>
                                     {venue.rating > 0 && (

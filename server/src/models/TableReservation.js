@@ -124,7 +124,6 @@ tableReservationSchema.index({
 tableReservationSchema.index({ user: 1, createdAt: -1 });
 tableReservationSchema.index({ date: 1, 'timeSlot.start': 1 });
 tableReservationSchema.index({ status: 1 });
-tableReservationSchema.index({ reservationNumber: 1 });
 
 // Generate unique reservation number
 tableReservationSchema.pre('save', async function (next) {

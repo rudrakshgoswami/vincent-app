@@ -1033,7 +1033,11 @@ export const lockVenueSlot = async (req, res) => {
     try {
         const { venueId, date, timeSlot } = req.body;
         const userId = req.user._id;
-        const LOCK_DURATION_MINS = 3;
+        // Must match the 15 minutes promised on the venue page and the
+        // lock taken at order time below. Three minutes was not enough to
+        // get through the five-step wizard, so the slot was released while
+        // the guest was still choosing catering.
+        const LOCK_DURATION_MINS = 15;
 
         if (!venueId || !date || !timeSlot) {
             return res.status(400).json({ message: 'Venue ID, Date, and Slot are required' });

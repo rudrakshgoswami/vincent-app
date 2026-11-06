@@ -86,7 +86,6 @@ const tableSchema = new mongoose.Schema({
 });
 
 // Index for quick lookups
-tableSchema.index({ tableNumber: 1 });
 tableSchema.index({ isActive: 1, isBlocked: 1 });
 tableSchema.index({ area: 1, floor: 1 });
 

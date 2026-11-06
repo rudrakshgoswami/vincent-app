@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import {
     fetchVenue, fetchCateringPackages, fetchCateringExtras,
-    createVenueBookingOrder, verifyVenueBookingPayment, extendVenueBookingLock, getRazorpayKey, fetchCateringPackageById, getImageUrl, cancelVenueBooking,
+    createVenueBookingOrder, verifyVenueBookingPayment, fetchCateringPackageById, getImageUrl, cancelVenueBooking,
     releaseVenueSlot
 } from '../../api';
 import { initiatePayment } from '../../utils/paymentHandler';
@@ -146,11 +146,19 @@ export default function VenueBooking() {
         return () => clearInterval(interval);
     }, [lockExpiry]);
 
+    const [lockExpired, setLockExpired] = useState(false);
     useEffect(() => {
-        if (lockTimer === 0 && lockExpiry && !bookingResult) {
+        if (!lockExpiry || bookingResult) { setLockExpired(false); return; }
+        const expire = () => {
+            setLockExpired(true);
             setPaymentError('Your temporary slot lock has expired. Please refresh or try re-locking the slot.');
-        }
-    }, [lockTimer, lockExpiry, bookingResult]);
+        };
+        const msLeft = new Date(lockExpiry).getTime() - Date.now();
+        if (msLeft <= 0) { expire(); return; }
+        setLockExpired(false);
+        const timeout = setTimeout(expire, msLeft + 250);
+        return () => clearTimeout(timeout);
+    }, [lockExpiry, bookingResult]);
 
     // Cleanup: Release lock on unmount if not committed
     useEffect(() => {
@@ -159,9 +167,10 @@ export default function VenueBooking() {
 
             if (lastOrderData?.bookingId) {
                 // We have a formal booking order, cancel it
-                cancelVenueBooking(lastOrderData.bookingId, {
-                    cancellationReason: 'User navigated away or closed tab during payment'
-                }).catch(() => { });
+                cancelVenueBooking(
+                    lastOrderData.bookingId,
+                    'User navigated away or closed tab during payment'
+                ).catch((err) => console.error('[CANCEL ON UNLOAD FAILED]', err));
             } else if (date && slot) {
                 // Still in pre-booking phase, release the pre-lock
                 releaseVenueSlot({ venueId: id, date, timeSlot: slot }).catch(() => { });
@@ -380,7 +389,11 @@ export default function VenueBooking() {
                     setPaymentLoading(false);
                     setPaymentError('Payment was cancelled or the window was closed. Please try again.');
                     if (orderData?.bookingId) {
-                        try { await cancelVenueBooking(orderData.bookingId, 'Manual cancellation'); } catch (e) { }
+                        try {
+                            await cancelVenueBooking(orderData.bookingId, 'Manual cancellation');
+                        } catch (cancelErr) {
+                            console.error('[CANCEL AFTER DISMISS FAILED]', cancelErr);
+                        }
                     }
                 }
             });
@@ -425,7 +438,11 @@ export default function VenueBooking() {
                     setPaymentLoading(false);
                     setPaymentError('Payment was cancelled.');
                     if (lastOrderData?.bookingId) {
-                        try { await cancelVenueBooking(lastOrderData.bookingId, 'Manual cancellation retry'); } catch (e) { }
+                        try {
+                            await cancelVenueBooking(lastOrderData.bookingId, 'Manual cancellation retry');
+                        } catch (cancelErr) {
+                            console.error('[CANCEL AFTER DISMISS FAILED]', cancelErr);
+                        }
                     }
                 }
             });
@@ -513,6 +530,21 @@ export default function VenueBooking() {
             </div>
 
             <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-10 relative min-h-screen">
+                {lockExpired && !bookingResult && (
+                    <div className="mb-6 flex flex-col sm:flex-row sm:items-center gap-3 bg-red-50 border border-red-200 rounded-2xl px-5 py-4" role="alert">
+                        <AlertCircle size={20} className="text-red-500 shrink-0" />
+                        <p className="text-sm text-red-700 flex-1">
+                            Your hold on this slot has expired and it is open to other guests again.
+                            Your answers are saved &mdash; reopen the slot to carry on.
+                        </p>
+                        <button
+                            onClick={() => navigate(`/venues/${id}`)}
+                            className="bg-red-600 text-white text-sm font-semibold px-4 py-2 rounded-xl shrink-0"
+                        >
+                            Pick the slot again
+                        </button>
+                    </div>
+                )}
                 <div className="absolute top-20 -left-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] animate-blob pointer-events-none" />
                 <div className="absolute bottom-20 -right-20 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] animate-blob delay-500 pointer-events-none" />
                 

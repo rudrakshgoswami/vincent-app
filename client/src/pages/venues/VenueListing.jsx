@@ -433,7 +433,9 @@ export default function VenueListing() {
 // ========================================
 function VenueCard({ venue, index, navigate }) {
     const coverImg = getCoverImage(venue);
-    const startPrice = venue.pricing?.weekday?.evening || venue.pricing?.weekday?.morning || 0;
+    const weekdayPrices = Object.values(venue.pricing?.weekday || {})
+        .filter(p => typeof p === 'number' && p > 0);
+    const startPrice = weekdayPrices.length ? Math.min(...weekdayPrices) : 0;
 
     return (
         <div
@@ -554,7 +556,9 @@ function VenueCard({ venue, index, navigate }) {
 // ========================================
 function VenueListCard({ venue, index, navigate }) {
     const coverImg = getCoverImage(venue);
-    const startPrice = venue.pricing?.weekday?.evening || venue.pricing?.weekday?.morning || 0;
+    const weekdayPrices = Object.values(venue.pricing?.weekday || {})
+        .filter(p => typeof p === 'number' && p > 0);
+    const startPrice = weekdayPrices.length ? Math.min(...weekdayPrices) : 0;
 
     return (
         <div
