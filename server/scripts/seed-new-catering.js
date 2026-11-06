@@ -1,23 +1,34 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import CateringPackage from '../src/models/CateringPackage.js';
 import FoodCategory from '../src/models/FoodCategory.js';
 import FoodItem from '../src/models/FoodItem.js';
 import LiveCounter from '../src/models/LiveCounter.js';
-import CateringAddOn from '../src/models/CateringAddOn.js';
+// Add-ons belong to seed-venues.js, which carries the categories the
+// booking page groups by and the beverage packages it picks from.
 
-const MONGO_URI = 'mongodb://localhost:27017/vincent_db';
+dotenv.config({ path: new URL('../.env', import.meta.url) });
+
+// This used to be a hardcoded localhost string. Pointed at a remote
+// cluster, the script connected to the developer's own machine instead,
+// seeded that, and printed "Seeding Complete!" -- so the cluster came up
+// with no catering packages and no menus, and nothing said so.
+const MONGO_URI = process.env.MONGO_URI;
 
 const seedCatering = async () => {
     try {
+        if (!MONGO_URI) {
+            console.error('MONGO_URI is not set. Put it in server/.env first.');
+            process.exit(1);
+        }
         await mongoose.connect(MONGO_URI);
-        console.log('Connected to DB...');
+        console.log('Connected to DB: %s', mongoose.connection.db.databaseName);
 
         // Clear existing data
         await CateringPackage.deleteMany();
         await FoodCategory.deleteMany();
         await FoodItem.deleteMany();
         await LiveCounter.deleteMany();
-        await CateringAddOn.deleteMany();
         console.log('Cleared existing catering data');
 
         // Create Packages
@@ -96,13 +107,6 @@ const seedCatering = async () => {
         console.log('Live counters seeded');
 
         // Create Add-ons
-        await CateringAddOn.insertMany([
-            { name: "Mineral Water Bottles (250ml)", description: "Served on each table", pricingType: "per_plate", price: 20, isActive: true },
-            { name: "Premium Cutlery Set", description: "Gold-plated elegant cutlery on all tables", pricingType: "flat", price: 5000, isActive: true },
-            { name: "Midnight Snack Boxes", description: "Small snack packs for late-night guests", pricingType: "per_plate", price: 150, isActive: true }
-        ]);
-
-        console.log('Add-ons seeded');
 
         console.log('Seeding Complete!');
         process.exit(0);

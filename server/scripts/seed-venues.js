@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 dotenv.config({ path: new URL('../.env', import.meta.url) });
 import mongoose from 'mongoose';
 import Venue from '../src/models/Venue.js';
-import CateringPackage from '../src/models/CateringPackage.js';
 import CateringExtra from '../src/models/CateringAddOn.js'; // Aliased, same as venueController.js
 import ServicePackage from '../src/models/ServicePackage.js';
 
@@ -37,10 +36,11 @@ const seed = async () => {
 
         // Clear existing
         await Venue.deleteMany({});
-        await CateringPackage.deleteMany({});
         await CateringExtra.deleteMany({});
         await ServicePackage.deleteMany({});
         console.log('Cleared existing venue data');
+        // Catering packages and their menus belong to seed-new-catering.js;
+        // this script owns the venues, the add-ons and the service packages.
 
         // ===================== VENUES =====================
         const venues = await Venue.insertMany([
@@ -346,163 +346,6 @@ const seed = async () => {
             }
         ]);
         console.log(`✅ Created ${venues.length} venues`);
-
-        // ===================== CATERING PACKAGES =====================
-        const packages = await CateringPackage.insertMany([
-            {
-                name: 'Basic Package',
-                thumbnail: 'https://www.themealdb.com/images/media/meals/o2cd4r1764113576.jpg',
-                tier: 'basic',
-                description: 'A simple yet satisfying menu perfect for budget-conscious events. Features essential dishes that please every palate.',
-                shortDescription: 'Essential menu for budget-friendly events',
-                pricePerPlate: 350,
-                minGuests: 50,
-                menuItems: {
-                    welcomeDrinks: [{ name: 'Masala Chai', icon: '☕' }],
-                    starters: [{ name: 'Paneer Tikka', icon: '🧀' }, { name: 'Hara Bhara Kabab', icon: '🥗' }],
-                    mainCourse: [
-                        { name: 'Dal Makhani', icon: '🍲' }, { name: 'Kadhai Paneer', icon: '🧀' },
-                        { name: 'Veg Biryani', icon: '🍚' }, { name: 'Jeera Rice', icon: '🍚' }
-                    ],
-                    breads: [{ name: 'Butter Naan', icon: '🫓' }, { name: 'Tandoori Roti', icon: '🫓' }],
-                    accompaniments: [
-                        { name: 'Raita', icon: '🥛' }, { name: 'Papad', icon: '🫓' },
-                        { name: 'Pickle', icon: '🫙' }, { name: 'Salad', icon: '🥗' }, { name: 'Green Chutney', icon: '🟢' }
-                    ],
-                    desserts: [{ name: 'Gulab Jamun', icon: '🍩' }]
-                },
-                itemCounts: { welcomeDrinks: 1, starters: 2, mainCourse: 4, breads: 2, accompaniments: 5, desserts: 1 },
-                serviceStyle: 'Buffet',
-                highlights: ['Welcome Drinks (1)', 'Starters (2 items)', 'Main Course (4 items)', 'Breads (2 types)', 'Dessert (1 item)', 'Buffet Service'],
-                dietary: '100% Vegetarian',
-                badge: 'none',
-                gstRate: 5,
-                displayOrder: 1
-            },
-            {
-                name: 'Standard Package',
-                thumbnail: 'https://www.themealdb.com/images/media/meals/02s6gc1763799560.jpg',
-                tier: 'standard',
-                description: 'Our most popular package with a perfect balance of variety and value. Features an extensive menu with live counter and multiple dessert options.',
-                shortDescription: 'Most popular balanced menu with live counters',
-                pricePerPlate: 550,
-                minGuests: 50,
-                menuItems: {
-                    welcomeDrinks: [{ name: 'Masala Chai', icon: '☕' }, { name: 'Virgin Mojito', icon: '🍹' }],
-                    starters: [{ name: 'Paneer Tikka', icon: '🧀' }, { name: 'Hara Bhara Kabab', icon: '🥗' }, { name: 'Corn Cheese Balls', icon: '🧀' }, { name: 'Crispy Veg Fingers', icon: '🥕' }],
-                    soup: [{ name: 'Tomato Shorba', icon: '🍅' }],
-                    mainCourse: [
-                        { name: 'Dal Makhani', icon: '🍲' }, { name: 'Kadhai Paneer', icon: '🧀' },
-                        { name: 'Veg Kolhapuri', icon: '🌶️' }, { name: 'Veg Biryani', icon: '🍚' },
-                        { name: 'Jeera Rice', icon: '🍚' }, { name: 'Curd Rice', icon: '🍚' }
-                    ],
-                    breads: [{ name: 'Butter Naan', icon: '🫓' }, { name: 'Tandoori Roti', icon: '🫓' }, { name: 'Garlic Naan', icon: '🫓' }],
-                    accompaniments: [{ name: 'Raita', icon: '🥛' }, { name: 'Papad', icon: '🫓' }, { name: 'Pickle', icon: '🫙' }, { name: 'Salad Bar', icon: '🥗' }, { name: 'Green Chutney', icon: '🟢' }],
-                    desserts: [{ name: 'Gulab Jamun', icon: '🍩' }, { name: 'Ice Cream', icon: '🍨' }],
-                    liveCounters: [{ name: 'Chaat Counter', icon: '🍽️', description: 'Pani Puri, Dahi Puri, Sev Puri' }]
-                },
-                itemCounts: { welcomeDrinks: 2, starters: 4, soup: 1, mainCourse: 6, breads: 3, accompaniments: 5, desserts: 2, liveCounters: 1 },
-                serviceStyle: 'Buffet + Live Counters',
-                highlights: ['Welcome Drinks (2)', 'Starters (4 items)', 'Soup (1)', 'Main Course (6 items)', 'Live Chaat Counter', 'Ice Cream Station', 'Buffet + Live Service'],
-                dietary: '100% Vegetarian',
-                badge: 'popular',
-                isPopular: true,
-                comboDiscount: 15000,
-                comboDiscountLabel: 'Save ₹15,000 with venue booking!',
-                gstRate: 5,
-                displayOrder: 2
-            },
-            {
-                name: 'Premium Package',
-                thumbnail: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
-                tier: 'premium',
-                description: 'An elevated dining experience with extensive menu, multiple live counters, mocktail stations, and premium desserts. Perfect for special celebrations.',
-                shortDescription: 'Premium dining with live counters and mocktails',
-                pricePerPlate: 800,
-                minGuests: 50,
-                menuItems: {
-                    welcomeDrinks: [{ name: 'Fresh Watermelon Juice', icon: '🍉' }, { name: 'Virgin Mojito', icon: '🍹' }, { name: 'Masala Lemonade', icon: '🍋' }],
-                    starters: [
-                        { name: 'Paneer Malai Tikka', icon: '🧀' }, { name: 'Hara Bhara Kabab', icon: '🥗' },
-                        { name: 'Corn Cheese Balls', icon: '🧀' }, { name: 'Stuffed Mushrooms', icon: '🍄' },
-                        { name: 'Honey Chilli Potato', icon: '🍯' }, { name: 'Veg Spring Rolls', icon: '🥟' }
-                    ],
-                    soup: [{ name: 'Tomato Basil', icon: '🍅' }, { name: 'Sweet Corn', icon: '🌽' }],
-                    mainCourse: [
-                        { name: 'Dal Makhani', icon: '🍲' }, { name: 'Shahi Paneer', icon: '🧀' },
-                        { name: 'Malai Kofta', icon: '🍛' }, { name: 'Veg Biryani', icon: '🍚' },
-                        { name: 'Mushroom Masala', icon: '🍄' }, { name: 'Pasta Alfredo', icon: '🍝' },
-                        { name: 'Jeera Rice', icon: '🍚' }, { name: 'Steamed Rice', icon: '🍚' }
-                    ],
-                    breads: [{ name: 'Butter Naan', icon: '🫓' }, { name: 'Garlic Naan', icon: '🫓' }, { name: 'Laccha Paratha', icon: '🫓' }, { name: 'Missi Roti', icon: '🫓' }],
-                    accompaniments: [{ name: 'Raita', icon: '🥛' }, { name: 'Papad', icon: '🫓' }, { name: 'Premium Pickle Selection', icon: '🫙' }, { name: 'Gourmet Salad Bar', icon: '🥗' }],
-                    desserts: [{ name: 'Gulab Jamun', icon: '🍩' }, { name: 'Rasmalai', icon: '🍮' }, { name: 'Phirni', icon: '🍨' }, { name: 'Ice Cream Bar', icon: '🍦' }],
-                    liveCounters: [{ name: 'Chaat Counter' }, { name: 'Live Pasta Station' }, { name: 'Mocktail Station' }, { name: 'Pan Counter' }]
-                },
-                itemCounts: { welcomeDrinks: 3, starters: 6, soup: 2, mainCourse: 8, breads: 4, accompaniments: 4, desserts: 4, liveCounters: 4 },
-                serviceStyle: 'Buffet + Multiple Live Counters',
-                highlights: ['Welcome Drinks (3)', 'Starters (6 items)', 'Main Course (8 items)', '4 Live Counters', 'Mocktail Station', 'Pan Counter', 'Premium Desserts (4)'],
-                dietary: '100% Vegetarian',
-                badge: 'premium',
-                tastingAvailable: true,
-                tastingFee: 2000,
-                comboDiscount: 25000,
-                comboDiscountLabel: 'Save ₹25,000 with venue booking!',
-                gstRate: 5,
-                displayOrder: 3
-            },
-            {
-                name: 'Deluxe Package',
-                thumbnail: 'https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg',
-                tier: 'deluxe',
-                description: 'The ultimate luxury dining experience with our most comprehensive menu, premium ingredients, dedicated chef stations, and white-glove service. An unforgettable culinary journey.',
-                shortDescription: 'Ultimate luxury dining with dedicated chef stations',
-                pricePerPlate: 1200,
-                minGuests: 50,
-                menuItems: {
-                    welcomeDrinks: [{ name: 'Fresh Fruit Smoothie', icon: '🥤' }, { name: 'Signature Mocktail', icon: '🍸' }, { name: 'Rose Sharbat', icon: '🌹' }, { name: 'Masala Chai', icon: '☕' }],
-                    starters: [
-                        { name: 'Paneer Malai Tikka', icon: '🧀' }, { name: 'Truffle Mushroom Bruschetta', icon: '🍞' },
-                        { name: 'Stuffed Jalapenos', icon: '🌶️' }, { name: 'Mini Tacos', icon: '🌮' },
-                        { name: 'Dim Sum Platter', icon: '🥟' }, { name: 'Crispy Corn', icon: '🌽' },
-                        { name: 'Cheese Fondue Bites', icon: '🧀' }, { name: 'Avocado Rolls', icon: '🥑' }
-                    ],
-                    soup: [{ name: 'Wild Mushroom Truffle', icon: '🍄' }, { name: 'Thai Tom Yum Veg', icon: '🍲' }],
-                    mainCourse: [
-                        { name: 'Dal Makhani', icon: '🍲' }, { name: 'Shahi Paneer', icon: '🧀' },
-                        { name: 'Malai Kofta', icon: '🍛' }, { name: 'Mushroom Stroganoff', icon: '🍄' },
-                        { name: 'Thai Green Curry', icon: '🥘' }, { name: 'Hyderabadi Biryani', icon: '🍚' },
-                        { name: 'Pasta Arrabiata', icon: '🍝' }, { name: 'Risotto', icon: '🍚' },
-                        { name: 'Mexican Rice Bowl', icon: '🌯' }, { name: 'Truffle Mac & Cheese', icon: '🧀' }
-                    ],
-                    breads: [{ name: 'Assorted Naan Basket', icon: '🫓' }, { name: 'Artisan Bread Selection', icon: '🍞' }],
-                    accompaniments: [{ name: 'Premium Raita Bar', icon: '🥛' }, { name: 'Artisan Pickle Selection', icon: '🫙' }, { name: 'Live Salad Station', icon: '🥗' }],
-                    desserts: [
-                        { name: 'Live Jalebi Counter', icon: '🍩' }, { name: 'Rasmalai', icon: '🍮' },
-                        { name: 'Chocolate Fountain', icon: '🍫' }, { name: 'Crème Brûlée', icon: '🍮' },
-                        { name: 'Ice Cream & Waffle Station', icon: '🧇' }, { name: 'Fruit Tart Selection', icon: '🥧' }
-                    ],
-                    liveCounters: [
-                        { name: 'Chaat Counter' }, { name: 'Live Pasta Station' }, { name: 'Live Dosa Station' },
-                        { name: 'Fresh Juice Bar' }, { name: 'Mocktail Bar' }, { name: 'Pizza Station' }
-                    ]
-                },
-                itemCounts: { welcomeDrinks: 4, starters: 8, soup: 2, mainCourse: 10, breads: 2, accompaniments: 3, desserts: 6, liveCounters: 6 },
-                serviceStyle: 'Premium Buffet + 6 Live Stations',
-                highlights: ['Welcome Drinks (4)', '8 Premium Starters', '10 Main Courses', '6 Live Stations', 'Chocolate Fountain', 'Fresh Juice Bar', 'Premium White-Glove Service'],
-                dietary: '100% Vegetarian',
-                badge: 'luxury',
-                tastingAvailable: true,
-                tastingFee: 0,
-                chefOnSite: true,
-                staffRatio: '1:10',
-                comboDiscount: 40000,
-                comboDiscountLabel: 'Save ₹40,000 with venue booking!',
-                gstRate: 5,
-                displayOrder: 4
-            }
-        ]);
-        console.log(`✅ Created ${packages.length} catering packages`);
 
         // ===================== CATERING EXTRAS =====================
         const EXTRA_ROWS = [

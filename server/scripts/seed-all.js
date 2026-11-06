@@ -22,9 +22,20 @@ dotenv.config({ path: new URL('../.env', import.meta.url) });
 const here = path.dirname(fileURLToPath(import.meta.url));
 
 const STEPS = [
-    'seed-venues.js',
-    'seed-new-catering.js',
+    // The restaurant menu: the categories have to exist before
+    // seed-all-items.js can put anything in them. It looks each one up by
+    // name and skips the ones it cannot find, silently, reporting success.
+    'seed-categories.js',
     'seed-all-items.js',
+
+    // Catering packages, and the menus attached to them.
+    'seed-new-catering.js',
+
+    // Venues, service packages, and the catering add-ons.
+    'seed-venues.js',
+
+    // Last, so a failure above does not leave accounts pointing at data
+    // that was never created.
     'create-admin.js',
     'create-demo-users.js'
 ];
