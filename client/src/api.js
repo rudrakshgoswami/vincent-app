@@ -515,20 +515,14 @@ export const verifyVenueBookingPayment = async ({ bookingId, razorpayOrderId, ra
     return handleResponse(res);
 };
 
-export const createCateringBookingOrder = async (payload) => {
-    const res = await authFetch(`${API_URL}/catering-bookings/create-order`, {
+// Saves a catering plan for the team to confirm. There is no payment step
+// here on purpose: the quote depends on the final headcount and the menu,
+// so money is taken with the venue booking, not from this planner.
+export const createCateringBooking = async (payload) => {
+    const res = await authFetch(`${API_URL}/catering/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-    });
-    return handleResponse(res);
-};
-
-export const verifyCateringBookingPayment = async (data) => {
-    const res = await authFetch(`${API_URL}/catering-bookings/verify-payment`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
     });
     return handleResponse(res);
 };
@@ -1092,16 +1086,15 @@ export const updateReservationSettings = async (settings) => {
     return handleResponse(res);
 };
 
-export const sendOtp = async (phone) => {
-    // OTP functionality - to be implemented later
-    console.warn('OTP functionality not yet implemented');
-    return { success: true, message: 'OTP feature coming soon' };
+// Phone OTP has no server behind it yet. These used to answer
+// { success: true } to anything, which would have handed the first caller a
+// verification step that accepts any code.
+export const sendOtp = async () => {
+    throw new Error('Phone OTP is not available yet.');
 };
 
-export const verifyOtp = async (phone, otp) => {
-    // OTP functionality - to be implemented later
-    console.warn('OTP functionality not yet implemented');
-    return { success: true, message: 'OTP feature coming soon' };
+export const verifyOtp = async () => {
+    throw new Error('Phone OTP is not available yet.');
 };
 // ==========================================
 // USER - PASSWORD CHANGE VIA OTP (non-admin)

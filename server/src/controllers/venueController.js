@@ -259,7 +259,7 @@ export const getMonthlyAvailability = async (req, res) => {
 // GET /api/venues/catering/packages
 export const getCateringPackages = async (req, res) => {
     try {
-        const packages = await CateringPackage.find({ status: 'active' }).sort({ displayOrder: 1 });
+        const packages = await CateringPackage.find({ isActive: true }).sort({ pricePerPlate: 1 });
         res.json(packages);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -280,7 +280,7 @@ export const getCateringPackageById = async (req, res) => {
 // GET /api/venues/catering/extras
 export const getCateringExtras = async (req, res) => {
     try {
-        const extras = await CateringExtra.find({ status: 'active' }).sort({ category: 1, displayOrder: 1 });
+        const extras = await CateringExtra.find({ isActive: true }).sort({ category: 1, displayOrder: 1 });
         res.json(extras);
     } catch (err) {
         res.status(500).json({ message: err.message });

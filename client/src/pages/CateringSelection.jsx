@@ -4,12 +4,10 @@ import {
     Package, ArrowRight, Shield, Sparkles, MapPin, Phone, Mail, Clock, 
     ShieldCheck, Loader2, Check, Users
 } from 'lucide-react';
-import { 
-    getImageUrl, fetchCateringPackageById, fetchCateringPackages, fetchCateringExtras, 
-    createCateringBookingOrder, verifyCateringBookingPayment, getRazorpayKey 
+import {
+    getImageUrl, fetchCateringPackageById, fetchCateringPackages, fetchCateringExtras,
+    createCateringBooking
 } from '../api';
-import { initiatePayment } from '../utils/paymentHandler';
-import { useAuth } from '../context/AuthContext';
 import CounterVarietySlider from '../components/CounterVarietySlider';
 import FlavorCarousel from '../components/FlavorCarousel';
 
@@ -37,16 +35,21 @@ export default function CateringSelection() {
     const [selectedVariants, setSelectedVariants] = useState({}); // { itemId: [variantName1, variantName2] }
     const [specialRequests, setSpecialRequests] = useState('');
     const [activeMenuSection, setActiveMenuSection] = useState('guest-count');
+    const [submitting, setSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+    const [savedBooking, setSavedBooking] = useState(null);
     const [detailedCounter, setDetailedCounter] = useState(null);
     const [isJainMode, setIsJainMode] = useState(false);
 
 
     useEffect(() => {
         Promise.all([fetchCateringPackages(), fetchCateringExtras()]).then(([pkgRes, extRes]) => {
-            setPackages(pkgRes.packages?.filter(p => p.isActive) || []);
-            setExtras(extRes.extras?.filter(e => e.status === 'active') || []);
+            const rows = (res, key) => (Array.isArray(res) ? res : res?.[key] || res?.data || []);
+            setPackages(rows(pkgRes, 'packages').filter(p => p.isActive !== false));
+            setExtras(rows(extRes, 'extras').filter(e => e.isActive !== false));
             setLoading(false);
         }).catch(err => {
+            console.error('[CATERING] could not load packages or add-ons', err);
             setError('Failed to load catering data.');
             setLoading(false);
         });
@@ -161,6 +164,40 @@ export default function CateringSelection() {
         return { base, addOns, total: base + addOns };
     }, [guestCount, selectedPackage, menuData, selectedCounters, extras, selectedExtras]);
 
+    const handleSubmitPlan = async () => {
+        setSubmitting(true);
+        setSubmitError('');
+        try {
+            // The stored shape groups chosen items under their category and
+            // carries each item's chosen variants, which is what the kitchen
+            // reads off the ticket.
+            const booking = await createCateringBooking({
+                packageId: selectedPackage?._id,
+                guestCount,
+                selectedItems: Object.entries(selectedItems)
+                    .filter(([, itemIds]) => itemIds.length > 0)
+                    .map(([categoryId, itemIds]) => ({
+                        categoryId,
+                        selectedItems: itemIds.map(foodItemId => ({
+                            foodItemId,
+                            variants: selectedVariants[foodItemId] || []
+                        }))
+                    })),
+                selectedLiveCounters: selectedCounters,
+                selectedAddOns: selectedExtras,
+                specialRequest: specialRequests,
+                totalCateringCost: costBreakdown.total
+            });
+            setSavedBooking(booking?.booking || null);
+            setStep(3);
+        } catch (err) {
+            console.error('[CATERING] could not save the plan', err);
+            setSubmitError(err?.message || 'We could not save your plan. Please try again, or call us and quote your menu.');
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
     const isStep2Valid = useMemo(() => {
         if (!selectedPackage || !menuData) return false;
         if (guestCount < selectedPackage?.minGuests) return false;
@@ -175,10 +212,10 @@ export default function CateringSelection() {
         for (const itemId of Object.values(selectedItems).flat()) {
             const item = menuData.items.find(i => i._id === itemId);
             if (item?.hasVariants) {
-                const limitObj = item.variantPackageLimits?.find(l => (l.packageId?._id || l.packageId || '').toString() === selectedPackage?._id.toString());
-                const limit = limitObj?.limit || 1;
-                const selectedV = (selectedVariants[itemId] || []).length;
-                if (selectedV === 0) return false; // Must select at least one if variants exist and item selected
+                // The per-package cap is applied in toggleVariantSelection, as
+                // the guest picks. All that is left to check here is that a
+                // selected item with flavours has at least one chosen.
+                if ((selectedVariants[itemId] || []).length === 0) return false;
             }
         }
         return true;
@@ -527,7 +564,7 @@ export default function CateringSelection() {
                                 {/* Wizard Stepper / Tabs */}
                                 <div className="flex flex-col md:flex-row md:items-center justify-between bg-gray-50 border-b p-4 gap-4">
                                     <div className="overflow-x-auto flex gap-2 hide-scrollbar w-full md:w-auto">
-                                        {menuSections.map((sec, idx) => {
+                                        {menuSections.map((sec) => {
                                             const isActive = activeMenuSection === sec.id;
                                         // Optional: Check if section is valid to add a checkmark
                                         let isSectionComplete = false;
@@ -596,7 +633,7 @@ export default function CateringSelection() {
                         <div className="bg-white rounded-xl border shadow-sm sticky top-24 overflow-hidden">
                             <div className="bg-secondary text-white p-6">
                                 <h3 className="text-xl font-bold mb-1">Your Menu Summary</h3>
-                                <p className="text-secondary-100">{selectedPackage?.name} Package</p>
+                                <p className="text-secondary-100">{selectedPackage?.name}</p>
                             </div>
                             <div className="p-6">
                                 <div className="space-y-4 mb-6">
@@ -628,12 +665,17 @@ export default function CateringSelection() {
                                     rows="2"
                                 />
 
+                                {submitError && (
+                                    <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3 mb-4" role="alert">{submitError}</p>
+                                )}
                                 <button
-                                    disabled={!isStep2Valid}
-                                    onClick={() => setStep(3)}
+                                    disabled={!isStep2Valid || submitting}
+                                    onClick={handleSubmitPlan}
                                     className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2"
                                 >
-                                    Review & Confirm <ArrowRight size={20} />
+                                    {submitting
+                                        ? <><Loader2 size={20} className="animate-spin" /> Sending your plan</>
+                                        : <>Send for confirmation <ArrowRight size={20} /></>}
                                 </button>
                                 {!isStep2Valid && <p className="text-xs text-red-500 text-center mt-3">Please meet guest minimums and select all required menu items.</p>}
                             </div>
@@ -744,11 +786,20 @@ export default function CateringSelection() {
                     <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                         <Check size={40} />
                     </div>
-                    <h2 className="text-3xl font-bold mb-4">Selection Confirmed!</h2>
-                    <p className="text-gray-600 mb-8">Your catering menu for {guestCount} guests has been finalized. Estimated total is {fmt(costBreakdown.total)}. This goes directly into the booking/payment flow (mocked for this demo).</p>
+                    <h2 className="text-3xl font-bold mb-4">Plan sent to the kitchen</h2>
+                    <p className="text-gray-600 mb-2">
+                        Your menu for {guestCount} guests is saved. The estimate is {fmt(costBreakdown.total)} before GST
+                        &mdash; our team confirms the final quote once they have checked availability for your dates.
+                    </p>
+                    {savedBooking?._id && (
+                        <p className="text-sm text-gray-500 mb-8">
+                            Reference <span className="font-mono font-bold text-secondary">{savedBooking._id.slice(-8).toUpperCase()}</span>
+                            {' '}&middot; quote it when you call.
+                        </p>
+                    )}
 
                     <button onClick={() => window.location.reload()} className="bg-secondary text-white px-8 py-3 rounded-xl font-bold hover:bg-secondary/90 transition">
-                        Start New Booking
+                        Plan another event
                     </button>
                 </div>
             )}

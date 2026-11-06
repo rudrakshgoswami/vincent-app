@@ -18,6 +18,25 @@ import CounterVarietySlider from '../../components/CounterVarietySlider';
 import FlavorCarousel from '../../components/FlavorCarousel';
 
 const fmt = (p) => '₹' + (p || 0).toLocaleString('en-IN');
+
+// 'flat' add-ons are bought by the unit -- one more server, one more table's
+// linen -- so they scale with quantity, not with the number of guests.
+const addOnQty = (e) => Math.max(1, e?.qty || 1);
+const addOnLineTotal = (e, guests) => (e?.pricingType === 'flat'
+    ? (e.price || 0) * addOnQty(e)
+    : (e?.price || 0) * guests);
+
+// Beverage packages are left out: only one applies to an event, so they get
+// their own single-choice picker instead of a row in this grid.
+const ADDON_GROUPS = [
+    { key: 'extra_item', label: 'Extra dishes', hint: 'Added to every plate' },
+    { key: 'live_station', label: 'Live counters', hint: 'Cooked in front of your guests, priced per plate' },
+    { key: 'dietary', label: 'Dietary options', hint: 'Priced per plate' },
+    { key: 'service_style', label: 'Service style', hint: 'How the food reaches the table' },
+    { key: 'staff', label: 'Extra staff', hint: 'Priced per person hired' },
+    { key: 'equipment', label: 'Equipment', hint: 'Charged once unless counted' },
+    { key: 'kids_menu', label: 'Kids menu', hint: 'Priced per child' }
+];
 const STEPS = ['Event Details', 'Catering', 'Contact', 'Summary', 'Payment'];
 const SLOT_LABELS = { morning: '6:00 AM - 12:00 PM', afternoon: '12:00 PM - 6:00 PM', evening: '6:00 PM - 12:00 AM', fullDay: '6:00 AM - 12:00 AM' };
 const EVENT_TYPES = [
@@ -47,11 +66,22 @@ export default function VenueBooking() {
         try {
             const data = sessionStorage.getItem(SESSION_KEY);
             return data ? JSON.parse(data) : null;
-        } catch (e) { return null; }
+        } catch {
+            // Private mode and blocked site data both throw here; starting the
+            // wizard from scratch is the right answer either way.
+            return null;
+        }
     }, [SESSION_KEY]);
 
     const [venue, setVenue] = useState(null);
     const [step, setStep] = useState(initialSavedData?.step ?? 0);
+
+    // Each step is long enough to scroll, and the next one rendered at
+    // whatever offset the last one was left at: after scrolling through the
+    // catering add-ons, the contact step opened on empty space below its form.
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [step]);
     const [loading, setLoading] = useState(true);
 
     // Step 1: Event Details
@@ -305,11 +335,28 @@ export default function VenueBooking() {
         });
     }
 
-    const extrasTotal = selectedExtras.reduce((sum, e) => {
-        if (e.pricingType === 'per_plate') return sum + ((e.price || 0) * guestCount);
-        if (e.pricingType === 'flat') return sum + (e.price || 0);
-        return sum + (e.price || e.pricePerPlate || e.pricePerPerson || e.fixedPrice || 0) * (e.qty || guestCount);
-    }, 0) + counterAddonsTotal;
+    const extrasTotal = selectedExtras.reduce(
+        (sum, e) => sum + addOnLineTotal(e, guestCount), 0) + counterAddonsTotal;
+
+    // Beverage packages come back in the same list as every other add-on and
+    // are only tellable apart by category, which is why there was no picker
+    // for them until the category survived being seeded.
+    const beveragePackages = useMemo(
+        () => cateringExtras.filter(e => e.category === 'beverage_package'),
+        [cateringExtras]
+    );
+    const addOnGroups = useMemo(() => ADDON_GROUPS
+        .map(g => ({ ...g, items: cateringExtras.filter(e => (e.category || 'extra_item') === g.key) }))
+        .filter(g => g.items.length > 0), [cateringExtras]);
+
+    const toggleExtra = (extra) => setSelectedExtras(prev => (
+        prev.some(e => e._id === extra._id)
+            ? prev.filter(e => e._id !== extra._id)
+            : [...prev, { ...extra, qty: extra.requiresQuantity ? 1 : undefined }]
+    ));
+    const stepExtraQty = (extraId, delta) => setSelectedExtras(prev => prev.map(e => (
+        e._id === extraId ? { ...e, qty: Math.max(1, (e.qty || 1) + delta) } : e
+    )));
 
     const beverageTotal = selectedBeverage ? (selectedBeverage.pricePerPerson || 0) * guestCount : 0;
     const cateringSubtotal = cateringBase + extrasTotal + beverageTotal;
@@ -348,7 +395,13 @@ export default function VenueBooking() {
                     package: selectedPackage?._id, packageName: selectedPackage?.name,
                     pricePerPlate: selectedPackage?.pricePerPlate || 0, guestCount,
                     baseTotal: cateringBase,
-                    extraItems: selectedExtras.map(e => ({ itemId: e._id, name: e.name, pricePerPlate: e.price || e.pricePerPlate || e.fixedPrice || 0, quantity: e.qty, total: (e.price || e.pricePerPlate || e.fixedPrice || 0) * (e.qty || guestCount) })),
+                    extraItems: selectedExtras.map(e => ({
+                        itemId: e._id,
+                        name: e.name,
+                        pricePerPlate: e.price || 0,
+                        quantity: e.pricingType === 'flat' ? addOnQty(e) : guestCount,
+                        total: addOnLineTotal(e, guestCount)
+                    })),
                     extraItemsTotal: extrasTotal,
                     beveragePackage: selectedBeverage ? { name: selectedBeverage.name, pricePerPerson: selectedBeverage.pricePerPerson, total: beverageTotal } : undefined,
                     subtotal: cateringSubtotal, gstRate: cateringGstRate, gstAmount: cateringGstAmount, total: cateringTotal
@@ -810,26 +863,103 @@ export default function VenueBooking() {
                                         </div>
                                     </div>
                                 )}
-                                {hasCatering && cateringExtras.length > 0 && (
+                                {hasCatering && beveragePackages.length > 0 && (
                                     <div className="mt-12 space-y-6">
-                                        <h4 className="text-2xl font-heading">Premium Add-ons</h4>
+                                        <div>
+                                            <h4 className="text-2xl font-heading">Beverages</h4>
+                                            <p className="text-sm text-gray-500 mt-1">One package covers the whole event, charged per guest. Leave it out and drinks are on your guests.</p>
+                                        </div>
                                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                            {cateringExtras.map(extra => {
-                                                const isSel = selectedExtras.some(e => e._id === extra._id);
+                                            {beveragePackages.map(bev => {
+                                                const isSel = selectedBeverage?._id === bev._id;
                                                 return (
-                                                    <div key={extra._id} onClick={() => setSelectedExtras(prev => isSel ? prev.filter(e => e._id !== extra._id) : [...prev, extra])} className={`p-4 rounded-2xl border-2 transition-all cursor-pointer flex items-center gap-4 ${isSel ? 'border-primary bg-primary/5 shadow-md' : 'border-border bg-white hover:border-primary/20'}`}>
-                                                        <div className="w-12 h-12 bg-surface rounded-xl flex items-center justify-center text-xl">{extra.icon || '✨'}</div>
-                                                        <div className="flex-1">
-                                                            <p className="font-heading text-secondary">{extra.name}</p>
-                                                            <p className="text-primary font-bold text-sm">{fmt(extra.price)} {extra.pricingType === 'per_plate' ? '/ guest' : ''}</p>
+                                                    <button
+                                                        key={bev._id}
+                                                        type="button"
+                                                        aria-pressed={isSel}
+                                                        onClick={() => setSelectedBeverage(isSel ? null : { _id: bev._id, name: bev.name, pricePerPerson: bev.price || 0 })}
+                                                        className={`text-left p-5 rounded-2xl border-2 transition-all ${isSel ? 'border-primary bg-primary/5 shadow-md' : 'border-border bg-white hover:border-primary/20'}`}
+                                                    >
+                                                        <div className="flex items-start justify-between gap-3">
+                                                            <div>
+                                                                <p className="font-heading text-secondary">{bev.name}</p>
+                                                                <p className="text-primary font-bold text-sm mt-0.5">{fmt(bev.price)} / guest</p>
+                                                            </div>
+                                                            {isSel && <CheckCircle size={20} className="text-primary shrink-0" />}
                                                         </div>
-                                                        {isSel && <CheckCircle size={20} className="text-primary" />}
+                                                        {bev.items?.length > 0 && (
+                                                            <ul className="mt-3 space-y-1">
+                                                                {bev.items.map(item => (
+                                                                    <li key={item} className="text-xs text-gray-600 flex items-start gap-1.5">
+                                                                        <Check size={12} className="text-primary mt-0.5 shrink-0" />
+                                                                        <span>{item}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        )}
+                                                        <p className="mt-4 pt-3 border-t border-black/5 text-xs font-bold text-secondary">
+                                                            {guestCount} guests &middot; {fmt((bev.price || 0) * guestCount)}
+                                                        </p>
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                        {selectedBeverage && (
+                                            <button type="button" onClick={() => setSelectedBeverage(null)} className="text-xs text-gray-500 underline hover:text-secondary">
+                                                Remove beverage package
+                                            </button>
+                                        )}
+                                    </div>
+                                )}
+                                {hasCatering && addOnGroups.map(group => (
+                                    <div key={group.key} className="mt-12 space-y-6">
+                                        <div>
+                                            <h4 className="text-2xl font-heading">{group.label}</h4>
+                                            <p className="text-sm text-gray-500 mt-1">{group.hint}</p>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                            {group.items.map(extra => {
+                                                const picked = selectedExtras.find(e => e._id === extra._id);
+                                                const showStepper = picked && extra.requiresQuantity && extra.pricingType === 'flat';
+                                                return (
+                                                    <div key={extra._id} className={`p-4 rounded-2xl border-2 transition-all ${picked ? 'border-primary bg-primary/5 shadow-md' : 'border-border bg-white hover:border-primary/20'}`}>
+                                                        <div
+                                                            role="button"
+                                                            tabIndex={0}
+                                                            aria-pressed={!!picked}
+                                                            onClick={() => toggleExtra(extra)}
+                                                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleExtra(extra); } }}
+                                                            className="cursor-pointer flex items-center gap-4"
+                                                        >
+                                                            <div className="w-12 h-12 bg-surface rounded-xl flex items-center justify-center text-xl shrink-0">{extra.icon || '✨'}</div>
+                                                            <div className="flex-1 min-w-0">
+                                                                <p className="font-heading text-secondary">{extra.name}</p>
+                                                                <p className="text-primary font-bold text-sm">
+                                                                    {fmt(extra.price)}{extra.pricingType === 'per_plate' ? ' / guest' : extra.requiresQuantity ? ' each' : ''}
+                                                                </p>
+                                                                {extra.description && <p className="text-xs text-gray-500 mt-0.5">{extra.description}</p>}
+                                                            </div>
+                                                            {picked && <CheckCircle size={20} className="text-primary shrink-0" />}
+                                                        </div>
+                                                        {showStepper && (
+                                                            <div className="flex items-center justify-between mt-4 pt-3 border-t border-primary/10">
+                                                                <span className="text-xs text-gray-500">How many</span>
+                                                                <div className="flex items-center gap-3">
+                                                                    <button type="button" aria-label={`One less ${extra.name}`} onClick={() => stepExtraQty(extra._id, -1)} className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:border-primary transition-colors"><Minus size={13} /></button>
+                                                                    <span className="font-bold text-sm w-5 text-center">{addOnQty(picked)}</span>
+                                                                    <button type="button" aria-label={`One more ${extra.name}`} onClick={() => stepExtraQty(extra._id, 1)} className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:border-primary transition-colors"><Plus size={13} /></button>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                        {picked && (
+                                                            <p className="text-xs font-bold text-secondary mt-3">Adds {fmt(addOnLineTotal(picked, guestCount))}</p>
+                                                        )}
                                                     </div>
                                                 );
                                             })}
                                         </div>
                                     </div>
-                                )}
+                                ))}
                                 {hasCatering && (
                                     <div className="bg-white rounded-3xl border border-border overflow-hidden text-secondary p-8 mt-8 shadow-sm">
                                         <h3 className="text-xl font-heading mb-4">Catering Notes & Dietary Requests</h3>

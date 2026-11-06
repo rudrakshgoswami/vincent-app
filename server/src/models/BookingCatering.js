@@ -11,7 +11,10 @@ const categorySelectionSchema = new mongoose.Schema({
 }, { _id: false });
 
 const bookingCateringSchema = new mongoose.Schema({
-    bookingId: { type: mongoose.Schema.Types.ObjectId, required: true }, // referencing existing booking model (which isn't given)
+    // Set when the catering hangs off a venue booking. The standalone
+    // /catering planner has no venue booking, so it stays empty there.
+    bookingId: { type: mongoose.Schema.Types.ObjectId },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     packageId: { type: mongoose.Schema.Types.ObjectId, ref: 'CateringPackage', required: true },
     guestCount: { type: Number, required: true },
     selectedItems: [categorySelectionSchema],

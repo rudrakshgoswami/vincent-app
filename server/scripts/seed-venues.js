@@ -7,17 +7,26 @@ import CateringExtra from '../src/models/CateringAddOn.js'; // Aliased, same as 
 import ServicePackage from '../src/models/ServicePackage.js';
 
 /*
- * The rows below were written for a CateringExtra model that does not exist.
- * CateringAddOn stands in for it, and wants a single `price` plus a
- * pricingType of 'per_plate' or 'flat'. per_person folds into per_plate
- * because the pricing code multiplies both by the guest count.
+ * The rows below were written for a CateringExtra model that does not exist;
+ * CateringAddOn stands in for it. per_person folds into per_plate because the
+ * pricing code multiplies both by the guest count. fixedPrice has to be read
+ * as well as pricePerPlate and pricePerPerson, or every 'fixed' row -- the
+ * staff roles, the linen, the sanitizer stations -- is stored at zero and
+ * billed at nothing. The category stays a category instead of being written
+ * into the description, where the guest reads it as "extra_item".
  */
 const toAddOn = (row) => ({
     name: row.name,
-    description: row.description || row.category || '',
+    description: row.description || '',
     icon: row.icon || '',
-    price: row.pricePerPlate ?? row.pricePerPerson ?? row.price ?? 0,
+    category: row.category || 'extra_item',
+    subcategory: row.subcategory || undefined,
+    items: row.beverageItems || row.stationMenuItems || [],
+    price: row.pricePerPlate ?? row.pricePerPerson ?? row.fixedPrice ?? row.price ?? 0,
     pricingType: row.priceType === 'fixed' ? 'flat' : 'per_plate',
+    requiresQuantity: !!row.requiresQuantity,
+    minOrder: row.minOrder ?? undefined,
+    displayOrder: row.displayOrder ?? 0,
     isActive: row.status ? row.status === 'active' : true,
 });
 

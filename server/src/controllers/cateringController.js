@@ -224,7 +224,21 @@ export const getBookings = async (req, res) => {
 
 export const createBooking = async (req, res) => {
     try {
-        const booking = new BookingCatering(req.body);
+        // Only the guest's own choices are taken from the request. status,
+        // isLocked and editDeadline are the kitchen's to set, and the owner
+        // is whoever is signed in, not whoever the body claims.
+        const booking = new BookingCatering({
+            bookingId: req.body.bookingId || undefined,
+            userId: req.user?._id,
+            packageId: req.body.packageId,
+            guestCount: req.body.guestCount,
+            selectedItems: req.body.selectedItems || [],
+            selectedLiveCounters: req.body.selectedLiveCounters || [],
+            selectedAddOns: req.body.selectedAddOns || [],
+            specialRequest: req.body.specialRequest,
+            // An estimate until the team confirms it; status stays 'pending'.
+            totalCateringCost: req.body.totalCateringCost
+        });
         await booking.save();
         res.status(201).json({ success: true, booking });
     } catch (error) {
