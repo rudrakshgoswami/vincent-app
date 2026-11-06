@@ -34,6 +34,9 @@ export default function Home() {
     const [menuItems, setMenuItems] = useState([]);
     const [venues, setVenues] = useState([]);
     const [totalDishes, setTotalDishes] = useState(0);
+    const [failed, setFailed] = useState({});
+    // The cards below show three venues; the stat must count them all.
+    const [totalVenues, setTotalVenues] = useState(0);
     const heroRef = useRef(null);
 
     // Parallax on hero image
@@ -52,19 +55,29 @@ export default function Home() {
             try {
                 const r = await fetchContactInfo();
                 setContactInfo(r.data);
-            } catch (err) { console.error('[HOME] contact info failed', err); }
+            } catch (err) {
+                console.error('[HOME] contact info failed', err);
+                setFailed(f => ({ ...f, contact: true }));
+            }
             try {
                 const m = await fetchMenu();
                 let all = [];
                 m.forEach(c => { if (c.Items) all = [...all, ...c.Items]; });
                 setTotalDishes(all.length);
                 setMenuItems(all.slice(0, 6));
-            } catch (err) { console.error('[HOME] menu failed', err); }
+            } catch (err) {
+                console.error('[HOME] menu failed', err);
+                setFailed(f => ({ ...f, menu: true }));
+            }
             try {
                 const v = await fetchVenues();
                 const list = v?.venues || (Array.isArray(v) ? v : []);
+                setTotalVenues(v?.total ?? list.length);
                 setVenues(list.slice(0, 3));
-            } catch (err) { console.error('[HOME] venues failed', err); }
+            } catch (err) {
+                console.error('[HOME] venues failed', err);
+                setFailed(f => ({ ...f, venues: true }));
+            }
         };
         load();
     }, []);
@@ -113,18 +126,26 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Stats bar — real data */}
+                {/* Stats bar. Real counts only: a dash while they are
+                    loading or if they could not be loaded, never a
+                    stand-in number. These used to fall back to 100 and 5,
+                    so an unreachable database advertised a menu and a set
+                    of venues that nobody had counted. */}
                 <div className="relative z-10 border-t border-white/10 bg-secondary/80 backdrop-blur-md">
                     <div className="container mx-auto px-6 md:px-16 py-5 grid grid-cols-3 divide-x divide-white/10">
                         <div className="text-center pr-6">
                             <p className="text-primary text-2xl md:text-3xl font-heading">
-                                <Counter to={totalDishes || 100} suffix="+" />
+                                {totalDishes > 0
+                                    ? <Counter to={totalDishes} suffix="+" />
+                                    : <span>&mdash;</span>}
                             </p>
                             <p className="text-white/30 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Dishes on Menu</p>
                         </div>
                         <div className="text-center px-6">
                             <p className="text-primary text-2xl md:text-3xl font-heading">
-                                <Counter to={venues.length || 5} suffix="" />
+                                {totalVenues > 0
+                                    ? <Counter to={totalVenues} suffix="" />
+                                    : <span>&mdash;</span>}
                             </p>
                             <p className="text-white/30 text-[9px] font-black uppercase tracking-[0.2em] mt-1">Venues Available</p>
                         </div>
@@ -336,7 +357,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1">Direct Line</p>
-                                        <p className="text-xl font-heading text-secondary">{contactInfo?.phone || 'Loading...'}</p>
+                                        <p className="text-xl font-heading text-secondary">{contactInfo?.phone || (failed.contact ? 'Unavailable' : 'Loading…')}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-6 group">
@@ -345,7 +366,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1">Email</p>
-                                        <p className="text-xl font-heading text-secondary">{contactInfo?.email || 'Loading...'}</p>
+                                        <p className="text-xl font-heading text-secondary">{contactInfo?.email || (failed.contact ? 'Unavailable' : 'Loading…')}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-6 group">
@@ -354,7 +375,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1">Address</p>
-                                        <p className="text-xl font-heading text-secondary leading-snug max-w-xs">{contactInfo?.address || 'Loading...'}</p>
+                                        <p className="text-xl font-heading text-secondary leading-snug max-w-xs">{contactInfo?.address || (failed.contact ? 'Unavailable' : 'Loading…')}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-6 group">
@@ -363,7 +384,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1">Hours</p>
-                                        <p className="text-xl font-heading text-secondary">{contactInfo?.weekdayHours || 'Loading...'}</p>
+                                        <p className="text-xl font-heading text-secondary">{contactInfo?.weekdayHours || (failed.contact ? 'Unavailable' : 'Loading…')}</p>
                                     </div>
                                 </div>
                             </div>
