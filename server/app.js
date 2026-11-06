@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import mongoose from 'mongoose';
 import path from 'path';
 import fs from 'fs';
 
@@ -65,6 +66,18 @@ app.use(cors({
 app.use(cookieParser()); // Parse cookies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// readyState 0 means the connection was never made or has failed, as
+// opposed to 2, still connecting, where Mongoose buffers the query and the
+// request completes normally a moment later.
+app.use('/api', (req, res, next) => {
+    if (mongoose.connection.readyState === 0) {
+        return res.status(503).json({
+            message: 'The database is not reachable from this deployment.'
+        });
+    }
+    next();
+});
 
 // Routes
 app.use('/api/auth', authRoutes);

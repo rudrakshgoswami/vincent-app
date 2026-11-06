@@ -47,9 +47,19 @@ export const SocketProvider = ({ children }) => {
             setConnected(false);
         });
 
+        // Socket.io retries five times before giving up, and a host that
+        // cannot hold a connection fails all five. One line saying live
+        // updates are off is useful; five identical stack traces in a
+        // visitor's console are not.
+        let reportedFailure = false;
         socketInstance.on('connect_error', (error) => {
-            console.error('Socket.IO connection error:', error);
             setConnected(false);
+            if (reportedFailure) return;
+            reportedFailure = true;
+            console.warn(
+                'Live updates are unavailable; everything else works without them.',
+                error?.message || error
+            );
         });
 
         setSocket(socketInstance);

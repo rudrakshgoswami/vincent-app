@@ -1,104 +1,116 @@
 # Deploying Vincent
 
-Vincent is a MERN app with live sockets, file uploads and a background job, so
-it does not go up as one static site. The client is a Vite build and belongs on
-Vercel. The server is a long-running Node process and belongs somewhere that
-keeps a process alive.
+Vincent is live on Vercel as two projects in the `rudraksh8` team:
 
-## What has to exist first
+| | Project | URL |
+|---|---|---|
+| Client | `vincent-app` | https://vincent-app-omega.vercel.app |
+| API | `vincent-api` | https://vincent-api.vercel.app |
 
-**A hosted MongoDB.** `server/.env` currently points at `mongodb://localhost`,
-which nothing outside this machine can reach. Create a free M0 cluster at
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register), add a database
-user, and allow access from anywhere (`0.0.0.0/0`) so your host can connect.
+Both deploy with `vercel deploy --prod` from `client/` and `server/`. Vercel
+detects the Express app in `server/` on its own — the framework preset is
+Express, and it runs `server.js`, which is why there is no handler of our own
+under `server/api/`.
 
-Vercel's marketplace has Postgres, DynamoDB, Redis, Convex and Turso, but no
-MongoDB, so this one cannot be provisioned through Vercel. Moving to Postgres
-instead would mean rewriting every Mongoose model and query in the project.
+## The one thing still missing
 
-## 1. The database
+`MONGO_URI`. Until it is set, every `/api` route answers:
 
-Put the Atlas connection string in `server/.env`:
-
-```
-MONGO_URI=mongodb+srv://USER:PASSWORD@cluster0.xxxxx.mongodb.net/vincent
+```json
+{ "message": "The database is not reachable from this deployment." }
 ```
 
-Then seed it, exactly as on a fresh local checkout:
+The site renders, the client reaches the API, and CORS is already correct.
+Only the data is absent.
+
+### Setting it
+
+The Atlas cluster is ready: **Cluster0** (free M0) in the project named
+`project`, resumed, with `0.0.0.0/0` already on the IP access list and a
+database user `rudrakshgoswami5555_db_user` holding `atlasAdmin`.
+
+What is missing is that user's password, which only you have. Either use the
+one you set, or open
+[Database Access](https://cloud.mongodb.com/v2/694a63e1346a7179401924e7#/security/database/users)
+→ **Edit** → **Edit Password** → **Autogenerate Secure Password** → **Copy**.
+
+The connection string is then:
+
+```
+mongodb+srv://rudrakshgoswami5555_db_user:THEPASSWORD@cluster0.XXXXX.mongodb.net/vincent_db
+```
+
+Take the `cluster0.XXXXX` host from **Connect → Drivers** on the cluster. Keep
+`/vincent_db` on the end — without a database name, Mongoose writes to `test`.
+
+Set it in two places:
+
+1. **Vercel**, so the deployed API can reach it:
+   ```bash
+   cd server && vercel env add MONGO_URI production
+   ```
+   Paste the string when prompted, then redeploy: `vercel deploy --prod`.
+
+2. **`server/.env`**, so the seed scripts can reach it. Replace the
+   `mongodb://localhost:27017/vincent_db` line that is there now.
+
+### Then seed it
+
+A new cluster is empty. One command fills it:
 
 ```bash
-cd server
-node scripts/seed-venues.js
-node scripts/seed-new-catering.js
-node scripts/seed-all-items.js
-node scripts/create-admin.js
-node scripts/create-demo-users.js
+cd server && npm run seed
 ```
 
-Confirm it worked by starting the server and watching for `MongoDB Connected`.
+That runs venues, catering, menu items, the admin account and the demo users,
+in the order they depend on each other. Check it worked by opening
+https://vincent-app-omega.vercel.app/venues — six venues, prices from ₹30,000.
 
-## 2. The server
+## What this host does not do
 
-It needs a host that runs `node server.js` continuously, because of three
-things a serverless function cannot do:
+Three things work locally, under `npm run dev`, and not on Vercel, because
+functions do not stay alive between requests:
 
-- **Socket.io** holds open connections for the live floor plan, slot locks and
-  the admin order feed
-- **`startReservationLockCleanup()`** runs on a 30-second interval
-- **multer** writes uploads to `server/uploads/`, which must survive restarts
+- **Socket.io.** The live floor plan, the slot-availability push and the admin
+  order feed. The client reports this once in the console and carries on; no
+  page depends on it.
+- **The 30-second lock cleanup.** It does not run. This cannot cause a double
+  booking: every availability query filters on `lockExpiresAt`, and
+  `VenueSlotLock` carries a TTL index that MongoDB enforces itself. What is
+  lost is tidying of stale `pending` rows in the admin list.
+- **Image uploads from the admin panel.** The filesystem is read-only, so
+  `multer` cannot write to `server/uploads/`. The seeded images, which are
+  committed, still serve. Moving uploads to Vercel Blob would fix this.
 
-Render, Railway and Fly all run this unchanged on a free or cheap tier. Set the
-start command to `npm start`, the root directory to `server`, and these
-variables:
+If all three matter, the same code runs unchanged on a host that keeps a
+process alive — Render, Railway and Fly all take `npm start` with the root
+directory set to `server`. `server.js` still creates the HTTP server, attaches
+Socket.io and starts the cleanup job; that path was never removed.
 
-| Variable | Value |
+## Environment variables
+
+Already set on `vincent-api`:
+
+| Variable | |
 |---|---|
-| `MONGO_URI` | the Atlas string from step 1 |
-| `JWT_SECRET` | a long random string |
-| `JWT_REFRESH_SECRET` | a different long random string |
-| `FRONTEND_URL` | your Vercel URLs, comma separated |
+| `JWT_SECRET` | generated |
+| `JWT_REFRESH_SECRET` | generated |
 | `NODE_ENV` | `production` |
-| `PORT` | whatever the host provides |
+| `FRONTEND_URL` | the client URL |
 
-`FRONTEND_URL` takes a list because every Vercel deployment gets a preview
-domain alongside the production one, and CORS rejects anything not listed once
-`NODE_ENV=production`. Email, SMS and Razorpay keys can stay unset; those flows
-fall back to the demo behaviour described in the README.
+Already set on `vincent-app`:
 
-For uploads to survive a redeploy, mount a persistent disk at
-`server/uploads`. Without one, images uploaded through the admin panel vanish
-on the next deploy, while the seed images committed to the repo stay.
+| Variable | |
+|---|---|
+| `VITE_BACKEND_URL` | the API URL |
 
-## 3. The client
+Vite bakes its variables in at build time, so changing `VITE_BACKEND_URL`
+means redeploying the client, not just saving the variable.
 
-```bash
-cd client
-vercel --prod
-```
+`FRONTEND_URL` takes a comma-separated list. Every Vercel deployment also gets
+a preview domain, and with `NODE_ENV=production` the CORS check rejects any
+origin not in that list, so add preview domains there if you need them to call
+the API.
 
-Set the root directory to `client`; Vercel detects Vite and uses `npm run
-build` into `dist`. Add one environment variable:
-
-```
-VITE_BACKEND_URL=https://your-server-host.example.com
-```
-
-`client/src/api.js` reads it and falls back to `http://localhost:5000`, so
-without it a deployed client will quietly try to call your laptop.
-
-Redeploy after setting it — Vite bakes environment variables into the bundle at
-build time, so changing the variable alone does nothing.
-
-## 4. Check it
-
-- The venue list loads and prices are not all ₹0 — that means Mongo is
-  connected and seeded
-- The browser console shows `Socket.IO connected` — that means websockets
-  reached the server
-- Sign in as `customer@example.com` / `Password123!` and open a booking; the
-  slot lock countdown should start at 15:00
-- No `CORS Blocked Origin` lines in the server log
-
-If the venue list is empty but the page renders, the client reached the server
-and the server did not reach Mongo. If every request fails, check
-`VITE_BACKEND_URL` was set *before* the build that is live.
+Email, SMS and Razorpay keys are unset; those flows fall back to the demo
+behaviour described in the README. Razorpay is in test mode.
