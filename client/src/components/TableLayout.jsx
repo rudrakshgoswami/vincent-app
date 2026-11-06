@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 // Table status color mapping
@@ -10,22 +10,73 @@ const TABLE_COLORS = {
     locked: 'bg-orange-500 cursor-not-allowed opacity-75'
 };
 
-const TableLayout = ({ tables, selectedTableIds, onTableSelect, numberOfGuests }) => {
-    const [groupedTables, setGroupedTables] = useState({
-        indoor: [],
-        outdoor: [],
-        ac: []
-    });
+const TableCard = ({ table, status, onSelect }) => {
+    const colorClass = TABLE_COLORS[status];
+    const isDisabled = !table.isSelectable && status !== 'selected';
 
-    useEffect(() => {
-        // Group tables by area
-        const grouped = {
-            indoor: tables.filter(t => t.area === 'indoor'),
-            outdoor: tables.filter(t => t.area === 'outdoor'),
-            ac: tables.filter(t => t.area === 'ac')
-        };
-        setGroupedTables(grouped);
-    }, [tables]);
+    return (
+        <div
+            onClick={() => !isDisabled && onSelect(table)}
+            className={`
+                relative p-4 rounded-lg border-2 border-white/20
+                transition-all duration-200 transform hover:scale-105
+                ${colorClass}
+                ${isDisabled ? '' : 'active:scale-95'}
+                min-w-[100px] min-h-[100px]
+                flex flex-col items-center justify-center
+                text-white font-heading
+            `}
+        >
+            <div className="text-lg font-bold">#{table.tableNumber}</div>
+            <div className="text-sm opacity-90 flex items-center gap-1 mt-1">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
+                </svg>
+                <span>{table.capacity}</span>
+            </div>
+            <div className="text-xs mt-1 capitalize opacity-75">
+                {table.area} • ₹{table.reservationPrice || 0}
+            </div>
+
+            {status === 'selected' && (
+                <div className="absolute -top-2 -right-2 bg-white text-yellow-600 rounded-full w-6 h-6 flex items-center justify-center">
+                    ✓
+                </div>
+            )}
+        </div>
+    );
+};
+
+const AreaSection = ({ title, tables, icon, getStatus, onSelect }) => {
+    if (tables.length === 0) return null;
+
+    return (
+        <div className="mb-8">
+            <h3 className="text-xl font-heading mb-4 flex items-center gap-2">
+                {icon}
+                {title}
+                <span className="text-sm text-text-muted">({tables.length} tables)</span>
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {tables.map(table => (
+                    <TableCard
+                        key={table._id}
+                        table={table}
+                        status={getStatus(table)}
+                        onSelect={onSelect}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
+const TableLayout = ({ tables, selectedTableIds, onTableSelect, numberOfGuests }) => {
+    const groupedTables = useMemo(() => ({
+        indoor: tables.filter(t => t.area === 'indoor'),
+        outdoor: tables.filter(t => t.area === 'outdoor'),
+        ac: tables.filter(t => t.area === 'ac')
+    }), [tables]);
 
     const handleTableClick = (table) => {
         if (!table.isSelectable) return;
@@ -44,63 +95,6 @@ const TableLayout = ({ tables, selectedTableIds, onTableSelect, numberOfGuests }
             return 'selected';
         }
         return table.status || 'available';
-    };
-
-    const TableCard = ({ table }) => {
-        const status = getTableStatus(table);
-        const colorClass = TABLE_COLORS[status];
-        const isDisabled = !table.isSelectable && status !== 'selected';
-
-        return (
-            <div
-                onClick={() => !isDisabled && handleTableClick(table)}
-                className={`
-                    relative p-4 rounded-lg border-2 border-white/20
-                    transition-all duration-200 transform hover:scale-105
-                    ${colorClass}
-                    ${isDisabled ? '' : 'active:scale-95'}
-                    min-w-[100px] min-h-[100px]
-                    flex flex-col items-center justify-center
-                    text-white font-heading
-                `}
-            >
-                <div className="text-lg font-bold">#{table.tableNumber}</div>
-                <div className="text-sm opacity-90 flex items-center gap-1 mt-1">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
-                    </svg>
-                    <span>{table.capacity}</span>
-                </div>
-                <div className="text-xs mt-1 capitalize opacity-75">
-                    {table.area} • ₹{table.reservationPrice || 0}
-                </div>
-
-                {status === 'selected' && (
-                    <div className="absolute -top-2 -right-2 bg-white text-yellow-600 rounded-full w-6 h-6 flex items-center justify-center">
-                        ✓
-                    </div>
-                )}
-            </div>
-        );
-    };
-
-    const AreaSection = ({ title, tables, icon }) => {
-        if (tables.length === 0) return null;
-
-        return (
-            <div className="mb-8">
-                <h3 className="text-xl font-heading mb-4 flex items-center gap-2">
-                    {icon}
-                    {title}
-                    <span className="text-sm text-text-muted">({tables.length} tables)</span>
-                </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {tables.map(table => (
-                        <TableCard key={table._id} table={table} />
-                    ))}
-                </div>
-            </div>
-        );
     };
 
     return (
@@ -137,18 +131,24 @@ const TableLayout = ({ tables, selectedTableIds, onTableSelect, numberOfGuests }
                 title="AC Dining"
                 tables={groupedTables.ac}
                 icon={<span>❄️</span>}
+                getStatus={getTableStatus}
+                onSelect={handleTableClick}
             />
 
             <AreaSection
                 title="Indoor Dining"
                 tables={groupedTables.indoor}
                 icon={<span>🏠</span>}
+                getStatus={getTableStatus}
+                onSelect={handleTableClick}
             />
 
             <AreaSection
                 title="Outdoor Dining"
                 tables={groupedTables.outdoor}
                 icon={<span>🌳</span>}
+                getStatus={getTableStatus}
+                onSelect={handleTableClick}
             />
 
             {tables.length === 0 && (
@@ -158,6 +158,20 @@ const TableLayout = ({ tables, selectedTableIds, onTableSelect, numberOfGuests }
             )}
         </div>
     );
+};
+
+TableCard.propTypes = {
+    table: PropTypes.object.isRequired,
+    status: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired
+};
+
+AreaSection.propTypes = {
+    title: PropTypes.string.isRequired,
+    tables: PropTypes.array.isRequired,
+    icon: PropTypes.node,
+    getStatus: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired
 };
 
 TableLayout.propTypes = {

@@ -39,22 +39,36 @@ startReservationLockCleanup();
 connectDB();
 
 // Middleware
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+
+// FRONTEND_URL takes a comma-separated list, so a Vercel production domain and
+// its preview domains can both be allowed.
+const ALLOWED_ORIGINS = (process.env.FRONTEND_URL || '')
+    .split(',')
+    .map(o => o.trim().replace(/\/$/, ''))
+    .filter(Boolean);
+
 app.use(cors({
     origin: function(origin, callback) {
         // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        
-        const isLocalNetwork = origin.startsWith('http://localhost') || 
-                              origin.startsWith('http://127.0.0.1') || 
-                              origin.startsWith('http://192.168.') ||
-                              origin.startsWith('http://10.'); // Allow any 10.X.X.X IP
-        
-        if (isLocalNetwork || (process.env.FRONTEND_URL && origin === process.env.FRONTEND_URL)) {
-            return callback(null, true);
-        } else {
-            console.log('CORS Blocked Origin:', origin);
-            return callback(new Error('Not allowed by CORS'), false);
+
+        const clean = origin.replace(/\/$/, '');
+        if (ALLOWED_ORIGINS.includes(clean)) return callback(null, true);
+
+        // Localhost and the LAN are for developing against a phone on the same
+        // network. Left on in production, any page served from a private
+        // address could call this API with credentials, so it is dev only.
+        if (!IS_PRODUCTION) {
+            const isLocalNetwork = clean.startsWith('http://localhost') ||
+                                  clean.startsWith('http://127.0.0.1') ||
+                                  clean.startsWith('http://192.168.') ||
+                                  clean.startsWith('http://10.');
+            if (isLocalNetwork) return callback(null, true);
         }
+
+        console.log('CORS Blocked Origin:', origin);
+        return callback(new Error('Not allowed by CORS'), false);
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -93,7 +107,6 @@ app.get('/', (req, res) => {
 // Start server with error handling
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ Server running on port ${PORT}`);
-    console.log(`📡 MongoDB Connected`);
     console.log(`🔗 API available on network at http://0.0.0.0:${PORT}`);
 }).on('error', (err) => {
     if (err.code === 'EADDRINUSE') {

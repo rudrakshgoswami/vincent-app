@@ -49,19 +49,22 @@ export default function Home() {
 
     useEffect(() => {
         const load = async () => {
-            try { const r = await fetchContactInfo(); setContactInfo(r.data); } catch {}
+            try {
+                const r = await fetchContactInfo();
+                setContactInfo(r.data);
+            } catch (err) { console.error('[HOME] contact info failed', err); }
             try {
                 const m = await fetchMenu();
                 let all = [];
                 m.forEach(c => { if (c.Items) all = [...all, ...c.Items]; });
                 setTotalDishes(all.length);
                 setMenuItems(all.slice(0, 6));
-            } catch {}
+            } catch (err) { console.error('[HOME] menu failed', err); }
             try {
                 const v = await fetchVenues();
                 const list = v?.venues || (Array.isArray(v) ? v : []);
                 setVenues(list.slice(0, 3));
-            } catch {}
+            } catch (err) { console.error('[HOME] venues failed', err); }
         };
         load();
     }, []);
