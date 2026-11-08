@@ -201,7 +201,19 @@ export default function Checkout() {
                             <div className="text-text-muted text-center py-8">
                                 <MapPin className="w-12 h-12 mx-auto mb-3 opacity-50" />
                                 <p>No addresses saved.</p>
-                                <button onClick={() => navigate('/profile')} className="btn mt-4">
+                                {/*
+                                  * This used to go to /profile, which opens on
+                                  * the overview tab in read-only mode: the
+                                  * customer arrived at a page that said "No
+                                  * addresses saved" with no way to add one,
+                                  * because the address editor only appears
+                                  * after pressing "Edit Profile". Land them
+                                  * on the address form itself.
+                                  */}
+                                <button
+                                    onClick={() => navigate('/profile?tab=account&add=address')}
+                                    className="btn mt-4"
+                                >
                                     Add Address
                                 </button>
                             </div>

@@ -14,13 +14,14 @@ import {
     requestUserPasswordOTP, verifyUserPasswordOTP
 } from '../api';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const BASE_URL = 'http://localhost:5000';
 
 export default function Profile() {
     const { logout } = useAuth();
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [isEditing, setIsEditing] = useState(false);
@@ -45,7 +46,9 @@ export default function Profile() {
     const [stats, setStats] = useState({
         totalOrders: 0,
         totalReservations: 0,
+        totalBookings: 0,
         totalSpent: 0,
+        mostActiveMonth: null,
         memberSince: ''
     });
 
@@ -164,10 +167,34 @@ export default function Profile() {
                 total: totalLifetimeValue
             });
 
+            /*
+             * The month the customer was actually busiest, counted across
+             * everything they have booked. Ties go to the most recent.
+             */
+            const monthCounts = {};
+            [...userOrders, ...userReservations, ...userBookings].forEach((item) => {
+                const when = item.createdAt || item.date || item.eventDate;
+                if (!when) return;
+                const d = new Date(when);
+                if (Number.isNaN(d.getTime())) return;
+                const key = `${d.getFullYear()}-${d.getMonth()}`;
+                monthCounts[key] = (monthCounts[key] || 0) + 1;
+            });
+            const busiest = Object.entries(monthCounts)
+                .sort((a, b) => (b[1] - a[1]) || b[0].localeCompare(a[0]))[0];
+            const mostActiveMonth = busiest
+                ? new Date(Number(busiest[0].split('-')[0]), Number(busiest[0].split('-')[1]))
+                    .toLocaleDateString('en-IN', { month: 'long' })
+                : null;
+
             setStats({
                 totalOrders: userOrders.length,
                 totalReservations: userReservations.length + userBookings.length,
+                // Everything the lifetime figure is made of, so an average
+                // over it divides like with like.
+                totalBookings: userOrders.length + userReservations.length + userBookings.length,
                 totalSpent: totalLifetimeValue,
+                mostActiveMonth,
                 memberSince: new Date(u.createdAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })
             });
 
@@ -209,6 +236,22 @@ export default function Profile() {
         }));
     };
 
+    /*
+     * Checkout sends customers here with ?tab=account&add=address when they
+     * have no delivery address. Open the right tab, switch on edit mode and
+     * put an empty address in front of them, so the link lands on the form
+     * rather than on a page that only says they have none.
+     */
+    const addressLinkHandled = useRef(false);
+    useEffect(() => {
+        if (loading || addressLinkHandled.current) return;
+        if (searchParams.get('add') !== 'address') return;
+        addressLinkHandled.current = true;
+        setActiveTab(searchParams.get('tab') || 'account');
+        setIsEditing(true);
+        if ((formData.addresses || []).length === 0) addNewAddress();
+    }, [loading, searchParams, formData.addresses]);
+
     const removeAddress = (index) => {
         setFormData(prev => ({
             ...prev,
@@ -247,11 +290,35 @@ export default function Profile() {
                 return;
             }
 
+            /*
+             * "Add Address" appends a row of empty inputs, and saving used
+             * to store it exactly as it was. The blank address then showed
+             * up in the checkout address picker as ", -", and could be
+             * selected and ordered against. Drop the rows the customer
+             * never filled in, and refuse to save a half-written one rather
+             * than silently keeping an address nothing can be delivered to.
+             */
+            const filled = (a) => [a.street, a.city, a.state, a.pincode]
+                .some((v) => (v || '').trim() !== '');
+            const deliverable = (a) => ['street', 'city', 'pincode']
+                .every((k) => (a[k] || '').trim() !== '');
+
+            const touched = formData.addresses.filter(filled);
+            const incomplete = touched.find((a) => !deliverable(a));
+            if (incomplete) {
+                setMessage({
+                    type: 'error',
+                    text: 'That address needs at least a street, a city and a pincode.'
+                });
+                setSaving(false);
+                return;
+            }
+
             // Update other fields without OTP
             await updateUserProfile({
                 name: formData.name,
                 birthDate: formData.birthDate,
-                addresses: formData.addresses,
+                addresses: touched,
                 profilePicture: formData.profilePicture
             });
 
@@ -602,15 +669,36 @@ export default function Profile() {
 
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="bg-surface/50 rounded-2xl p-5">
-                                            <p className="text-sm font-bold text-text-muted mb-3">Average Order Value</p>
+                                            <p className="text-sm font-bold text-text-muted mb-3">Average Booking Value</p>
                                             <p className="text-3xl font-heading text-secondary">
-                                                ₹{stats.totalOrders > 0 ? Math.round(stats.totalSpent / stats.totalOrders).toLocaleString('en-IN') : '0'}
+                                                {/*
+                                                  * stats.totalSpent is lifetime value across food
+                                                  * orders, table reservations and venue bookings,
+                                                  * so dividing it by the food-order count alone
+                                                  * produced nonsense: one 500 rupee meal next to a
+                                                  * 1,42,500 rupee venue booking reported an
+                                                  * "average order" of 1,43,000. Divide by
+                                                  * everything that contributed to the total.
+                                                  */}
+                                                {stats.totalBookings > 0
+                                                    ? `₹${Math.round(stats.totalSpent / stats.totalBookings).toLocaleString('en-IN')}`
+                                                    : <span className="text-text-muted">&mdash;</span>}
+                                            </p>
+                                            <p className="text-[11px] text-text-muted mt-2">
+                                                Across orders, tables and venues
                                             </p>
                                         </div>
                                         <div className="bg-surface/50 rounded-2xl p-5">
                                             <p className="text-sm font-bold text-text-muted mb-3">Most Active Month</p>
                                             <p className="text-3xl font-heading text-secondary">
-                                                {new Date().toLocaleDateString('en-IN', { month: 'long' })}
+                                                {/*
+                                                  * This printed new Date() — the current month,
+                                                  * for every customer, whatever they had done.
+                                                  * It is worked out from their actual history
+                                                  * now, and says nothing when there is none.
+                                                  */}
+                                                {stats.mostActiveMonth
+                                                    || <span className="text-text-muted">&mdash;</span>}
                                             </p>
                                         </div>
                                     </div>

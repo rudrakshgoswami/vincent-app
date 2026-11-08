@@ -94,11 +94,30 @@ export default function Order() {
 
                                     <div className="flex items-center gap-4">
                                         <div className="flex items-center bg-surface border border-border rounded-lg p-1">
-                                            <button onClick={() => item.quantity > 1 ? updateQuantity(item.id, -1) : removeFromCart(item.id)} className="w-6 h-6 flex items-center justify-center hover:bg-white rounded transition-colors text-text-muted">
+                                            {/*
+                                              * These two carried no text and no
+                                              * label, so a screen reader announced
+                                              * them only as "button" and the minus
+                                              * silently removes the item at a
+                                              * quantity of one.
+                                              */}
+                                            <button
+                                                onClick={() => item.quantity > 1 ? updateQuantity(item.id, -1) : removeFromCart(item.id)}
+                                                aria-label={item.quantity > 1
+                                                    ? `Remove one ${item.name}`
+                                                    : `Remove ${item.name} from the cart`}
+                                                className="w-6 h-6 flex items-center justify-center hover:bg-white rounded transition-colors text-text-muted"
+                                            >
                                                 <Minus size={10} />
                                             </button>
-                                            <span className="px-3 text-xs font-black text-secondary">{item.quantity}</span>
-                                            <button onClick={() => updateQuantity(item.id, 1)} className="w-6 h-6 flex items-center justify-center hover:bg-white rounded transition-colors text-text-muted">
+                                            <span className="px-3 text-xs font-black text-secondary" aria-live="polite">
+                                                <span className="sr-only">Quantity: </span>{item.quantity}
+                                            </span>
+                                            <button
+                                                onClick={() => updateQuantity(item.id, 1)}
+                                                aria-label={`Add one more ${item.name}`}
+                                                className="w-6 h-6 flex items-center justify-center hover:bg-white rounded transition-colors text-text-muted"
+                                            >
                                                 <Plus size={10} />
                                             </button>
                                         </div>
@@ -115,14 +134,21 @@ export default function Order() {
 
                 <div className="p-6 bg-surface/50 border-t border-border mt-auto">
                     <div className="space-y-3 mb-6">
-                        <div className="flex justify-between items-center">
-                            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-text-muted">Subtotal Indicated</p>
-                            <p className="text-xs font-bold text-secondary">₹{cartTotal.toFixed(0)}</p>
-                        </div>
-                        <div className="flex justify-between items-center text-primary pt-3 border-t border-border">
-                            <p className="text-xs font-black uppercase tracking-[0.4em]">Proprietary Total</p>
+                        {/*
+                          * Both lines showed the same number and the second
+                          * called it the total, but checkout then adds 5% tax
+                          * and the delivery charge -- a 720 rupee cart is
+                          * billed at 796. Call it a subtotal and say what is
+                          * still to come, rather than quoting a total that
+                          * is not the one they pay.
+                          */}
+                        <div className="flex justify-between items-center text-primary">
+                            <p className="text-xs font-black uppercase tracking-[0.4em]">Subtotal</p>
                             <p className="text-2xl font-heading">₹{cartTotal.toFixed(0)}</p>
                         </div>
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-text-muted pt-2 border-t border-border">
+                            Tax &amp; delivery calculated at checkout
+                        </p>
                     </div>
 
                     <button
