@@ -130,7 +130,15 @@ export const checkAvailability = async (req, res) => {
         });
 
         const bookedSlots = conflictingBookings.map(b => b.timeSlot);
-        const hasFullDay = bookedSlots.includes('fullDay');
+        /*
+         * Short-term holds have to follow the same full-day rule as bookings.
+         * They did not: a hold on the evening left "Full Day" showing as
+         * free, so a second guest could start a full-day booking against a
+         * slot someone was already paying for, and only find out at the
+         * payment step -- after the whole five-step wizard.
+         */
+        const lockedSlots = activeLocks.map(l => l.timeSlot);
+        const hasFullDay = bookedSlots.includes('fullDay') || lockedSlots.includes('fullDay');
 
         const slots = [
             { name: 'Morning', key: 'morning', time: '6:00 AM - 12:00 PM' },
@@ -148,7 +156,7 @@ export const checkAvailability = async (req, res) => {
             if (hasFullDay) {
                 isAvailable = false;
             } else if (slot.key === 'fullDay') {
-                if (bookedSlots.length > 0) isAvailable = false;
+                if (bookedSlots.length > 0 || lockedSlots.length > 0) isAvailable = false;
             } else {
                 if (bookedSlots.includes(slot.key)) isAvailable = false;
             }
@@ -163,7 +171,11 @@ export const checkAvailability = async (req, res) => {
                 available: isAvailable,
                 blocked: !!blockedByVenue,
                 booked: bookedSlots.includes(slot.key) && !currentLock,
-                locked: !!currentLock || !!shortTermLock,
+                // Blocked by someone else's hold rather than by a booking --
+                // the page then says "being booked now", not "already booked".
+                locked: !!currentLock || !!shortTermLock
+                    || (slot.key !== 'fullDay' && lockedSlots.includes('fullDay'))
+                    || (slot.key === 'fullDay' && lockedSlots.length > 0),
                 lockExpiresAt: currentLock?.lockExpiresAt || shortTermLock?.expiresAt,
                 price: venue.pricing[priceKey]?.[slot.key] || 0,
                 gst: Math.round((venue.pricing[priceKey]?.[slot.key] || 0) * (venue.pricing.gstRate / 100))

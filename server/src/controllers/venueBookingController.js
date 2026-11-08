@@ -1046,16 +1046,30 @@ export const lockVenueSlot = async (req, res) => {
         const targetDateUTC = new Date(new Date(date).toISOString().split('T')[0] + 'T00:00:00.000Z');
         const expiresAt = new Date(Date.now() + LOCK_DURATION_MINS * 60 * 1000);
 
-        // Concurrency Check 1: Already booked or has a payment-pending lock (existing logic)
+        /*
+         * The slot rule, in both directions: a full-day request clashes with
+         * ANY booked slot, and a partial request clashes with its own slot or
+         * with a full-day booking.
+         *
+         * This was written as two `$or` keys in one object literal. An object
+         * cannot hold the same key twice, so JavaScript kept the last one and
+         * the slot condition was gone before the query was ever sent. What
+         * ran was "is there any live booking for this venue on this date",
+         * which refused an evening hold at a venue whose MORNING was booked
+         * -- while the availability endpoint went on reporting that evening
+         * as free. The guest saw "Evening / Hold this slot" and got back
+         * "This slot is already reserved". One booking closed the whole day.
+         */
+        const slotClash = timeSlot === 'fullDay'
+            ? {}
+            : { timeSlot: { $in: [timeSlot, 'fullDay'] } };
+
+        // Concurrency Check 1: Already booked or has a payment-pending lock
         const conflict = await VenueBooking.findOne({
             venue: venueId,
             eventDate: targetDateUTC,
             status: { $in: ['CONFIRMED', 'PAYMENT_PENDING', 'AWAITING_ADMIN_APPROVAL', 'COMPLETED'] },
-            $or: [
-                { timeSlot: timeSlot },
-                { timeSlot: 'fullDay' },
-                { $and: [{ timeSlot: { $ne: 'fullDay' } }, { $expr: { $eq: [timeSlot, 'fullDay'] } }] }
-            ],
+            ...slotClash,
             $or: [
                 { lockExpiresAt: { $gt: new Date() } },
                 { lockExpiresAt: { $exists: false } }
@@ -1064,6 +1078,24 @@ export const lockVenueSlot = async (req, res) => {
 
         if (conflict) {
             return res.status(409).json({ message: 'This slot is already reserved or being booked.' });
+        }
+
+        /*
+         * The unique index on (venue, eventDate, timeSlot) stops two people
+         * holding the SAME slot, but not one holding the full day while
+         * another holds the evening. Both would walk the whole wizard and
+         * only the first to pay would get the venue.
+         */
+        const overlappingLock = await VenueSlotLock.findOne({
+            venue: venueId,
+            eventDate: targetDateUTC,
+            user: { $ne: userId },
+            expiresAt: { $gt: new Date() },
+            ...slotClash
+        });
+
+        if (overlappingLock) {
+            return res.status(409).json({ message: 'This slot was just locked by another user.' });
         }
 
         // Concurrency Check 2: Try to create/update short-term lock
