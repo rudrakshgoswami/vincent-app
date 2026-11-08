@@ -396,7 +396,10 @@ export default function AdminDashboard() {
                                                     <p className="font-semibold text-secondary text-sm mt-0.5">
                                                         {booking.user?.name || booking.name || 'Client'}
                                                     </p>
-                                                    <p className="text-xs text-purple-600 mt-1">{booking.venue?.name || 'Venue Booking'}</p>
+                                                    {/* Same fallback as the bookings list: the booking
+                                                        records the venue name it was made under, so use
+                                                        it when the venue itself is gone. */}
+                                                    <p className="text-xs text-purple-600 mt-1">{booking.venue?.name || booking.venueName || 'Venue Booking'}</p>
                                                 </div>
                                                 <div className="text-right">
                                                     <p className="text-xs text-gray-400">{timeAgo(booking.createdAt)}</p>

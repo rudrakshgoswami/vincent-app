@@ -246,14 +246,31 @@ export default function AdminReservations() {
 
                             {/* Table / Zone */}
                             <div className="col-span-2 text-center mb-4 lg:mb-0">
-                                {reservation.table ? (
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-xs font-black text-secondary uppercase tracking-widest mb-1">Table #{reservation.table.tableNumber}</p>
-                                        <p className="text-[9px] font-bold text-text-muted uppercase tracking-[0.15em]">{reservation.table.area} Zone</p>
-                                    </div>
-                                ) : (
-                                    <p className="text-[10px] font-bold italic text-text-muted">Unassigned</p>
-                                )}
+                                {/*
+                                  * Only the singular `table` was read here, but a
+                                  * reservation can combine up to three tables and
+                                  * those are stored in `tables`. Multi-table
+                                  * bookings therefore showed as "Unassigned" while
+                                  * holding real tables. Read the array first and
+                                  * keep the old field as the fallback.
+                                  */}
+                                {(() => {
+                                    const booked = (reservation.tables?.length ? reservation.tables : [reservation.table])
+                                        .filter(t => t && t.tableNumber);
+                                    if (booked.length === 0) {
+                                        return <p className="text-[10px] font-bold italic text-text-muted">Unassigned</p>;
+                                    }
+                                    return (
+                                        <div className="flex flex-col items-center">
+                                            <p className="text-xs font-black text-secondary uppercase tracking-widest mb-1">
+                                                Table{booked.length > 1 ? 's' : ''} {booked.map(t => `#${t.tableNumber}`).join(' + ')}
+                                            </p>
+                                            <p className="text-[9px] font-bold text-text-muted uppercase tracking-[0.15em]">
+                                                {[...new Set(booked.map(t => t.area).filter(Boolean))].join(' / ')} Zone
+                                            </p>
+                                        </div>
+                                    );
+                                })()}
                             </div>
 
                             {/* Billing */}

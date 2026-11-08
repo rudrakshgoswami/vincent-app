@@ -19,6 +19,26 @@ export const createReservationOrder = async (req, res) => {
             return res.status(400).json({ message: 'No tables selected' });
         }
 
+        /*
+         * The booking form stops you choosing a past date with a min= on the
+         * date input, but that is only the browser being helpful: a request
+         * made directly can carry any date at all, and the reservation was
+         * accepted and billed for. Check it here, where it cannot be
+         * skipped, using the slot's own start time so that a slot earlier
+         * today is refused as well.
+         */
+        const when = new Date(date);
+        if (Number.isNaN(when.getTime())) {
+            return res.status(400).json({ message: 'That reservation date is not a real date' });
+        }
+        const [slotHour, slotMinute] = String(timeSlot?.start || '00:00').split(':').map(Number);
+        when.setHours(slotHour || 0, slotMinute || 0, 0, 0);
+        if (when.getTime() <= Date.now()) {
+            return res.status(400).json({
+                message: 'That date and time has already passed. Please choose a later slot.'
+            });
+        }
+
         // Validate all tables exist and are available
         const tables = await Table.find({ _id: { $in: selectedIds } });
         if (tables.length !== selectedIds.length) {

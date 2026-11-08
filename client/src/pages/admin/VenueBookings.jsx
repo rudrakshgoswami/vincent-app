@@ -252,7 +252,17 @@ export default function AdminVenueBookings() {
                                             <StatusIcon size={10} /> {status.label}
                                         </span>
                                     </div>
-                                    <h4 className="text-base font-heading text-secondary truncate">{booking.venue?.name || 'Unknown Venue'}</h4>
+                                    {/*
+                                      * Only the populated venue was used here, so
+                                      * every booking whose venue has since been
+                                      * deleted or re-seeded read "Unknown Venue" --
+                                      * even though the booking itself records the
+                                      * name it was made under. Prefer the live
+                                      * venue, fall back to what was stored at the
+                                      * time, and keep "Unknown" for the genuinely
+                                      * unknown.
+                                      */}
+                                    <h4 className="text-base font-heading text-secondary truncate">{booking.venue?.name || booking.venueName || 'Unknown Venue'}</h4>
                                     <p className="text-xs text-text-muted mt-0.5">
                                         {booking.contactInfo?.fullName || 'No name'} · {booking.contactInfo?.phone || 'No phone'}
                                     </p>
