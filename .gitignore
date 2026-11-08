@@ -48,3 +48,8 @@ Thumbs.db
 
 # Python bytecode from the helper scripts
 __pycache__/
+
+# Database dumps from scripts/backup-db.js. These contain real user
+# records -- emails, phone numbers, password hashes -- and this
+# repository is public.
+server/backups/
