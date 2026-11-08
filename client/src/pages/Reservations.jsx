@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { fetchResources, createBooking } from '../api';
 import { useAuth } from '../context/AuthContext';
 import { Calendar, Clock, Users, CheckCircle, AlertCircle, Lock } from 'lucide-react';
+import LoadError from '../components/LoadError';
 
 export default function Reservations() {
     const location = useLocation();
@@ -12,6 +13,7 @@ export default function Reservations() {
     const initialType = queryParams.get('type') || 'hall';
 
     const [resources, setResources] = useState([]);
+    const [resourcesError, setResourcesError] = useState(null);
     const [formData, setFormData] = useState({
         customerName: '',
         customerEmail: '',
@@ -28,7 +30,17 @@ export default function Reservations() {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetchResources().then(setResources);
+        /*
+         * fetchResources used to swallow its own errors and hand back an
+         * empty array, and this had no catch either, so a failed request
+         * showed an empty venue picker as though nothing were bookable.
+         */
+        fetchResources()
+            .then(setResources)
+            .catch(err => {
+                console.error('Failed to load bookable resources:', err);
+                setResourcesError(err);
+            });
         if (user) {
             setFormData(prev => ({
                 ...prev,
@@ -178,6 +190,11 @@ export default function Reservations() {
                                     >
                                         Any Available
                                     </button>
+                                    {resourcesError && (
+                                        <div className="col-span-full">
+                                            <LoadError what="the list of venues" compact />
+                                        </div>
+                                    )}
                                     {availableResources.map(r => (
                                         <button
                                             key={r.id}

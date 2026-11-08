@@ -973,31 +973,61 @@ export const fetchMenu = async () => {
 
         return categories;
     } catch (error) {
+        /*
+         * This used to return [] here. A page cannot tell an empty array
+         * meaning "the kitchen has no dishes" from one meaning "the server
+         * never answered", so every caller rendered an empty menu during an
+         * outage -- which is exactly what the deployed site showed while the
+         * database was unreachable: "Our Menu", and nothing under it.
+         * Let it reject so the caller can say what went wrong.
+         */
         console.error('fetchMenu error:', error);
-        return [];
+        throw error;
     }
 };
 
 export const fetchResources = async () => {
     try {
-        // Fetch both banquet and lawn venues
+        /*
+         * This read venuesRes.data.venues, venue.images and
+         * venue.pricePerDay -- none of which the venue API returns. It
+         * threw on the first property every time and the old catch turned
+         * that into an empty array, so the picker on /reservations has
+         * always been empty and never said why. The shape it maps from
+         * now is the one the API actually sends: { venues, total, page,
+         * pages }, with media[] rather than images[] and a pricing object
+         * rather than a single price.
+         */
         const venuesRes = await fetchVenues();
+        const list = venuesRes?.venues || (Array.isArray(venuesRes) ? venuesRes : []);
 
-        // Return in old format
-        return venuesRes.data.venues.map(venue => ({
-            id: venue._id,
-            name: venue.name,
-            type: venue.type,
-            description: venue.description,
-            capacity: venue.capacity,
-            price: venue.pricePerDay,
-            image: venue.images[0] || '',
-            images: venue.images,
-            amenities: venue.amenities || []
-        }));
+        return list.map(venue => {
+            const images = (venue.media || [])
+                .filter(m => m.type === 'image' && m.url)
+                .map(m => m.url);
+            // capacity is { min, max }; this shape wants a single number,
+            // and callers render it straight into the page.
+            const seats = typeof venue.capacity === 'object'
+                ? venue.capacity?.max
+                : venue.capacity;
+
+            return {
+                id: venue._id,
+                name: venue.name,
+                type: venue.type,
+                description: venue.shortDescription || venue.description,
+                capacity: seats ?? venue.seatingCapacity ?? 0,
+                price: venue.startingPrice ?? venue.pricing?.weekday?.evening ?? 0,
+                image: images[0] || '',
+                images,
+                amenities: venue.amenities || []
+            };
+        });
     } catch (error) {
+        // Same reason as fetchMenu: an empty list and a failed request are
+        // different things and the caller has to be able to tell them apart.
         console.error('fetchResources error:', error);
-        return [];
+        throw error;
     }
 };
 
@@ -1006,8 +1036,9 @@ export const fetchBookings = async () => {
         const res = await fetchMyVenueBookings();
         return res.data.bookings || [];
     } catch (error) {
+        // As above: do not disguise a failure as "you have no bookings".
         console.error('fetchBookings error:', error);
-        return [];
+        throw error;
     }
 };
 

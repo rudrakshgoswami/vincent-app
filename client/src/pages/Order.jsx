@@ -4,23 +4,38 @@ import { fetchMenu, getImageUrl } from '../api';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { ShoppingBag, X, Search, Sparkles, Star, ArrowRight, ChefHat, Info } from 'lucide-react';
+import LoadError from '../components/LoadError';
 
 export default function Order() {
     const navigate = useNavigate();
     const { user } = useAuth();
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [activeCategory, setActiveCategory] = useState(null);
     const { addToCart, isCartOpen, setIsCartOpen, cart, updateQuantity, removeFromCart, cartTotal } = useCart();
 
     useEffect(() => {
-        fetchMenu().then(data => {
-            setCategories(data);
-            if (data.length > 0) setActiveCategory(data[0].id || data[0]._id || data[0].name);
-            setLoading(false);
-        });
+        loadMenu();
     }, []);
+
+    const loadMenu = () => {
+        setLoading(true);
+        setLoadError(null);
+        fetchMenu()
+            .then(data => {
+                setCategories(data);
+                if (data.length > 0) setActiveCategory(data[0].id || data[0]._id || data[0].name);
+            })
+            .catch(err => {
+                // There was no catch here at all, so a failed request left
+                // loading true and the page sat on its loader indefinitely.
+                console.error('Failed to load the menu:', err);
+                setLoadError(err);
+            })
+            .finally(() => setLoading(false));
+    };
 
     const scrollToCategory = (id) => {
         setActiveCategory(id);
@@ -46,6 +61,14 @@ export default function Order() {
             <div className="min-h-screen flex flex-col items-center justify-center p-20 grayscale opacity-40">
                 <ChefHat className="w-16 h-16 text-secondary mb-6 animate-bounce" />
                 <p className="text-[11px] font-black uppercase tracking-[0.4em] text-secondary">Synchronizing Culinary Inventory...</p>
+            </div>
+        );
+    }
+
+    if (loadError) {
+        return (
+            <div className="min-h-screen bg-background flex items-center justify-center">
+                <LoadError what="the menu" onRetry={loadMenu} />
             </div>
         );
     }
