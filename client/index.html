@@ -6,7 +6,16 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vincent Restaurant</title>
-  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+  <!--
+    Razorpay's checkout script is deliberately not loaded here. It used to
+    be, which meant every visitor reading the menu fetched it, waited on it
+    before the load event, and picked up Razorpay's tracking identifiers in
+    localStorage before ever reaching a payment.
+
+    Nothing needed it: src/utils/paymentHandler.js injects the same script
+    itself, on demand, the moment a payment actually starts, and waits for
+    it to load. Add it back here and that work is simply done twice.
+  -->
 </head>
 
 <body>

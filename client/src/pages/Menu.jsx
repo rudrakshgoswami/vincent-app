@@ -11,20 +11,43 @@ import {
     Sparkles
 } from 'lucide-react';
 import { fetchMenu, getImageUrl } from '../api';
+import LoadError from '../components/LoadError';
 
 export default function Menu() {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [loadError, setLoadError] = useState(null);
 
-    useEffect(() => {
-        fetchMenu().then(data => {
-            setCategories(data);
-            if (data.length > 0) setActiveCategory(data[0].id || data[0]._id || data[0].name);
-            setLoading(false);
-        });
-    }, []);
+    const loadMenu = () => {
+        setLoading(true);
+        setLoadError(null);
+        fetchMenu()
+            .then(data => {
+                setCategories(data);
+                if (data.length > 0) setActiveCategory(data[0].id || data[0]._id || data[0].name);
+            })
+            .catch(err => {
+                // Without this the promise rejects unhandled, loading stays
+                // true and the page shows "Preparing the Masterpiece..."
+                // for ever, which reads as a very slow kitchen rather than
+                // a failed request.
+                console.error('Failed to load the menu:', err);
+                setLoadError(err);
+            })
+            .finally(() => setLoading(false));
+    };
+
+    useEffect(() => { loadMenu(); }, []);
+
+    // How many dishes the current search matches, across every category.
+    const matchCount = searchTerm
+        ? categories.reduce((n, category) => n + (category.Items || []).filter(i =>
+            i.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            i.description.toLowerCase().includes(searchTerm.toLowerCase())
+        ).length, 0)
+        : 0;
 
     const scrollToCategory = (id) => {
         setActiveCategory(id);
@@ -42,6 +65,14 @@ export default function Menu() {
             <div className="min-h-screen flex flex-col items-center justify-center p-20 grayscale opacity-40">
                 <ChefHat className="w-16 h-16 text-secondary mb-6 animate-bounce" />
                 <p className="text-[11px] font-black uppercase tracking-[0.4em] text-secondary">Preparing the Masterpiece...</p>
+            </div>
+        );
+    }
+
+    if (loadError) {
+        return (
+            <div className="min-h-screen bg-[#0A261A] flex items-center justify-center">
+                <LoadError what="the menu" onRetry={loadMenu} />
             </div>
         );
     }
@@ -139,6 +170,30 @@ export default function Menu() {
             {/* Menu Content */}
             <div className="container mx-auto px-4 lg:px-8 mt-12 relative z-10 min-h-screen">
                 <div className="space-y-16 relative z-10 max-w-[1400px] mx-auto pb-20">
+                    {/*
+                      * Every category hides itself when the search matches
+                      * none of its dishes, so a search that matches nothing
+                      * anywhere used to leave the page completely blank with
+                      * no explanation. Say so instead.
+                      */}
+                    {searchTerm && matchCount === 0 && (
+                        <div className="text-center py-24">
+                            <UtensilsCrossed className="w-12 h-12 mx-auto mb-6 text-white/30" />
+                            <h2 className="text-2xl font-heading text-white mb-3">
+                                No dishes match &ldquo;{searchTerm}&rdquo;
+                            </h2>
+                            <p className="text-white/60 mb-8 max-w-md mx-auto">
+                                Try a shorter word, or a different spelling.
+                            </p>
+                            <button
+                                onClick={() => setSearchTerm('')}
+                                className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold tracking-wide transition-colors"
+                            >
+                                Clear search
+                            </button>
+                        </div>
+                    )}
+
                     {categories.map((category) => {
                         const items = (category.Items || []).filter(i =>
                             i.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
