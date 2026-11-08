@@ -1,0 +1,41 @@
+[
+  {
+    "_id": "69b6f00a68666d216c859a1f",
+    "user": "69a2f9d174c4bac49c9753ea",
+    "items": [
+      {
+        "menuItem": "69b6ef1368666d216c859918",
+        "name": "Margherita",
+        "quantity": 2,
+        "price": 250,
+        "subtotal": 500,
+        "notes": "",
+        "_id": "69b6f00a68666d216c859a20"
+      }
+    ],
+    "subtotal": 500,
+    "tax": 25,
+    "deliveryCharge": 40,
+    "totalAmount": 565,
+    "orderType": "delivery",
+    "deliveryAddress": {
+      "street": "12 Example Street, Civil Lines",
+      "city": "Surat",
+      "state": "Gujarat",
+      "pincode": "395003"
+    },
+    "paymentStatus": "paid",
+    "orderNumber": "ORD00001",
+    "status": "delivered",
+    "cancellationReason": null,
+    "refundStatus": "none",
+    "refundAmount": 0,
+    "cancelledBy": null,
+    "razorpayOrderId": "demo_orderid_1",
+    "razorpayPaymentId": "demo_paymentid_1",
+    "estimatedPrepTime": 30,
+    "createdAt": "2026-03-15T17:44:42.444Z",
+    "updatedAt": "2026-03-15T17:44:55.823Z",
+    "__v": 0
+  }
+]

@@ -53,12 +53,3 @@ __pycache__/
 # records -- emails, phone numbers, password hashes -- and this
 # repository is public.
 server/backups/
-
-# These dumps hold real people: user accounts with email addresses,
-# phone numbers, delivery addresses and bcrypt password hashes, a
-# customer enquiry, and an order with a home address. This repository
-# is public, so they do not belong in it. Demo accounts are created by
-# server/scripts/create-demo-users.js instead.
-db_export/users.json
-db_export/contactMessages.json
-db_export/orders.json
