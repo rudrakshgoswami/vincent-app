@@ -56,7 +56,17 @@ export default function Login() {
             // user → React state
             login(response.data.accessToken, response.data.refreshToken, response.data.user);
             const fromState = location.state?.from;
-            const from = (typeof fromState === 'string' ? fromState : fromState?.pathname) || '/';
+            /*
+             * This used to take only .pathname, which throws away the query
+             * string. Someone who searched /reservations?date=...&guests=400,
+             * hit a login wall and signed in came back to a blank search and
+             * had to type it all again. Same for a filtered /venues list.
+             */
+            const from = (typeof fromState === 'string'
+                ? fromState
+                : fromState?.pathname
+                    ? `${fromState.pathname}${fromState.search || ''}${fromState.hash || ''}`
+                    : '') || '/';
             setTimeout(() => {
                 navigate(from, { replace: true });
             }, 800);

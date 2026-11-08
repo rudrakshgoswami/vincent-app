@@ -17,6 +17,7 @@ export default function Navbar() {
         { name: 'Home', path: '/' },
         { name: 'Menu', path: '/menu' },
         { name: 'Venues', path: '/venues' },
+        { name: 'Plan an Event', path: '/reservations' },
         { name: 'Order Online', path: '/order' },
         { name: 'Contact', path: '/contact' },
     ];
@@ -88,7 +89,7 @@ export default function Navbar() {
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`px-6 py-2 rounded-full text-[11px] uppercase tracking-[0.2em] font-bold transition-all duration-500 relative flex items-center justify-center group ${isActive(link.path) ? 'text-white' : 'text-secondary/60 hover:text-secondary'}`}
+                                className={`px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.2em] font-bold transition-all duration-500 relative flex items-center justify-center whitespace-nowrap group ${isActive(link.path) ? 'text-white' : 'text-secondary/60 hover:text-secondary'}`}
                             >
                                 {isActive(link.path) && (
                                     <div className="absolute inset-0 bg-secondary rounded-full shadow-lg animate-scale-up" />
@@ -187,7 +188,7 @@ export default function Navbar() {
                         ) : (
                             <Link
                                 to="/login"
-                                className="group relative px-8 py-3 rounded-full border-2 border-secondary text-secondary hover:text-white text-[10px] font-black uppercase tracking-[0.3em] transition-all duration-500 overflow-hidden"
+                                className="group relative px-8 py-3 rounded-full border-2 border-secondary text-secondary hover:text-white text-[10px] font-black uppercase tracking-[0.3em] whitespace-nowrap transition-all duration-500 overflow-hidden"
                             >
                                 <div className="absolute inset-0 bg-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                                 <span className="relative z-10">Log In</span>

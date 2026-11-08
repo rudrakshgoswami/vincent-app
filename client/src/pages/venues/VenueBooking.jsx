@@ -87,7 +87,16 @@ export default function VenueBooking() {
     // Step 1: Event Details
     const [eventType, setEventType] = useState(initialSavedData?.eventType ?? 'wedding_reception');
     const [eventTypeOther, setEventTypeOther] = useState(initialSavedData?.eventTypeOther ?? '');
-    const [guestCount, setGuestCount] = useState(initialSavedData?.guestCount ?? 200);
+    /*
+     * /reservations searches by headcount and hands it over in the query
+     * string, so the wizard opens on the number the person already typed
+     * rather than back on 200. A saved session still wins over both.
+     */
+    const guestsFromSearch = Number(searchParams.get('guests'));
+    const [guestCount, setGuestCount] = useState(
+        initialSavedData?.guestCount
+        ?? (Number.isFinite(guestsFromSearch) && guestsFromSearch > 0 ? guestsFromSearch : 200)
+    );
     const [specialRequirements, setSpecialRequirements] = useState(initialSavedData?.specialRequirements ?? '');
 
     // Step 2: Catering
