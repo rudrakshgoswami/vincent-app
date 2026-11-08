@@ -7,7 +7,7 @@ Vincent is live on Vercel as two projects in the `rudraksh8` team:
 | Client | `vincent-app` | https://vincent-app-omega.vercel.app |
 | API | `vincent-api` | https://vincent-api.vercel.app |
 
-Both deploy with `vercel deploy --prod` from `client/` and `server/`. Vercel
+Both deploy on a push to `main`, each from its own subdirectory. Vercel
 detects the Express app in `server/` on its own — the framework preset is
 Express, and it runs `server.js`, which is why there is no handler of our own
 under `server/api/`.
@@ -78,7 +78,9 @@ password twice:
    ```
 
    Piping it from the file means the password is never typed on a command
-   line. Then redeploy: `vercel deploy --prod`.
+   line. A change to an environment variable does not rebuild anything on
+   its own, so push a commit — or hit Redeploy on the latest deployment in
+   the dashboard — to pick it up.
 
 ### Then seed it
 
@@ -132,27 +134,33 @@ and the data. Two things follow:
   would rather the deployment details were not readable by anyone, make it
   private in the GitHub settings.
 
-## Pushing to GitHub does not deploy
+## Pushing to GitHub is how you deploy
 
-Both projects are connected to `rudrakshgoswami/vincent-app`, and both are
-set to build from the repository root. Neither of them builds there — the
-client's `vite build` finds no `vite` at the root — so every `git push` to
-`main` starts two production builds and both fail in about three seconds.
+A push to `main` builds and deploys both projects. Nothing else is needed,
+and there is no CLI deploy step.
 
-Nothing breaks when they do. A failed build is never aliased, so
-`vincent-app-omega` and `vincent-api` keep serving the last build that
-worked, which is why the site stayed up through all of them. But the
-dashboard shows two red deployments per push, and that looks exactly like
-a broken site when it isn't.
+Each project builds from its own subdirectory:
 
-Two ways out. They are mutually exclusive, so pick one.
+| Project | Root directory |
+|---|---|
+| `vincent-app` | `client` |
+| `vincent-api` | `server` |
 
-**Keep deploying from the CLI**, which is what the commands above assume,
-and stop Git from trying. In each project's settings on Vercel, under Git,
-turn off automatic deployments for `main`. Pushes then only push.
+**`vercel deploy --prod` from inside `client/` or `server/` no longer
+works.** With a root directory set, Vercel looks for that folder *inside*
+whatever the CLI uploads, and the CLI uploads the folder you ran it in, so
+it goes looking for `client/client`. Push instead.
 
-**Or make `git push` the way you deploy**, which is the more usual setup
-and one less thing to remember:
+### What this replaced
+
+Both projects used to build from the repository root, where neither of them
+builds — the client's `vite build` finds no `vite` there — so every push
+started two production builds and both failed in about three seconds. The
+site never went down, because a failed build is never aliased and the last
+good one keeps serving, but the dashboard showed two red deployments per
+push, which looks exactly like a broken site.
+
+It was set with:
 
 ```bash
 vercel project update vincent-app --root-directory client --yes
@@ -162,11 +170,9 @@ vercel project update vincent-app --root-directory client --yes
 vercel project update vincent-api --root-directory server --yes
 ```
 
-Each project then builds from its own subdirectory and a push to `main`
-deploys both. The trade is that `vercel deploy --prod` from inside
-`client/` or `server/` stops working: with a root directory set, Vercel
-looks for that folder *inside* whatever the CLI uploads, and the CLI
-uploads the folder you ran it in. Deploy by pushing instead.
+To go back to deploying from the CLI instead, clear the root directories
+(`--auto-detect root-directory`) and turn off automatic deployments for
+`main` under each project's Git settings, so pushes only push.
 
 ## What this host does not do
 
