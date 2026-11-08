@@ -12,6 +12,7 @@
  */
 
 import mongoose from 'mongoose';
+import { EJSON } from 'bson';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -83,7 +84,17 @@ async function exportDB() {
             try {
                 const docs = await Model.find({}).lean();
                 const filePath = path.join(EXPORT_DIR, `${name}.json`);
-                fs.writeFileSync(filePath, JSON.stringify(docs, null, 2), 'utf8');
+                /*
+                 * Extended JSON, not JSON.stringify. Plain JSON has no
+                 * ObjectId, so stringify writes _id as a bare string and
+                 * import_db.js reads it back as one. Mongoose then casts
+                 * query values to ObjectId and never matches those
+                 * documents again: booking a table failed with "One or
+                 * more tables not found", and populate() returned nothing,
+                 * which is how this database ended up needing
+                 * scripts/fix-string-ids.js. Dates go the same way.
+                 */
+                fs.writeFileSync(filePath, EJSON.stringify(docs, null, 2, { relaxed: false }), 'utf8');
                 console.log(`📦 Exported  ${name.padEnd(20)} → ${docs.length} documents`);
                 totalDocs += docs.length;
             } catch (err) {
